@@ -94,17 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="##linux基本终端操作echo 输出命令 echo “hello world” 终端输出hello world    echo “hello world” &amp;gt; helloworld.txt        &amp;gt; 重定向至输入至特定位置    echo “xxxx” &amp;gt;&amp;gt; helloworld.txt        &amp;gt; 再次重定向则覆盖        &amp;gt;&amp;gt;两">
+  <meta name="description" content="linux基本终端操作echo 输出命令　　echo “hello world” 终端输出hello world　　echo “hello world” &amp;gt; helloworld.txt　　　　&amp;gt; 重定向至输入至特定位置　　echo “xxxx” &amp;gt;&amp;gt; helloworld.txt　　　　&amp;gt; 再次重定向则覆盖　　　　&amp;gt;&amp;gt;两次重定向会追加 &amp;gt; 终端能输">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linuxbasic2">
 <meta property="og:url" content="http://yoursite.com/2019/07/23/linuxbasic2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="##linux基本终端操作echo 输出命令 echo “hello world” 终端输出hello world    echo “hello world” &amp;gt; helloworld.txt        &amp;gt; 重定向至输入至特定位置    echo “xxxx” &amp;gt;&amp;gt; helloworld.txt        &amp;gt; 再次重定向则覆盖        &amp;gt;&amp;gt;两">
+<meta property="og:description" content="linux基本终端操作echo 输出命令　　echo “hello world” 终端输出hello world　　echo “hello world” &amp;gt; helloworld.txt　　　　&amp;gt; 重定向至输入至特定位置　　echo “xxxx” &amp;gt;&amp;gt; helloworld.txt　　　　&amp;gt; 再次重定向则覆盖　　　　&amp;gt;&amp;gt;两次重定向会追加 &amp;gt; 终端能输">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T16:34:29.170Z">
+<meta property="og:updated_time" content="2019-07-25T15:55:59.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linuxbasic2">
-<meta name="twitter:description" content="##linux基本终端操作echo 输出命令 echo “hello world” 终端输出hello world    echo “hello world” &amp;gt; helloworld.txt        &amp;gt; 重定向至输入至特定位置    echo “xxxx” &amp;gt;&amp;gt; helloworld.txt        &amp;gt; 再次重定向则覆盖        &amp;gt;&amp;gt;两">
+<meta name="twitter:description" content="linux基本终端操作echo 输出命令　　echo “hello world” 终端输出hello world　　echo “hello world” &amp;gt; helloworld.txt　　　　&amp;gt; 重定向至输入至特定位置　　echo “xxxx” &amp;gt;&amp;gt; helloworld.txt　　　　&amp;gt; 再次重定向则覆盖　　　　&amp;gt;&amp;gt;两次重定向会追加 &amp;gt; 终端能输">
 
 
 
@@ -340,7 +341,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-24 00:34:29" itemprop="dateModified" datetime="2019-07-24T00:34:29+08:00">2019-07-24</time>
+                <time title="Modified: 2019-07-25 23:55:59" itemprop="dateModified" datetime="2019-07-25T23:55:59+08:00">2019-07-25</time>
               </span>
             
           
@@ -379,12 +380,101 @@
       
 
       
-        <p>##linux基本终端操作<br>echo 输出命令 echo “hello world” 终端输出hello world<br>    echo “hello world” &gt; helloworld.txt<br>        &gt; 重定向至输入至特定位置<br>    echo “xxxx” &gt;&gt; helloworld.txt<br>        &gt; 再次重定向则覆盖<br>        &gt;&gt;两次重定向会追加</p>
-<blockquote>
-<p>终端能输出的都能重定向输出<br>| 管道，有输入有输出<br>    指令1|指令2|…|指令n    从指令1的输出作为指令2的输入，一直到指令n输出<br>    举例：ls -l|more 查看文件列表并分屏显示<br>ln 建立链接<br>    -s 软连接    1.类似快捷方式<br>                2.删除软连接不影响源文件<br>                3.软连接显示链接文件大小<br>                4.可以链接不存在文件<br>                5.可以连接目录<br>                6.可以跨系统<br>                例子：ln -s 1.txt softlink1.txt<br>    硬链接    1.类似多名称<br>            2.删除硬链接，若无其他硬链接删除data，若有则无影响<br>            3.硬链接显示data大小，多个硬链接实际上只有data实际大小<br>            4.不可以链接不存在文件<br>            5.不可链接目录<br>            6.不可跨系统<br>            例子：ln 2.txt hardlink2.txt<br>grep 文件内容搜索<br>    grep ‘搜索内容’ 搜索文件路径<br>    -t 忽略大小写<br>    -n 显示行号<br>    -v 取反，不显示搜索内容<br>    grep 搜索内容可用正则<br>find 文件搜索<br>    名称搜索<br>        find ./ 文件名称<br>        类正则：<br>            find ./ ‘*.txt’<br>            find ./ ‘sa?asd.txt’<br>    大小搜索<br>        find ./ -size +30M                 大于30M<br>                      -30M                 小于30M<br>                      +15M -size -30M     大于15M小于30M<br>tar 归档文件 和 gz 压缩文件<br>    归档是确保文件完整性<br>    压缩是节省空间<br>    tar &gt; 源文件<br>    gz 文件可能   &gt; 源文件<br>           也可能 &lt; 源文件<br>    -c 生成档案文件，创建打包文件<br>    -v 显示进度<br>    -f 指定文件名称，必须放最后<br>    -x 解开打包文件<br>    -z 解压缩和压缩<br>    -C 指定要解档目录<br>    常用操作:<br>        tar -cvf 归档文件名.tar 待归档文件1…        改变文件大小<br>        tar -xvf 归档文件名.tar                        改变文件大小<br>        tar -zcvf 压缩文件.tar.gz 待压缩文件1…    改变文件大小<br>        tar -zxvf 压缩文件.tar.gz                    改变文件大小<br>        tar -zxvf 压缩文件.tar.gz -C 指定目录<br>zip 和 unzip<br>    zip -r a.zip a  压缩a目录成a.zip文件<br>    unzip a.zip        解压缩文件<br>bz2 压缩与解压<br>    -j 解压和压缩<br>    tar -jcvf all.atr.bz2 *.txt<br>    tar -jxvf all.atr.bz2<br>rar 和 unrar<br>    类似zip</p>
-</blockquote>
+        <h1 id="linux基本终端操作"><a href="#linux基本终端操作" class="headerlink" title="linux基本终端操作"></a>linux基本终端操作</h1><h2 id="echo-输出命令"><a href="#echo-输出命令" class="headerlink" title="echo 输出命令"></a>echo 输出命令</h2><p>　　echo “hello world” 终端输出hello world<br>　　echo “hello world” &gt; helloworld.txt<br>　　　　&gt; 重定向至输入至特定位置<br>　　echo “xxxx” &gt;&gt; helloworld.txt<br>　　　　&gt; 再次重定向则覆盖<br>　　　　&gt;&gt;两次重定向会追加</p>
+<h2 id="gt-终端能输出的都能重定向输出"><a href="#gt-终端能输出的都能重定向输出" class="headerlink" title="&gt; 终端能输出的都能重定向输出"></a>&gt; 终端能输出的都能重定向输出</h2><h2 id="管道，有输入有输出"><a href="#管道，有输入有输出" class="headerlink" title="| 管道，有输入有输出"></a>| 管道，有输入有输出</h2><pre><code>指令1|指令2|...|指令n    从指令1的输出作为指令2的输入，一直到指令n输出
+举例：ls -l|more 查看文件列表并分屏显示</code></pre><h2 id="ln-建立链接"><a href="#ln-建立链接" class="headerlink" title="ln 建立链接"></a>ln 建立链接</h2><ol>
+<li>-s 软连接<ol>
+<li>类似快捷方式</li>
+<li>删除软连接不影响源文件</li>
+<li>软连接显示链接文件大小</li>
+<li>可以链接不存在文件</li>
+<li>可以连接目录</li>
+<li>可以跨系统<br>例子：ln -s 1.txt softlink1.txt    </li>
+</ol>
+</li>
+<li>硬链接    <ol>
+<li>类似多名称</li>
+<li>删除硬链接，若无其他硬链接删除data，若有则无影响</li>
+<li>硬链接显示data大小，多个硬链接实际上只有data实际大小</li>
+<li>不可以链接不存在文件</li>
+<li>不可链接目录</li>
+<li>不可跨系统<br>例子：ln 2.txt hardlink2.txt</li>
+</ol>
+</li>
+</ol>
 <hr>
-<p>##文件权限<br>ls -l<br>文件类型 文件拥有者u 文件所属组g 其他用户权限o 文件指针数 拥有者 用户所在组<br>rwx-    4210     读，写，执行，无权限<br>所有用户a<br>chmod 权限修改<br>    -R 递归修改<br>    chmod u+r 文件名     加权限<br>          u-r 文件名     减权限<br>          u=rwx 文件名   设置权限<br>    chmod 777 文件名<br>        7 rwx<br>        6 rw-<br>        5 r-x<br>        4 r–<br>        3 -wx<br>        2 -w-<br>        1 –x<br>        0 —</p>
+<h2 id="grep-文件内容搜索"><a href="#grep-文件内容搜索" class="headerlink" title="grep 文件内容搜索"></a>grep 文件内容搜索</h2><ul>
+<li>grep ‘搜索内容’ 搜索文件路径</li>
+<li>-t 忽略大小写</li>
+<li>-n 显示行号</li>
+<li>-v 取反，不显示搜索内容</li>
+<li>grep 搜索内容可用正则</li>
+</ul>
+<h2 id="find-文件搜索"><a href="#find-文件搜索" class="headerlink" title="find 文件搜索"></a>find 文件搜索</h2><ol>
+<li>名称搜索<ul>
+<li>find ./ 文件名称</li>
+<li>类正则：<br> find ./ ‘*.txt’<br> find ./ ‘sa?asd.txt’</li>
+</ul>
+</li>
+<li>大小搜索<ul>
+<li>find ./ -size +30M                 大于30M</li>
+<li>-30M                 小于30M</li>
+<li>+15M -size -30M     大于15M小于30M</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="tar-归档文件-和-gz-压缩文件"><a href="#tar-归档文件-和-gz-压缩文件" class="headerlink" title="tar 归档文件 和 gz 压缩文件"></a>tar 归档文件 和 gz 压缩文件</h2><ol>
+<li>归档是确保文件完整性</li>
+<li>压缩是节省空间</li>
+<li>tar &gt; 源文件</li>
+<li>gz 文件<ul>
+<li>可能   &gt; 源文件</li>
+<li>也可能 &lt; 源文件</li>
+</ul>
+</li>
+<li>-c 生成档案文件，创建打包文件</li>
+<li>-v 显示进度</li>
+<li>-f 指定文件名称，必须放最后</li>
+<li>-x 解开打包文件</li>
+<li>-z 解压缩和压缩</li>
+<li>-C 指定要解档目录</li>
+</ol>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作:"></a>常用操作:</h3><pre><code>1.    tar -cvf 归档文件名.tar 待归档文件1...        改变文件大小
+2.    tar -xvf 归档文件名.tar                        改变文件大小
+3.    tar -zcvf 压缩文件.tar.gz 待压缩文件1...    改变文件大小
+4.    tar -zxvf 压缩文件.tar.gz                    改变文件大小
+5.    tar -zxvf 压缩文件.tar.gz -C 指定目录</code></pre><h2 id="zip-和-unzip"><a href="#zip-和-unzip" class="headerlink" title="zip 和 unzip"></a>zip 和 unzip</h2><ol>
+<li>zip -r a.zip a  压缩a目录成a.zip文件</li>
+<li>unzip a.zip        解压缩文件</li>
+</ol>
+<h2 id="bz2-压缩与解压"><a href="#bz2-压缩与解压" class="headerlink" title="bz2 压缩与解压"></a>bz2 压缩与解压</h2><ol>
+<li>-j 解压和压缩</li>
+<li>tar -jcvf all.atr.bz2 *.txt</li>
+<li>tar -jxvf all.atr.bz2 </li>
+</ol>
+<h2 id="rar和unrar"><a href="#rar和unrar" class="headerlink" title="rar和unrar"></a>rar和unrar</h2><ul>
+<li>类似zip</li>
+</ul>
+<hr>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>ls -l<br>文件类型 文件拥有者u 文件所属组g 其他用户权限o 文件指针数 拥有者 用户所在组<br>rwx-    4210     读，写，执行，无权限<br>所有用户a<br>chmod 权限修改</p>
+<ul>
+<li>-R 递归修改</li>
+<li>chmod u+r 文件名     加权限</li>
+<li>chmod u-r 文件名     减权限</li>
+<li>chmod u=rwx 文件名   设置权限</li>
+<li>chmod 777 文件名   <ul>
+<li>7 rwx</li>
+<li>6 rw-</li>
+<li>5 r-x</li>
+<li>4 r–</li>
+<li>3 -wx</li>
+<li>2 -w-</li>
+<li>1 –x</li>
+<li>0 —</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -410,6 +500,15 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
 
       
       
@@ -428,6 +527,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/25/markdown1/" rel="prev" title="markdown1">
+                markdown1 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -471,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -490,7 +602,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -498,6 +610,25 @@
 
     
 
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
     
   </nav>
 
@@ -544,6 +675,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux基本终端操作"><span class="nav-number">1.</span> <span class="nav-text">linux基本终端操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echo-输出命令"><span class="nav-number">1.1.</span> <span class="nav-text">echo 输出命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gt-终端能输出的都能重定向输出"><span class="nav-number">1.2.</span> <span class="nav-text">&gt; 终端能输出的都能重定向输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道，有输入有输出"><span class="nav-number">1.3.</span> <span class="nav-text">| 管道，有输入有输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln-建立链接"><span class="nav-number">1.4.</span> <span class="nav-text">ln 建立链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-文件内容搜索"><span class="nav-number">1.5.</span> <span class="nav-text">grep 文件内容搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find-文件搜索"><span class="nav-number">1.6.</span> <span class="nav-text">find 文件搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar-归档文件-和-gz-压缩文件"><span class="nav-number">1.7.</span> <span class="nav-text">tar 归档文件 和 gz 压缩文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作"><span class="nav-number">1.7.1.</span> <span class="nav-text">常用操作:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip-和-unzip"><span class="nav-number">1.8.</span> <span class="nav-text">zip 和 unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bz2-压缩与解压"><span class="nav-number">1.9.</span> <span class="nav-text">bz2 压缩与解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rar和unrar"><span class="nav-number">1.10.</span> <span class="nav-text">rar和unrar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">1.11.</span> <span class="nav-text">文件权限</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

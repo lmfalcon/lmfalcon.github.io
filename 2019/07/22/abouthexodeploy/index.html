@@ -94,17 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="##更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程1.进入blog目录2.sudo su root权限3.修改blog的内容4.hexo clean(还不了解具体作用只是看视频中这样做）5.hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）6.ct">
+  <meta name="description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="abouthexodeploy">
 <meta property="og:url" content="http://yoursite.com/2019/07/22/abouthexodeploy/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="##更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程1.进入blog目录2.sudo su root权限3.修改blog的内容4.hexo clean(还不了解具体作用只是看视频中这样做）5.hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）6.ct">
+<meta property="og:description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T08:26:14.637Z">
+<meta property="og:updated_time" content="2019-07-25T16:40:34.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="abouthexodeploy">
-<meta name="twitter:description" content="##更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程1.进入blog目录2.sudo su root权限3.修改blog的内容4.hexo clean(还不了解具体作用只是看视频中这样做）5.hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）6.ct">
+<meta name="twitter:description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
 
 
 
@@ -325,13 +326,23 @@
                 
               
 
-              <time title="Created: 2019-07-22 16:06:08 / Modified: 16:26:14" itemprop="dateCreated datePublished" datetime="2019-07-22T16:06:08+08:00">2019-07-22</time>
+              <time title="Created: 2019-07-22 16:06:08" itemprop="dateCreated datePublished" datetime="2019-07-22T16:06:08+08:00">2019-07-22</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-26 00:40:34" itemprop="dateModified" datetime="2019-07-26T00:40:34+08:00">2019-07-26</time>
+              </span>
             
           
 
@@ -369,9 +380,17 @@
       
 
       
-        <p>##更换主题后修改作者<br>出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。</p>
-<p>hexo deploy 标准流程<br>1.进入blog目录<br>2.sudo su root权限<br>3.修改blog的内容<br>4.hexo clean(还不了解具体作用只是看视频中这样做）<br>5.hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）<br>6.ctrl+D退出root权限<br>7.sudo hexo d 进行部署，讲博客部署到github上的lmfalcon.github.io（具体网址不是这个，而是新建仓库时的那个链接）上。</p>
-<p>问题解决过程，root权限可以少打sudo命令本来很方便，但是建立ssh时我用的是lmfalcon这个用户导致git部署到github上时需要用lmfalcon这个用户。所以需要标准流程中的第6步退出过程，否者部署显示成功但是实际未部署任何文件。</p>
+        <h2 id="更换主题后修改作者"><a href="#更换主题后修改作者" class="headerlink" title="更换主题后修改作者"></a>更换主题后修改作者</h2><p>出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。</p>
+<h2 id="hexo-deploy-标准流程"><a href="#hexo-deploy-标准流程" class="headerlink" title="hexo deploy 标准流程"></a>hexo deploy 标准流程</h2><ol>
+<li>进入blog目录</li>
+<li>sudo su root权限</li>
+<li>修改blog的内容</li>
+<li>hexo clean(还不了解具体作用只是看视频中这样做）</li>
+<li>hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）</li>
+<li>ctrl+D退出root权限</li>
+<li>sudo hexo d 进行部署，讲博客部署到github上的lmfalcon.github.io（具体网址不是这个，而是新建仓库时的那个链接）上。</li>
+</ol>
+<h2 id="问题解决过程"><a href="#问题解决过程" class="headerlink" title="问题解决过程"></a>问题解决过程</h2><p>root权限可以少打sudo命令本来很方便，但是建立ssh时我用的是lmfalcon这个用户导致git部署到github上时需要用lmfalcon这个用户。所以需要标准流程中的第6步退出过程，否者部署显示成功但是实际未部署任何文件。</p>
 
       
     </div>
@@ -396,6 +415,15 @@
     
 
     <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
       
 
       
@@ -462,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -481,7 +518,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -489,6 +526,25 @@
 
     
 
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
     
   </nav>
 
@@ -535,6 +591,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题后修改作者"><span class="nav-number">1.</span> <span class="nav-text">更换主题后修改作者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-deploy-标准流程"><span class="nav-number">2.</span> <span class="nav-text">hexo deploy 标准流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决过程"><span class="nav-number">3.</span> <span class="nav-text">问题解决过程</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
