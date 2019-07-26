@@ -279,6 +279,435 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/vimbasic1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/26/vimbasic1/" class="post-title-link" itemprop="url">vimbasic1</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-26 23:59:06" itemprop="dateCreated datePublished" datetime="2019-07-26T23:59:06+08:00">2019-07-26</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-27 00:44:31" itemprop="dateModified" datetime="2019-07-27T00:44:31+08:00">2019-07-27</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="vim基本操作"><a href="#vim基本操作" class="headerlink" title="vim基本操作"></a>vim基本操作</h1><hr>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><ul>
+<li>I 在行首并开始插入模式</li>
+<li>A 在行尾并开始插入模式</li>
+<li>O 在上一行并开始插入模式 </li>
+<li>o 在下一行并开始插入模式</li>
+</ul>
+<hr>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
+<li>H 光标回到文章开头</li>
+<li>L 光标回到文章末尾</li>
+<li>ctrl + s 在bash中是锁屏快捷键，vim中无法使用</li>
+<li>Ctrl + q 在bash中可以解锁屏</li>
+<li>ctrl + { 上一段</li>
+<li>Ctrl + } 下一段</li>
+<li>gg 为移动至开头</li>
+<li>numG num表示移动的行号</li>
+<li>G 为移动到行尾</li>
+<li>dd 为删除所在行</li>
+<li>num dd 为删除num行</li>
+<li>d0 删除光标前本行所有内容</li>
+<li>D 删除光标后本行所有内容，包含光标位置字符</li>
+<li>dw 删除光标所在单词</li>
+<li>x 删除光标所在字符</li>
+<li>X 删除光标前字符</li>
+<li>u 撤销操作</li>
+<li>ctrl + r 反撤销（重做）</li>
+<li>. 重复上一次指令</li>
+<li><blockquote>
+<blockquote>
+<p>文本行右移动</p>
+</blockquote>
+</blockquote>
+</li>
+<li>&lt;&lt; 文本行左移动</li>
+<li>yy 复制本行</li>
+<li>nyy 复制n行</li>
+<li>p 粘贴</li>
+<li>r 替换当前字符</li>
+<li>R 替换模式，替换光标字符直到esc</li>
+</ul>
+<hr>
+<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
+<li>: 进入末行模式</li>
+<li>/ + 查找内容<ul>
+<li>n 查找下一个</li>
+<li>N 查找上一个</li>
+</ul>
+</li>
+<li>%s/abc/123/g 文本中所有abc替换为123，不加g只替换首个</li>
+<li>1,10s/abc/123/g 文本中1-10行的abc替换为123</li>
+<li>q 退出不保存</li>
+<li>x or wq 退出并保存</li>
+<li>w 保存</li>
+<li>q! 强制退出</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/linuxbasic3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/26/linuxbasic3/" class="post-title-link" itemprop="url">linuxbasic3</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-26 17:33:38 / Modified: 23:53:51" itemprop="dateCreated datePublished" datetime="2019-07-26T17:33:38+08:00">2019-07-26</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux基本指令"><a href="#linux基本指令" class="headerlink" title="linux基本指令"></a>linux基本指令</h1><h2 id="sudo-su-切换到root"><a href="#sudo-su-切换到root" class="headerlink" title="sudo su    切换到root"></a>sudo su    切换到root</h2><ul>
+<li>按ctrl + D 退出</li>
+</ul>
+<h2 id="sudo-临时提升为root权限"><a href="#sudo-临时提升为root权限" class="headerlink" title="sudo 临时提升为root权限"></a>sudo 临时提升为root权限</h2><ul>
+<li>只能提升当前指令权限</li>
+</ul>
+<h2 id="su-用户名-切换不同用户"><a href="#su-用户名-切换不同用户" class="headerlink" title="su 用户名    切换不同用户"></a>su 用户名    切换不同用户</h2><h2 id="passwd-默认修改当前用户密码"><a href="#passwd-默认修改当前用户密码" class="headerlink" title="passwd 默认修改当前用户密码"></a>passwd 默认修改当前用户密码</h2><ul>
+<li>需要用root用户修改密码，普通用户有限制，root可将密码改短</li>
+</ul>
+<h2 id="exit-用于退出当前用户，回到上一个登录用户"><a href="#exit-用于退出当前用户，回到上一个登录用户" class="headerlink" title="exit 用于退出当前用户，回到上一个登录用户"></a>exit 用于退出当前用户，回到上一个登录用户</h2><h2 id="who-查看当前用户"><a href="#who-查看当前用户" class="headerlink" title="who 查看当前用户"></a>who 查看当前用户</h2><ul>
+<li>-q 查看当前登录人数</li>
+<li>-u 查看最后一次操作时间</li>
+</ul>
+<h2 id="重启和关机"><a href="#重启和关机" class="headerlink" title="重启和关机"></a>重启和关机</h2><ul>
+<li>shutdown <ul>
+<li>now 立刻关机</li>
+<li>r 重启</li>
+<li>c 取消</li>
+<li>+20 20分钟后关机</li>
+<li>20:25 定时关机</li>
+</ul>
+</li>
+<li>reboot    重启无通知</li>
+</ul>
+<h2 id="软件安装-更新和卸载"><a href="#软件安装-更新和卸载" class="headerlink" title="软件安装,更新和卸载"></a>软件安装,更新和卸载</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p>make install 源代码安装包</p>
+<ol>
+<li>./configure 建立makefile这个文件</li>
+<li>makeclean 清除掉上次编译过的目标文件</li>
+<li>make 依据上一步的操作进行编译，通过gcc生成可执行文件，放在当前文件目录下</li>
+<li>make install 完成最后步骤</li>
+</ol>
+</li>
+<li><p>dpkg 安装deb包</p>
+<ul>
+<li>sudo dpkg -i 软件包名</li>
+</ul>
+</li>
+<li><p>sudo apt install 软件名</p>
+<ul>
+<li>apt-get 功能范围更小，推荐直接apt</li>
+</ul>
+</li>
+</ul>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
+<li>sudo apt update</li>
+</ul>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><ul>
+<li>sudo apt remove 软件名</li>
+</ul>
+<hr>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><p>-sudo apt install openssh-server</p>
+<h2 id="链接远程服务器"><a href="#链接远程服务器" class="headerlink" title="链接远程服务器"></a>链接远程服务器</h2><ul>
+<li>ssh 远程服务器用户名@远程服务器IP地址</li>
+<li>IP查询    ifconfig</li>
+</ul>
+<h2 id="远程拷贝"><a href="#远程拷贝" class="headerlink" title="远程拷贝"></a>远程拷贝</h2><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><ul>
+<li>scp 需要拷贝的文件的路径 用户名@IP地址：要拷贝到的路径</li>
+</ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li>scp 用户名@IP地址：拷贝文件路径 要拷贝到的路径</li>
+</ul>
+<h3 id="拷贝目录"><a href="#拷贝目录" class="headerlink" title="拷贝目录"></a>拷贝目录</h3><ul>
+<li>scp -r</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/javabasic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -957,7 +1386,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-26 00:01:40" itemprop="dateModified" datetime="2019-07-26T00:01:40+08:00">2019-07-26</time>
+                <time title="Modified: 2019-07-26 23:31:51" itemprop="dateModified" datetime="2019-07-26T23:31:51+08:00">2019-07-26</time>
               </span>
             
           
@@ -1036,7 +1465,10 @@
 <li>-v 显示移动过程 </li>
 <li>-f </li>
 </ul>
-<h2 id="cp-复制文件（DOS-copy）"><a href="#cp-复制文件（DOS-copy）" class="headerlink" title="cp 复制文件（DOS copy）"></a>cp 复制文件（DOS copy）</h2><h2 id="tree-以树状显示路径"><a href="#tree-以树状显示路径" class="headerlink" title="tree 以树状显示路径"></a>tree 以树状显示路径</h2><h2 id="clear-清屏（DOS-cls）ctrl-l"><a href="#clear-清屏（DOS-cls）ctrl-l" class="headerlink" title="clear 清屏（DOS cls）ctrl + l"></a>clear 清屏（DOS cls）ctrl + l</h2><h2 id="which-命令位置"><a href="#which-命令位置" class="headerlink" title="which 命令位置"></a>which 命令位置</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
+<h2 id="cp-复制文件（DOS-copy）"><a href="#cp-复制文件（DOS-copy）" class="headerlink" title="cp 复制文件（DOS copy）"></a>cp 复制文件（DOS copy）</h2><ul>
+<li>文件备份 sudo cp 路径/文件名.扩展名 路径/文件名.扩展名.bak(2)</li>
+</ul>
+<h2 id="tree-以树状显示路径"><a href="#tree-以树状显示路径" class="headerlink" title="tree 以树状显示路径"></a>tree 以树状显示路径</h2><h2 id="clear-清屏（DOS-cls）ctrl-l"><a href="#clear-清屏（DOS-cls）ctrl-l" class="headerlink" title="clear 清屏（DOS cls）ctrl + l"></a>clear 清屏（DOS cls）ctrl + l</h2><h2 id="which-命令位置"><a href="#which-命令位置" class="headerlink" title="which 命令位置"></a>which 命令位置</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
 <li>命令终止 ctrl + c </li>
 <li>ctrl + shift + + 放大</li>
 <li>ctrl + - 缩小</li>
@@ -1657,7 +2089,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1680,7 +2112,11 @@
         
           
         
-        <span class="site-state-item-count">4</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
