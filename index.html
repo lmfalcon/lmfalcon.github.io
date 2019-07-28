@@ -370,54 +370,27 @@
       
         
           
-            <h1 id="vim基本用法3"><a href="#vim基本用法3" class="headerlink" title="vim基本用法3"></a>vim基本用法3</h1><h2 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h2><ul>
-<li>[number]<command>[text object]<ul>
-<li>number 次数</li>
-<li>command 命令，d(elete),c(hange),y(ank)</li>
-<li>text object 文本对象，单词w，句子s,段落p</li>
-</ul>
-</li>
-<li>vaw 改变括号，引号等被包裹起来的所有词包括空格</li>
-<li>viw 改变包裹起来的所有词不包括结尾的空格</li>
-</ul>
-<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><ul>
-<li>设置了autoindent，可能导致代码缩进错乱<ul>
-<li>解决方式用:set paste和:set nopaste</li>
-<li>可以用插件直接解决</li>
-</ul>
-</li>
-<li>使用xp可以快速调换两个字符</li>
-</ul>
-<h3 id="vim使用无名寄存器用于保存复制内容"><a href="#vim使用无名寄存器用于保存复制内容" class="headerlink" title="vim使用无名寄存器用于保存复制内容"></a>vim使用无名寄存器用于保存复制内容</h3><ul>
-<li>“指定寄存器名，不指定为默认的无名寄存器</li>
-<li>“ayiw 复制一个单词到寄存器a中，”bdd 删除当前行到b寄存器中</li>
-<li>“”表示无名寄存器</li>
-</ul>
-<h3 id="各类寄存器"><a href="#各类寄存器" class="headerlink" title="各类寄存器"></a>各类寄存器</h3><ul>
-<li>“0 复制专用寄存器</li>
-<li>“+ 复制到系统剪贴板</li>
-<li>:echo has(‘clipboard’)查看是否有这个，1表示有，0表示无，暂时没有所有vim中的东西复制不出去</li>
-<li>貌似直接<c-sh-v>可以复制系统剪贴版的内容到vim中即使是python文件也没有问题</c-sh-v></li>
-<li></li>
-</ul>
-<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><ul>
-<li>q 用于录制和退出</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><ul>
-<li>将下面的操作全部变成列表</li>
-<li>用qa命令开始录制并将录制结果保存在a寄存器中</li>
-<li>成功后出现recording @a </li>
-<li>按i进入插入模式</li>
-<li>输入-加空格</li>
-<li>此时结束录制，底端的recording @a也会消失</li>
-<li>按V行选择</li>
-<li>按G直接选择至尾行</li>
-<li>按:发现左下角出现’&lt;,’&gt;</li>
-<li>输入normal @a</li>
-<li>完成列表</li>
-</ul>
+            <p>
+              vim基本用法3文本操作
+[number][text object]
+number 次数
+command 命令，d(elete),c(hange),y(ank)
+text object 文本对象，单词w，句子s,段落p
 
+
+vaw 改变括号，引号等被包裹起来的所有词包括空格
+viw 改变包裹起来的所
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/28/vimbasic3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -565,11 +538,22 @@
       
         
           
-            <h1 id="linux-命令"><a href="#linux-命令" class="headerlink" title="linux 命令"></a>linux 命令</h1><ul>
-<li>evince PDF文档名 阅读PDF文档</li>
-</ul>
+            <p>
+              linux 命令
+evince PDF文档名 阅读PDF文档
 
+
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/27/linuxbasic4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -727,39 +711,23 @@
       
         
           
-            <h1 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h1><h2 id="vimrc配置文件更改"><a href="#vimrc配置文件更改" class="headerlink" title=".vimrc配置文件更改"></a>.vimrc配置文件更改</h2><ul>
-<li>noremap 按键1 按键2    将按键一改为按键二</li>
-<li>map S :w<cr>            将大写S改为一键保存,CR表示Command模式</cr></li>
-<li>map Q :q<cr>            将大写Q改为一键退出</cr></li>
-<li>map R :source $MYVIMRC<cr> 一键修改设置</cr></li>
-<li>syntax on </li>
-<li>set number or nonuber        更改是否显示行号</li>
-<li>set norelativenumber    or relativenuber 更改行号是否关联</li>
-<li>map s <nop> 取消s按键在命令模式下替换功能</nop></li>
-<li>set cursorline    下划线显示所编辑行</li>
-<li>set wrap            </li>
-<li>set showcmd        </li>
-<li>set wildmenu        自动补全命令</li>
-<li></li>
-</ul>
-<h2 id="分屏设置"><a href="#分屏设置" class="headerlink" title="分屏设置"></a>分屏设置</h2><ul>
-<li><c-w> 用于分屏<c-w>表示Ctrl + w,不能直接分屏，只用于切换</c-w></c-w></li>
-<li><c-w>w 用于分屏间的切换</c-w></li>
-<li><c-w>l 用于分屏间互换位置</c-w></li>
-<li><c-w>= 用于分屏,所有窗口等高</c-w></li>
-<li><c-w>_ 用于分屏,当前窗口最大化活动高度</c-w></li>
-<li>[N]<c-w> 用于分屏,高度设为N</c-w></li>
-<li>[N]<c-w>l 用于分屏,纵向高度设为N</c-w></li>
-<li>:sp 横向分屏</li>
-<li>:vs 纵向分屏</li>
-</ul>
-<h2 id="标签页设置"><a href="#标签页设置" class="headerlink" title="标签页设置"></a>标签页设置</h2><ul>
-<li>:h tabpage了解tap的相关用法，相当于设置工作区，全部用于存储同一文件类型</li>
-<li>:tabnew 用于打开新的工作区</li>
-<li>gt 用于不同的工作区之间的切换</li>
-</ul>
-
+            <p>
+              vim配置.vimrc配置文件更改
+noremap 按键1 按键2    将按键一改为按键二
+map S :w            将大写S改为一键保存,CR表示Command模式
+map Q :q            将大写Q改为一键退出
+map R :source $MYVIMRC 一键修改
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/27/vimbasic2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -917,73 +885,32 @@
       
         
           
-            <h1 id="vim基本操作"><a href="#vim基本操作" class="headerlink" title="vim基本操作"></a>vim基本操作</h1><hr>
-<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><ul>
-<li>I 在行首并开始插入模式</li>
-<li>A 在行尾并开始插入模式</li>
-<li>O 在上一行并开始插入模式 </li>
-<li>o 在下一行并开始插入模式</li>
-</ul>
-<hr>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
-<li>H 光标回到文章开头</li>
-<li>L 光标回到文章末尾</li>
-<li>ctrl + s 在bash中是锁屏快捷键，vim中无法使用</li>
-<li>Ctrl + q 在bash中可以解锁屏</li>
-<li>ctrl + { 上一段</li>
-<li>Ctrl + } 下一段</li>
-<li>gg 为移动至开头</li>
-<li>numG num表示移动的行号</li>
-<li>G 为移动到行尾</li>
-<li>dd 为删除所在行</li>
-<li>num dd 为删除num行</li>
-<li>d0 删除光标前本行所有内容</li>
-<li>D 删除光标后本行所有内容，包含光标位置字符</li>
-<li>dw 删除光标所在单词</li>
-<li>x 删除光标所在字符</li>
-<li>X 删除光标前字符</li>
-<li>u 撤销操作</li>
-<li>ctrl + r 反撤销（重做）</li>
-<li>. 重复上一次指令</li>
-<li><blockquote>
-<blockquote>
-<p>文本行右移动</p>
-</blockquote>
-</blockquote>
-</li>
-<li>&lt;&lt; 文本行左移动</li>
-<li>yy 复制本行</li>
-<li>nyy 复制n行</li>
-<li>p 粘贴</li>
-<li>r 替换当前字符</li>
-<li>R 替换模式，替换光标字符直到esc</li>
-</ul>
-<hr>
-<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
-<li>: 进入末行模式</li>
-<li>/ + 查找内容<ul>
-<li>n 查找下一个</li>
-<li>N 查找上一个</li>
-</ul>
-</li>
-<li>:[range]s/{pattern}/{string}/{flags}    <ul>
-<li>flags<ul>
-<li>g 全局替换</li>
-<li>c 确认提换</li>
-<li>n 匹配到的次数    </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>%s/abc/123/g 文本中所有abc替换为123，不加g只替换首个</li>
-<li>1,10s/abc/123/g 文本中1-10行的abc替换为123</li>
-<li>q 退出不保存</li>
-<li>x or wq 退出并保存</li>
-<li>w 保存</li>
-<li>q! 强制退出</li>
-</ul>
+            <p>
+              vim基本操作
+插入模式
+I 在行首并开始插入模式
+A 在行尾并开始插入模式
+O 在上一行并开始插入模式 
+o 在下一行并开始插入模式
 
+
+命令模式
+H 光标回到文章开头
+L 光标回到文章末尾
+ctrl + s 在bash中是锁屏快捷键，vim中无法使用
+Ctrl + q 在bash中可以解锁屏
+c
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/26/vimbasic1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1131,73 +1058,28 @@
       
         
           
-            <h1 id="linux基本指令"><a href="#linux基本指令" class="headerlink" title="linux基本指令"></a>linux基本指令</h1><h2 id="sudo-su-切换到root"><a href="#sudo-su-切换到root" class="headerlink" title="sudo su    切换到root"></a>sudo su    切换到root</h2><ul>
-<li>按ctrl + D 退出</li>
-</ul>
-<h2 id="sudo-临时提升为root权限"><a href="#sudo-临时提升为root权限" class="headerlink" title="sudo 临时提升为root权限"></a>sudo 临时提升为root权限</h2><ul>
-<li>只能提升当前指令权限</li>
-</ul>
-<h2 id="su-用户名-切换不同用户"><a href="#su-用户名-切换不同用户" class="headerlink" title="su 用户名    切换不同用户"></a>su 用户名    切换不同用户</h2><h2 id="passwd-默认修改当前用户密码"><a href="#passwd-默认修改当前用户密码" class="headerlink" title="passwd 默认修改当前用户密码"></a>passwd 默认修改当前用户密码</h2><ul>
-<li>需要用root用户修改密码，普通用户有限制，root可将密码改短</li>
-</ul>
-<h2 id="exit-用于退出当前用户，回到上一个登录用户"><a href="#exit-用于退出当前用户，回到上一个登录用户" class="headerlink" title="exit 用于退出当前用户，回到上一个登录用户"></a>exit 用于退出当前用户，回到上一个登录用户</h2><h2 id="who-查看当前用户"><a href="#who-查看当前用户" class="headerlink" title="who 查看当前用户"></a>who 查看当前用户</h2><ul>
-<li>-q 查看当前登录人数</li>
-<li>-u 查看最后一次操作时间</li>
-</ul>
-<h2 id="重启和关机"><a href="#重启和关机" class="headerlink" title="重启和关机"></a>重启和关机</h2><ul>
-<li>shutdown <ul>
-<li>now 立刻关机</li>
-<li>r 重启</li>
-<li>c 取消</li>
-<li>+20 20分钟后关机</li>
-<li>20:25 定时关机</li>
-</ul>
-</li>
-<li>reboot    重启无通知</li>
-</ul>
-<h2 id="软件安装-更新和卸载"><a href="#软件安装-更新和卸载" class="headerlink" title="软件安装,更新和卸载"></a>软件安装,更新和卸载</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li><p>make install 源代码安装包</p>
-<ol>
-<li>./configure 建立makefile这个文件</li>
-<li>makeclean 清除掉上次编译过的目标文件</li>
-<li>make 依据上一步的操作进行编译，通过gcc生成可执行文件，放在当前文件目录下</li>
-<li>make install 完成最后步骤</li>
-</ol>
-</li>
-<li><p>dpkg 安装deb包</p>
-<ul>
-<li>sudo dpkg -i 软件包名</li>
-</ul>
-</li>
-<li><p>sudo apt install 软件名</p>
-<ul>
-<li>apt-get 功能范围更小，推荐直接apt</li>
-</ul>
-</li>
-</ul>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
-<li>sudo apt update</li>
-</ul>
-<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><ul>
-<li>sudo apt remove 软件名</li>
-</ul>
-<hr>
-<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><p>-sudo apt install openssh-server</p>
-<h2 id="链接远程服务器"><a href="#链接远程服务器" class="headerlink" title="链接远程服务器"></a>链接远程服务器</h2><ul>
-<li>ssh 远程服务器用户名@远程服务器IP地址</li>
-<li>IP查询    ifconfig</li>
-</ul>
-<h2 id="远程拷贝"><a href="#远程拷贝" class="headerlink" title="远程拷贝"></a>远程拷贝</h2><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><ul>
-<li>scp 需要拷贝的文件的路径 用户名@IP地址：要拷贝到的路径</li>
-</ul>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
-<li>scp 用户名@IP地址：拷贝文件路径 要拷贝到的路径</li>
-</ul>
-<h3 id="拷贝目录"><a href="#拷贝目录" class="headerlink" title="拷贝目录"></a>拷贝目录</h3><ul>
-<li>scp -r</li>
-</ul>
+            <p>
+              linux基本指令sudo su    切换到root
+按ctrl + D 退出
 
+sudo 临时提升为root权限
+只能提升当前指令权限
+
+su 用户名    切换不同用户passwd 默认修改当前用户密码
+需要用root用户修改密码，普通用户有限制，root可将密码改短
+
+exit 用于退出当前
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/26/linuxbasic3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1345,42 +1227,26 @@
       
         
           
-            <h1 id="eclipse常用操作"><a href="#eclipse常用操作" class="headerlink" title="eclipse常用操作"></a>eclipse常用操作</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
-<li>使用alt+/可以快速补全</li>
-<li>使用ctrl + alt + 上下箭头可以批量复制代码</li>
-<li>使用ctrl + shift + 上下箭头可以快速跳出大括号层代码并停留在当层标题处or大括号处</li>
-</ul>
-<h2 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h2><ul>
-<li>写下main按下快速补全可以快速写main函数语句</li>
-<li>写下sysout快速补全可以写输出语句</li>
-</ul>
-<hr>
-<h1 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h1><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><ul>
-<li>JavaEE 企业端</li>
-<li>JavaSE 标准版本</li>
-<li>JavaME 小型设备特殊版本</li>
-</ul>
-<h2 id="简称"><a href="#简称" class="headerlink" title="简称"></a>简称</h2><ul>
-<li>jdk 集成开发环境包括jre</li>
-<li>jre 运行环境包括jvm</li>
-<li>jvm Java虚拟机</li>
-</ul>
-<h2 id="基本编程易错及基本库介绍"><a href="#基本编程易错及基本库介绍" class="headerlink" title="基本编程易错及基本库介绍"></a>基本编程易错及基本库介绍</h2><ul>
-<li>python用多了容易漏分号</li>
-<li>a <em>= b + c 等于 a</em>(b+C)赋值给a</li>
-<li>java注释和C++一样是//单行/<strong>/行内/**</strong>/文档注释Python是##</li>
-<li>类名所有单词首字母大写，变量方法则用驼峰原则</li>
-<li>java.awt.*库可用于图形位置控制</li>
-<li>java.swing.JFrame库可以生成图形界面</li>
-<li>java.util.Scanner用于键盘监控</li>
-<li>Math.random()这个方法可以直接使用生成随机数范围[0,1)</li>
-<li>浮点数运算需要精确可以使用BigDecimal方法，尽量用字符串进行初始化相应库为java.Math.BigDecimal</li>
-<li>switch语句jdk1.7后可使用字符串作为判断条件了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">switch(判断条件)&#123;</span><br><span class="line">	case 条件1:</span><br><span class="line">		语句1;</span><br><span class="line">		break;</span><br><span class="line">	case 条件2:</span><br><span class="line">		...</span><br><span class="line">	default:</span><br><span class="line">		语句;</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+            <p>
+              eclipse常用操作快捷键
+使用alt+/可以快速补全
+使用ctrl + alt + 上下箭头可以批量复制代码
+使用ctrl + shift + 上下箭头可以快速跳出大括号层代码并停留在当层标题处or大括号处
 
-</li>
-</ul>
-
+自动补全
+写下main按下快速补全可以快速写main函数语句
+写下sysout快速补全
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/26/javabasic1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1528,40 +1394,22 @@
       
         
           
-            <h1 id="markdown文件的编辑基本操作"><a href="#markdown文件的编辑基本操作" class="headerlink" title="markdown文件的编辑基本操作"></a>markdown文件的编辑基本操作</h1><p>最近刚开始写技术blog，hexo使用的是.md文本，所以学习一下如何编辑，仅仅记录一些常用的编辑方式<br>开头提醒：markdown中的符号大部分需要与内容之间相隔一个空格否则可能直接显示，而不改变排版</p>
-<hr>
-<p>##标题<br>标题通过井号设置，井号个数代表几级标题<br>示例:</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><hr>
-<h2 id="加粗文字用两对星号包起来"><a href="#加粗文字用两对星号包起来" class="headerlink" title="加粗文字用两对星号包起来"></a>加粗文字用两对星号包起来</h2><p>示例<br><strong>这个是加粗的文字</strong></p>
-<h2 id="斜体用一对星号包起来"><a href="#斜体用一对星号包起来" class="headerlink" title="斜体用一对星号包起来"></a>斜体用一对星号包起来</h2><p>示例：<br><em>斜体是不是要写长一点才明显，lean or lie down</em></p>
-<h2 id="之前blog中关于linux重定向问题中用了-gt-gt-两个大于号，这在markdown中是引用，暂时不知道怎么去掉所以分段了"><a href="#之前blog中关于linux重定向问题中用了-gt-gt-两个大于号，这在markdown中是引用，暂时不知道怎么去掉所以分段了" class="headerlink" title="之前blog中关于linux重定向问题中用了&gt;&gt;两个大于号，这在markdown中是引用，暂时不知道怎么去掉所以分段了"></a>之前blog中关于linux重定向问题中用了&gt;&gt;两个大于号，这在markdown中是引用，暂时不知道怎么去掉所以分段了</h2><hr>
-<h2 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h2><p>中括号括起来链接名，小括号括起来链接<br><a href="https://lmfalcon.github.io/" target="_blank" rel="noopener">lmfalcon</a></p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>！【图片名】（图片未知，可以是网络图片）这里是用中文标点打出来，实际用英文</p>
-<h2 id="插入代码块"><a href="#插入代码块" class="headerlink" title="插入代码块"></a>插入代码块</h2><p>用三个反引号(`)包起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Code&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		System.out.println(&quot;hello world&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>
+              markdown文件的编辑基本操作最近刚开始写技术blog，hexo使用的是.md文本，所以学习一下如何编辑，仅仅记录一些常用的编辑方式开头提醒：markdown中的符号大部分需要与内容之间相隔一个空格否则可能直接显示，而不改变排版
 
-<p>写惯了Python真的很容易漏分号</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>可以用数字加点放在开头注意点和内容要用一个空格分隔</p>
-<ol>
-<li>这是一</li>
-<li>这是二</li>
-<li>这是三<br>也可以用单个横线，乘号，加号加在开头<br>如果要嵌套用不同层级间回车加三个空格<br>示例：</li>
-</ol>
-<ul>
-<li>这横线   <ul>
-<li>这是乘号   <ul>
-<li>这是加号</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="空格、缩进"><a href="#空格、缩进" class="headerlink" title="空格、缩进"></a>空格、缩进</h2><p>　改成全角空格ｌｉｎｕｘ使用ｓｈｉｆｔ＋ｓｐａｃｅ变换半角全角</p>
-<hr>
-<h2 id="文献参考"><a href="#文献参考" class="headerlink" title="文献参考"></a>文献参考</h2><p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">参考链接</a><br>写得比我全，但是还是要自己打打，试试看看还能不能用</p>
-
+##标题标题通过井号设置，井号个数代表几级标题示例:
+一级标题二
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/25/markdown1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1719,103 +1567,19 @@
       
         
           
-            <h1 id="linux基本终端操作"><a href="#linux基本终端操作" class="headerlink" title="linux基本终端操作"></a>linux基本终端操作</h1><h2 id="echo-输出命令"><a href="#echo-输出命令" class="headerlink" title="echo 输出命令"></a>echo 输出命令</h2><p>　　echo “hello world” 终端输出hello world<br>　　echo “hello world” &gt; helloworld.txt<br>　　　　&gt; 重定向至输入至特定位置<br>　　echo “xxxx” &gt;&gt; helloworld.txt<br>　　　　&gt; 再次重定向则覆盖<br>　　　　&gt;&gt;两次重定向会追加</p>
-<h2 id="gt-终端能输出的都能重定向输出"><a href="#gt-终端能输出的都能重定向输出" class="headerlink" title="&gt; 终端能输出的都能重定向输出"></a>&gt; 终端能输出的都能重定向输出</h2><h2 id="管道，有输入有输出"><a href="#管道，有输入有输出" class="headerlink" title="| 管道，有输入有输出"></a>| 管道，有输入有输出</h2><pre><code>指令1|指令2|...|指令n    从指令1的输出作为指令2的输入，一直到指令n输出
-举例：ls -l|more 查看文件列表并分屏显示</code></pre><h2 id="ln-建立链接"><a href="#ln-建立链接" class="headerlink" title="ln 建立链接"></a>ln 建立链接</h2><ol>
-<li>-s 软连接<ol>
-<li>类似快捷方式</li>
-<li>删除软连接不影响源文件</li>
-<li>软连接显示链接文件大小</li>
-<li>可以链接不存在文件</li>
-<li>可以连接目录</li>
-<li>可以跨系统<br>例子：ln -s 1.txt softlink1.txt    </li>
-</ol>
-</li>
-<li>硬链接    <ol>
-<li>类似多名称</li>
-<li>删除硬链接，若无其他硬链接删除data，若有则无影响</li>
-<li>硬链接显示data大小，多个硬链接实际上只有data实际大小</li>
-<li>不可以链接不存在文件</li>
-<li>不可链接目录</li>
-<li>不可跨系统<br>例子：ln 2.txt hardlink2.txt</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="grep-文件内容搜索"><a href="#grep-文件内容搜索" class="headerlink" title="grep 文件内容搜索"></a>grep 文件内容搜索</h2><ul>
-<li>grep ‘搜索内容’ 搜索文件路径</li>
-<li>-t 忽略大小写</li>
-<li>-n 显示行号</li>
-<li>-v 取反，不显示搜索内容</li>
-<li>grep 搜索内容可用正则</li>
-</ul>
-<h2 id="find-文件搜索"><a href="#find-文件搜索" class="headerlink" title="find 文件搜索"></a>find 文件搜索</h2><ol>
-<li>名称搜索<ul>
-<li>find ./ 文件名称</li>
-<li>类正则：<br> find ./ ‘*.txt’<br> find ./ ‘sa?asd.txt’</li>
-</ul>
-</li>
-<li>大小搜索<ul>
-<li>find ./ -size +30M                 大于30M</li>
-<li>-30M                 小于30M</li>
-<li>+15M -size -30M     大于15M小于30M</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="tar-归档文件-和-gz-压缩文件"><a href="#tar-归档文件-和-gz-压缩文件" class="headerlink" title="tar 归档文件 和 gz 压缩文件"></a>tar 归档文件 和 gz 压缩文件</h2><ol>
-<li>归档是确保文件完整性</li>
-<li>压缩是节省空间</li>
-<li>tar &gt; 源文件</li>
-<li>gz 文件<ul>
-<li>可能   &gt; 源文件</li>
-<li>也可能 &lt; 源文件</li>
-</ul>
-</li>
-<li>-c 生成档案文件，创建打包文件</li>
-<li>-v 显示进度</li>
-<li>-f 指定文件名称，必须放最后</li>
-<li>-x 解开打包文件</li>
-<li>-z 解压缩和压缩</li>
-<li>-C 指定要解档目录</li>
-</ol>
-<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作:"></a>常用操作:</h3><pre><code>1.    tar -cvf 归档文件名.tar 待归档文件1...        改变文件大小
-2.    tar -xvf 归档文件名.tar                        改变文件大小
-3.    tar -zcvf 压缩文件.tar.gz 待压缩文件1...    改变文件大小
-4.    tar -zxvf 压缩文件.tar.gz                    改变文件大小
-5.    tar -zxvf 压缩文件.tar.gz -C 指定目录</code></pre><h2 id="zip-和-unzip"><a href="#zip-和-unzip" class="headerlink" title="zip 和 unzip"></a>zip 和 unzip</h2><ol>
-<li>zip -r a.zip a  压缩a目录成a.zip文件</li>
-<li>unzip a.zip        解压缩文件</li>
-</ol>
-<h2 id="bz2-压缩与解压"><a href="#bz2-压缩与解压" class="headerlink" title="bz2 压缩与解压"></a>bz2 压缩与解压</h2><ol>
-<li>-j 解压和压缩</li>
-<li>tar -jcvf all.atr.bz2 *.txt</li>
-<li>tar -jxvf all.atr.bz2 </li>
-</ol>
-<h2 id="rar和unrar"><a href="#rar和unrar" class="headerlink" title="rar和unrar"></a>rar和unrar</h2><ul>
-<li>类似zip</li>
-</ul>
-<hr>
-<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>ls -l<br>文件类型 文件拥有者u 文件所属组g 其他用户权限o 文件指针数 拥有者 用户所在组<br>rwx-    4210     读，写，执行，无权限<br>所有用户a<br>chmod 权限修改</p>
-<ul>
-<li>-R 递归修改</li>
-<li>chmod u+r 文件名     加权限</li>
-<li>chmod u-r 文件名     减权限</li>
-<li>chmod u=rwx 文件名   设置权限</li>
-<li>chmod 777 文件名   <ul>
-<li>7 rwx</li>
-<li>6 rw-</li>
-<li>5 r-x</li>
-<li>4 r–</li>
-<li>3 -wx</li>
-<li>2 -w-</li>
-<li>1 –x</li>
-<li>0 —</li>
-</ul>
-</li>
-</ul>
-
+            <p>
+              linux基本终端操作echo 输出命令　　echo “hello world” 终端输出hello world　　echo “hello world” &gt; helloworld.txt　　　　&gt; 重定向至输入至特定位置　　echo “xxxx” &gt;&gt; helloworld.
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/23/linuxbasic2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1973,86 +1737,25 @@
       
         
           
-            <h1 id="linux入门基本命令"><a href="#linux入门基本命令" class="headerlink" title="linux入门基本命令"></a>linux入门基本命令</h1><ul>
-<li>终端命令格式 command [-option] [parameter]</li>
-<li>command –help 查看命令帮助</li>
-<li>man command  manualpage命令使用手册<br>进入文件后搜索常用: </li>
-<li>/搜索内容 类似window ctrl+F<br>换页常用: </li>
-<li>f 前一页</li>
-<li>b 后一页</li>
-<li>q 退出</li>
-</ul>
-<hr>
-<h2 id="ls-当前文件夹所有文件-类DOC-dir-命令"><a href="#ls-当前文件夹所有文件-类DOC-dir-命令" class="headerlink" title="ls 当前文件夹所有文件(类DOC dir 命令)"></a>ls 当前文件夹所有文件(类DOC dir 命令)</h2><ul>
-<li>-a 显示隐藏 </li>
-<li>-l 显示详细信息 </li>
-<li>-h 显示大小用人理解的单位</li>
-</ul>
-<h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><ul>
-<li>. 当前目录 </li>
-<li>.. 上级目录 </li>
-<li>~ 家目录 </li>
-<li>/ 根目录 </li>
-<li><ul>
-<li>回到上次进入目录</li>
-</ul>
-</li>
-</ul>
-<h2 id="pwd-当前路径"><a href="#pwd-当前路径" class="headerlink" title="pwd 当前路径"></a>pwd 当前路径</h2><h2 id="touch-新建文件-注意文件的扩展名加这个是好习惯，创建复制移动都要注意这点"><a href="#touch-新建文件-注意文件的扩展名加这个是好习惯，创建复制移动都要注意这点" class="headerlink" title="touch 新建文件 注意文件的扩展名加这个是好习惯，创建复制移动都要注意这点"></a>touch 新建文件 注意文件的扩展名加这个是好习惯，创建复制移动都要注意这点</h2><h2 id="mkdir-新建目录"><a href="#mkdir-新建目录" class="headerlink" title="mkdir 新建目录"></a>mkdir 新建目录</h2><ul>
-<li>-p 递归创建</li>
-</ul>
-<h2 id="gedit-编辑文件ubuntu可以打开文本文件，习惯后配置好的vim还是用vim打开文件编辑"><a href="#gedit-编辑文件ubuntu可以打开文本文件，习惯后配置好的vim还是用vim打开文件编辑" class="headerlink" title="gedit 编辑文件ubuntu可以打开文本文件，习惯后配置好的vim还是用vim打开文件编辑"></a>gedit 编辑文件ubuntu可以打开文本文件，习惯后配置好的vim还是用vim打开文件编辑</h2><h2 id="vi-所有linux都可以用的文本编辑器"><a href="#vi-所有linux都可以用的文本编辑器" class="headerlink" title="vi 所有linux都可以用的文本编辑器"></a>vi 所有linux都可以用的文本编辑器</h2><h2 id="rm-删除"><a href="#rm-删除" class="headerlink" title="rm 删除"></a>rm 删除</h2><ul>
-<li>-i 交互式运行 </li>
-<li>-f 强制进行忽略不存在 </li>
-<li>-r 递归删除可删文件夹</li>
-</ul>
-<h2 id="mv-移动文件，重命名"><a href="#mv-移动文件，重命名" class="headerlink" title="mv 移动文件，重命名"></a>mv 移动文件，重命名</h2><ul>
-<li>-i 交互方式 </li>
-<li>-v 显示移动过程 </li>
-<li>-f </li>
-</ul>
-<h2 id="cp-复制文件（DOS-copy）"><a href="#cp-复制文件（DOS-copy）" class="headerlink" title="cp 复制文件（DOS copy）"></a>cp 复制文件（DOS copy）</h2><ul>
-<li>文件备份 sudo cp 路径/文件名.扩展名 路径/文件名.扩展名.bak(2)</li>
-</ul>
-<h2 id="tree-以树状显示路径"><a href="#tree-以树状显示路径" class="headerlink" title="tree 以树状显示路径"></a>tree 以树状显示路径</h2><h2 id="clear-清屏（DOS-cls）ctrl-l"><a href="#clear-清屏（DOS-cls）ctrl-l" class="headerlink" title="clear 清屏（DOS cls）ctrl + l"></a>clear 清屏（DOS cls）ctrl + l</h2><h2 id="which-命令位置"><a href="#which-命令位置" class="headerlink" title="which 命令位置"></a>which 命令位置</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
-<li>命令终止 ctrl + c </li>
-<li>ctrl + shift + + 放大</li>
-<li>ctrl + - 缩小</li>
-</ul>
-<h2 id="cal-日期"><a href="#cal-日期" class="headerlink" title="cal 日期"></a>cal 日期</h2><ul>
-<li>-3 显示上月本月下月 </li>
-<li>-j 显示当年第几天 直接写年份</li>
-</ul>
-<h2 id="date-显示日期"><a href="#date-显示日期" class="headerlink" title="date 显示日期"></a>date 显示日期</h2><ul>
-<li><p>格式化显示举例 “+%Y年%m月%d日 %H时%M分%S秒”</p>
-<h2 id="history-显示曾经执行过得指令"><a href="#history-显示曾经执行过得指令" class="headerlink" title="history 显示曾经执行过得指令"></a>history 显示曾经执行过得指令</h2></li>
-<li><p>直接加数字n显示最近执行过得n条指令    </p>
-</li>
-<li><p>!编号执行编号那条指令 </p>
-</li>
-<li><p>家目录下 ls -al 有个.bash_history 文件记录history</p>
-</li>
-</ul>
-<h2 id="cat-文件查看or合并文件内容"><a href="#cat-文件查看or合并文件内容" class="headerlink" title="cat 文件查看or合并文件内容"></a>cat 文件查看or合并文件内容</h2><ul>
-<li>-n 加行号 </li>
-<li>-b 非空行加编号 </li>
-<li>-s 遇到两行以上空行只显示一个</li>
-<li>cat 1.txt 2.txt 连接显示两个文件</li>
-</ul>
-<h2 id="more-分页查看文件内容（举例more-etc-servers）"><a href="#more-分页查看文件内容（举例more-etc-servers）" class="headerlink" title="more 分页查看文件内容（举例more etc/servers）"></a>more 分页查看文件内容（举例more etc/servers）</h2><ul>
-<li>+num 从num行显示文件</li>
-<li>fb 翻页ctrl +f ctrl + v</li>
-<li>q 退出</li>
-<li>more 1.TXT 2.txt 也可以连接文件但是效果不一样</li>
-<li>-p 清屏查看</li>
-<li>-s 连续两个空行只显示一行</li>
-<li>回车查看一行</li>
-<li>空格查看一列</li>
-</ul>
-<hr>
-<h1 id="linux-入门基本路径介绍"><a href="#linux-入门基本路径介绍" class="headerlink" title="linux 入门基本路径介绍"></a>linux 入门基本路径介绍</h1><p>/ 表示根目录<br>~ 根目录<br>~/user 根目录下用户目录<br>/bin 可执行的二进制文件<br>/etc 存配置文件<br>/root root权限目录<br>/boot 启动使用文件 /boot/grub 系统引导<br>/dev 设备文件 u盘挂载 mount /dev/U盘名称 /mnt<br>/lib 系统使用的函数库目录，程序执行过程中需要调用的一些额外的函数库<br>/mnt 默认挂载点<br>/opt 额外安装软件目录<br>/sbin 给root用户使用的可执行二进制文件<br>/tmp 程序执行的临时文件<br>/srv 服务启动后的需要访问的数据目录<br>/usr UNIX system resource应用程序的存放目录 /usr/bin /usr/lib /usr/local/lib<br>/var /var/log 日志文件 /var/run 存放运行程序PID</p>
-
+            <p>
+              linux入门基本命令
+终端命令格式 command [-option] [parameter]
+command –help 查看命令帮助
+man command  manualpage命令使用手册进入文件后搜索常用: 
+/搜索内容 类似window ctrl+F换页常用: 
+f 前一页
+b 后一页
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/23/linuxbasic1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2210,19 +1913,25 @@
       
         
           
-            <h2 id="更换主题后修改作者"><a href="#更换主题后修改作者" class="headerlink" title="更换主题后修改作者"></a>更换主题后修改作者</h2><p>出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。</p>
-<h2 id="hexo-deploy-标准流程"><a href="#hexo-deploy-标准流程" class="headerlink" title="hexo deploy 标准流程"></a>hexo deploy 标准流程</h2><ol>
-<li>进入blog目录</li>
-<li>sudo su root权限</li>
-<li>修改blog的内容</li>
-<li>hexo clean(还不了解具体作用只是看视频中这样做）</li>
-<li>hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）</li>
-<li>ctrl+D退出root权限</li>
-<li>sudo hexo d 进行部署，讲博客部署到github上的lmfalcon.github.io（具体网址不是这个，而是新建仓库时的那个链接）上。</li>
-</ol>
-<h2 id="问题解决过程"><a href="#问题解决过程" class="headerlink" title="问题解决过程"></a>问题解决过程</h2><p>root权限可以少打sudo命令本来很方便，但是建立ssh时我用的是lmfalcon这个用户导致git部署到github上时需要用lmfalcon这个用户。所以需要标准流程中的第6步退出过程，否者部署显示成功但是实际未部署任何文件。</p>
-
+            <p>
+              更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。
+hexo deploy 标准流程
+进入blog目录
+sudo su root权限
+修改blog的内容
+hexo clean(还不了解具体作用只是看视频中这样做）
+hexo
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/22/abouthexodeploy/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
