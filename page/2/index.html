@@ -94,18 +94,13 @@
   };
 </script>
 
-  <meta name="description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
-<meta name="keywords" content="vim">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vimbasic1">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/vimbasic1/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lmblog(hexo)">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T15:45:42.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vimbasic1">
-<meta name="twitter:description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
+<meta name="twitter:title" content="lmblog(hexo)">
 
 
 
@@ -113,7 +108,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/vimbasic1/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
@@ -124,7 +119,7 @@
 </script>
 
   
-  <title>vimbasic1 | lmblog(hexo)</title>
+  <title>lmblog(hexo)</title>
   
 
 
@@ -172,7 +167,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,9 +262,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -283,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/vimbasic1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/template2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lmfalcon">
@@ -300,8 +296,10 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vimbasic1
-
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/17/template2/" class="post-title-link" itemprop="url">template</a>
               
             
           </h1>
@@ -326,7 +324,7 @@
                 
               
 
-              <time title="Created: 2019-07-26 23:59:06" itemprop="dateCreated datePublished" datetime="2019-07-26T23:59:06+08:00">2019-07-26</time>
+              <time title="Created: 2019-07-17 01:14:53" itemprop="dateCreated datePublished" datetime="2019-07-17T01:14:53+08:00">2019-07-17</time>
             </span>
           
 
@@ -341,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-28 23:45:42" itemprop="dateModified" datetime="2019-07-28T23:45:42+08:00">2019-07-28</time>
+                <time title="Modified: 2019-07-28 23:27:06" itemprop="dateModified" datetime="2019-07-28T23:27:06+08:00">2019-07-28</time>
               </span>
             
           
@@ -380,79 +378,25 @@
       
 
       
-        <h1 id="vim基本操作"><a href="#vim基本操作" class="headerlink" title="vim基本操作"></a>vim基本操作</h1><hr>
-<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><ul>
-<li>I 在行首并开始插入模式</li>
-<li>A 在行尾并开始插入模式</li>
-<li>O 在上一行并开始插入模式 </li>
-<li>o 在下一行并开始插入模式</li>
-</ul>
+        
+          
+            <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容<br>注意以上要在root权限下进行（sudo su ,ctrl+D退出root）<br>hexo v            版本<br>hexo init        初始化模板<br>hexo new 文章名    新建文章，一般存储在blog/source/_post目录下<br>hexo clean        清理<br>hexo g            生成新文章<br>hexo s            生成blog在本地localhost:4000</p>
 <hr>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
-<li>H 光标回到文章开头</li>
-<li>L 光标回到文章末尾</li>
-<li>ctrl + s 在bash中是锁屏快捷键，vim中无法使用</li>
-<li>Ctrl + q 在bash中可以解锁屏</li>
-<li>ctrl + { 上一段</li>
-<li>Ctrl + } 下一段</li>
-<li>gg 为移动至开头</li>
-<li>numG num表示移动的行号</li>
-<li>G 为移动到行尾</li>
-<li>dd 为删除所在行</li>
-<li>num dd 为删除num行</li>
-<li>d0 删除光标前本行所有内容</li>
-<li>D 删除光标后本行所有内容，包含光标位置字符</li>
-<li>dw 删除光标所在单词</li>
-<li>x 删除光标所在字符</li>
-<li>X 删除光标前字符</li>
-<li>u 撤销操作</li>
-<li>ctrl + r 反撤销（重做）</li>
-<li>. 重复上一次指令</li>
-<li><blockquote>
-<blockquote>
-<p>文本行右移动</p>
-</blockquote>
-</blockquote>
-</li>
-<li>&lt;&lt; 文本行左移动</li>
-<li>yy 复制本行</li>
-<li>nyy 复制n行</li>
-<li>p 粘贴</li>
-<li>r 替换当前字符</li>
-<li>R 替换模式，替换光标字符直到esc</li>
-</ul>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容<br>这次因为修改了md文件导致hexo g 时无法更新，问题出在：</p>
+<ol>
+<li>mv 重命名注意不要遗漏扩展名，否则改变文件格式</li>
+<li>修改文章标题只用修改title，与文件名无关</li>
+</ol>
 <hr>
-<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
-<li>: 进入末行模式</li>
-<li>/ + 查找内容<ul>
-<li>n 查找下一个</li>
-<li>N 查找上一个</li>
-</ul>
-</li>
-<li>:[range]s/{pattern}/{string}/{flags}    <ul>
-<li>flags<ul>
-<li>g 全局替换</li>
-<li>c 确认提换</li>
-<li>n 匹配到的次数    </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>%s/abc/123/g 文本中所有abc替换为123，不加g只替换首个</li>
-<li>1,10s/abc/123/g 文本中1-10行的abc替换为123</li>
-<li>q 退出不保存</li>
-<li>x or wq 退出并保存</li>
-<li>w 保存</li>
-<li>q! 强制退出</li>
-</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
 
+          
+        
       
     </div>
 
     
 
-    
-      
     
 
     
@@ -470,43 +414,14 @@
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/vim/" rel="tag"># vim</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/07/26/linuxbasic3/" rel="next" title="linuxbasic3">
-                <i class="fa fa-chevron-left"></i> linuxbasic3
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/27/vimbasic2/" rel="prev" title="vimbasic2">
-                vimbasic2 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -516,15 +431,176 @@
   </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 23:54:12" itemprop="dateCreated datePublished" datetime="2019-07-16T23:54:12+08:00">2019-07-16</time>
+            </span>
+          
+
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -544,17 +620,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -649,23 +716,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim基本操作"><span class="nav-number">1.</span> <span class="nav-text">vim基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入模式"><span class="nav-number">1.1.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令模式"><span class="nav-number">1.2.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#末行模式"><span class="nav-number">1.3.</span> <span class="nav-text">末行模式</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -798,10 +848,6 @@
 
 
   
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-
-
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -822,8 +868,6 @@
 
 
 
-
-  
 
 
 

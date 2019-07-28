@@ -279,6 +279,543 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/vimbasic3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/28/vimbasic3/" class="post-title-link" itemprop="url">vimbasic3</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-28 08:36:20 / Modified: 23:45:23" itemprop="dateCreated datePublished" datetime="2019-07-28T08:36:20+08:00">2019-07-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="vim基本用法3"><a href="#vim基本用法3" class="headerlink" title="vim基本用法3"></a>vim基本用法3</h1><h2 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h2><ul>
+<li>[number]<command>[text object]<ul>
+<li>number 次数</li>
+<li>command 命令，d(elete),c(hange),y(ank)</li>
+<li>text object 文本对象，单词w，句子s,段落p</li>
+</ul>
+</li>
+<li>vaw 改变括号，引号等被包裹起来的所有词包括空格</li>
+<li>viw 改变包裹起来的所有词不包括结尾的空格</li>
+</ul>
+<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><ul>
+<li>设置了autoindent，可能导致代码缩进错乱<ul>
+<li>解决方式用:set paste和:set nopaste</li>
+<li>可以用插件直接解决</li>
+</ul>
+</li>
+<li>使用xp可以快速调换两个字符</li>
+</ul>
+<h3 id="vim使用无名寄存器用于保存复制内容"><a href="#vim使用无名寄存器用于保存复制内容" class="headerlink" title="vim使用无名寄存器用于保存复制内容"></a>vim使用无名寄存器用于保存复制内容</h3><ul>
+<li>“指定寄存器名，不指定为默认的无名寄存器</li>
+<li>“ayiw 复制一个单词到寄存器a中，”bdd 删除当前行到b寄存器中</li>
+<li>“”表示无名寄存器</li>
+</ul>
+<h3 id="各类寄存器"><a href="#各类寄存器" class="headerlink" title="各类寄存器"></a>各类寄存器</h3><ul>
+<li>“0 复制专用寄存器</li>
+<li>“+ 复制到系统剪贴板</li>
+<li>:echo has(‘clipboard’)查看是否有这个，1表示有，0表示无，暂时没有所有vim中的东西复制不出去</li>
+<li>貌似直接<c-sh-v>可以复制系统剪贴版的内容到vim中即使是python文件也没有问题</c-sh-v></li>
+<li></li>
+</ul>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><ul>
+<li>q 用于录制和退出</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><ul>
+<li>将下面的操作全部变成列表</li>
+<li>用qa命令开始录制并将录制结果保存在a寄存器中</li>
+<li>成功后出现recording @a </li>
+<li>按i进入插入模式</li>
+<li>输入-加空格</li>
+<li>此时结束录制，底端的recording @a也会消失</li>
+<li>按V行选择</li>
+<li>按G直接选择至尾行</li>
+<li>按:发现左下角出现’&lt;,’&gt;</li>
+<li>输入normal @a</li>
+<li>完成列表</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/linuxbasic4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/27/linuxbasic4/" class="post-title-link" itemprop="url">linuxbasic3</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-27 15:19:50 / Modified: 15:57:35" itemprop="dateCreated datePublished" datetime="2019-07-27T15:19:50+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux-命令"><a href="#linux-命令" class="headerlink" title="linux 命令"></a>linux 命令</h1><ul>
+<li>evince PDF文档名 阅读PDF文档</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/vimbasic2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lmfalcon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/27/vimbasic2/" class="post-title-link" itemprop="url">vimbasic2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-27 14:12:48" itemprop="dateCreated datePublished" datetime="2019-07-27T14:12:48+08:00">2019-07-27</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-28 23:45:35" itemprop="dateModified" datetime="2019-07-28T23:45:35+08:00">2019-07-28</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h1><h2 id="vimrc配置文件更改"><a href="#vimrc配置文件更改" class="headerlink" title=".vimrc配置文件更改"></a>.vimrc配置文件更改</h2><ul>
+<li>noremap 按键1 按键2    将按键一改为按键二</li>
+<li>map S :w<cr>            将大写S改为一键保存,CR表示Command模式</cr></li>
+<li>map Q :q<cr>            将大写Q改为一键退出</cr></li>
+<li>map R :source $MYVIMRC<cr> 一键修改设置</cr></li>
+<li>syntax on </li>
+<li>set number or nonuber        更改是否显示行号</li>
+<li>set norelativenumber    or relativenuber 更改行号是否关联</li>
+<li>map s <nop> 取消s按键在命令模式下替换功能</nop></li>
+<li>set cursorline    下划线显示所编辑行</li>
+<li>set wrap            </li>
+<li>set showcmd        </li>
+<li>set wildmenu        自动补全命令</li>
+<li></li>
+</ul>
+<h2 id="分屏设置"><a href="#分屏设置" class="headerlink" title="分屏设置"></a>分屏设置</h2><ul>
+<li><c-w> 用于分屏<c-w>表示Ctrl + w,不能直接分屏，只用于切换</c-w></c-w></li>
+<li><c-w>w 用于分屏间的切换</c-w></li>
+<li><c-w>l 用于分屏间互换位置</c-w></li>
+<li><c-w>= 用于分屏,所有窗口等高</c-w></li>
+<li><c-w>_ 用于分屏,当前窗口最大化活动高度</c-w></li>
+<li>[N]<c-w> 用于分屏,高度设为N</c-w></li>
+<li>[N]<c-w>l 用于分屏,纵向高度设为N</c-w></li>
+<li>:sp 横向分屏</li>
+<li>:vs 纵向分屏</li>
+</ul>
+<h2 id="标签页设置"><a href="#标签页设置" class="headerlink" title="标签页设置"></a>标签页设置</h2><ul>
+<li>:h tabpage了解tap的相关用法，相当于设置工作区，全部用于存储同一文件类型</li>
+<li>:tabnew 用于打开新的工作区</li>
+<li>gt 用于不同的工作区之间的切换</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/vimbasic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -339,7 +876,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-27 00:44:31" itemprop="dateModified" datetime="2019-07-27T00:44:31+08:00">2019-07-27</time>
+                <time title="Modified: 2019-07-28 23:45:42" itemprop="dateModified" datetime="2019-07-28T23:45:42+08:00">2019-07-28</time>
               </span>
             
           
@@ -427,6 +964,15 @@
 <li>/ + 查找内容<ul>
 <li>n 查找下一个</li>
 <li>N 查找上一个</li>
+</ul>
+</li>
+<li>:[range]s/{pattern}/{string}/{flags}    <ul>
+<li>flags<ul>
+<li>g 全局替换</li>
+<li>c 确认提换</li>
+<li>n 匹配到的次数    </li>
+</ul>
+</li>
 </ul>
 </li>
 <li>%s/abc/123/g 文本中所有abc替换为123，不加g只替换首个</li>
@@ -1718,335 +2264,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/template2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lmfalcon">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lmblog(hexo)">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/17/template2/" class="post-title-link" itemprop="url">模板</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-17 01:14:53" itemprop="dateCreated datePublished" datetime="2019-07-17T01:14:53+08:00">2019-07-17</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-26 00:43:41" itemprop="dateModified" datetime="2019-07-26T00:43:41+08:00">2019-07-26</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容<br>注意以上要在root权限下进行（sudo su ,ctrl+D退出root）<br>hexo v            版本<br>hexo init        初始化模板<br>hexo new 文章名    新建文章，一般存储在blog/source/_post目录下<br>hexo clean        清理<br>hexo g            生成新文章<br>hexo s            生成blog在本地localhost:4000</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容<br>这次因为修改了md文件导致hexo g 时无法更新，问题出在：</p>
-<ol>
-<li>mv 重命名注意不要遗漏扩展名，否则改变文件格式</li>
-<li>修改文章标题只用修改title，与文件名无关</li>
-</ol>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lmfalcon">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lmblog(hexo)">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-16 23:54:12" itemprop="dateCreated datePublished" datetime="2019-07-16T23:54:12+08:00">2019-07-16</time>
-            </span>
-          
-
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2089,7 +2313,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

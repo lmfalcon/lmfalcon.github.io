@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
+  <meta name="description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vimbasic1">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/vimbasic1/index.html">
+<meta property="og:title" content="vimbasic2">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/vimbasic2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
+<meta property="og:description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T15:45:42.724Z">
+<meta property="og:updated_time" content="2019-07-28T15:45:35.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vimbasic1">
-<meta name="twitter:description" content="vim基本操作 插入模式 I 在行首并开始插入模式 A 在行尾并开始插入模式 O 在上一行并开始插入模式  o 在下一行并开始插入模式   命令模式 H 光标回到文章开头 L 光标回到文章末尾 ctrl + s 在bash中是锁屏快捷键，vim中无法使用 Ctrl + q 在bash中可以解锁屏 ctrl + { 上一段 Ctrl + } 下一段 gg 为移动至开头 numG num表示移动的行号">
+<meta name="twitter:title" content="vimbasic2">
+<meta name="twitter:description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/vimbasic1/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/vimbasic2/">
 
 
 
@@ -124,7 +124,7 @@
 </script>
 
   
-  <title>vimbasic1 | lmblog(hexo)</title>
+  <title>vimbasic2 | lmblog(hexo)</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/vimbasic1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/vimbasic2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lmfalcon">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vimbasic1
+          <h1 class="post-title" itemprop="name headline">vimbasic2
 
               
             
@@ -326,7 +326,7 @@
                 
               
 
-              <time title="Created: 2019-07-26 23:59:06" itemprop="dateCreated datePublished" datetime="2019-07-26T23:59:06+08:00">2019-07-26</time>
+              <time title="Created: 2019-07-27 14:12:48" itemprop="dateCreated datePublished" datetime="2019-07-27T14:12:48+08:00">2019-07-27</time>
             </span>
           
 
@@ -341,7 +341,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-28 23:45:42" itemprop="dateModified" datetime="2019-07-28T23:45:42+08:00">2019-07-28</time>
+                <time title="Modified: 2019-07-28 23:45:35" itemprop="dateModified" datetime="2019-07-28T23:45:35+08:00">2019-07-28</time>
               </span>
             
           
@@ -380,70 +380,36 @@
       
 
       
-        <h1 id="vim基本操作"><a href="#vim基本操作" class="headerlink" title="vim基本操作"></a>vim基本操作</h1><hr>
-<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><ul>
-<li>I 在行首并开始插入模式</li>
-<li>A 在行尾并开始插入模式</li>
-<li>O 在上一行并开始插入模式 </li>
-<li>o 在下一行并开始插入模式</li>
+        <h1 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h1><h2 id="vimrc配置文件更改"><a href="#vimrc配置文件更改" class="headerlink" title=".vimrc配置文件更改"></a>.vimrc配置文件更改</h2><ul>
+<li>noremap 按键1 按键2    将按键一改为按键二</li>
+<li>map S :w<cr>            将大写S改为一键保存,CR表示Command模式</cr></li>
+<li>map Q :q<cr>            将大写Q改为一键退出</cr></li>
+<li>map R :source $MYVIMRC<cr> 一键修改设置</cr></li>
+<li>syntax on </li>
+<li>set number or nonuber        更改是否显示行号</li>
+<li>set norelativenumber    or relativenuber 更改行号是否关联</li>
+<li>map s <nop> 取消s按键在命令模式下替换功能</nop></li>
+<li>set cursorline    下划线显示所编辑行</li>
+<li>set wrap            </li>
+<li>set showcmd        </li>
+<li>set wildmenu        自动补全命令</li>
+<li></li>
 </ul>
-<hr>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
-<li>H 光标回到文章开头</li>
-<li>L 光标回到文章末尾</li>
-<li>ctrl + s 在bash中是锁屏快捷键，vim中无法使用</li>
-<li>Ctrl + q 在bash中可以解锁屏</li>
-<li>ctrl + { 上一段</li>
-<li>Ctrl + } 下一段</li>
-<li>gg 为移动至开头</li>
-<li>numG num表示移动的行号</li>
-<li>G 为移动到行尾</li>
-<li>dd 为删除所在行</li>
-<li>num dd 为删除num行</li>
-<li>d0 删除光标前本行所有内容</li>
-<li>D 删除光标后本行所有内容，包含光标位置字符</li>
-<li>dw 删除光标所在单词</li>
-<li>x 删除光标所在字符</li>
-<li>X 删除光标前字符</li>
-<li>u 撤销操作</li>
-<li>ctrl + r 反撤销（重做）</li>
-<li>. 重复上一次指令</li>
-<li><blockquote>
-<blockquote>
-<p>文本行右移动</p>
-</blockquote>
-</blockquote>
-</li>
-<li>&lt;&lt; 文本行左移动</li>
-<li>yy 复制本行</li>
-<li>nyy 复制n行</li>
-<li>p 粘贴</li>
-<li>r 替换当前字符</li>
-<li>R 替换模式，替换光标字符直到esc</li>
+<h2 id="分屏设置"><a href="#分屏设置" class="headerlink" title="分屏设置"></a>分屏设置</h2><ul>
+<li><c-w> 用于分屏<c-w>表示Ctrl + w,不能直接分屏，只用于切换</c-w></c-w></li>
+<li><c-w>w 用于分屏间的切换</c-w></li>
+<li><c-w>l 用于分屏间互换位置</c-w></li>
+<li><c-w>= 用于分屏,所有窗口等高</c-w></li>
+<li><c-w>_ 用于分屏,当前窗口最大化活动高度</c-w></li>
+<li>[N]<c-w> 用于分屏,高度设为N</c-w></li>
+<li>[N]<c-w>l 用于分屏,纵向高度设为N</c-w></li>
+<li>:sp 横向分屏</li>
+<li>:vs 纵向分屏</li>
 </ul>
-<hr>
-<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
-<li>: 进入末行模式</li>
-<li>/ + 查找内容<ul>
-<li>n 查找下一个</li>
-<li>N 查找上一个</li>
-</ul>
-</li>
-<li>:[range]s/{pattern}/{string}/{flags}    <ul>
-<li>flags<ul>
-<li>g 全局替换</li>
-<li>c 确认提换</li>
-<li>n 匹配到的次数    </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>%s/abc/123/g 文本中所有abc替换为123，不加g只替换首个</li>
-<li>1,10s/abc/123/g 文本中1-10行的abc替换为123</li>
-<li>q 退出不保存</li>
-<li>x or wq 退出并保存</li>
-<li>w 保存</li>
-<li>q! 强制退出</li>
+<h2 id="标签页设置"><a href="#标签页设置" class="headerlink" title="标签页设置"></a>标签页设置</h2><ul>
+<li>:h tabpage了解tap的相关用法，相当于设置工作区，全部用于存储同一文件类型</li>
+<li>:tabnew 用于打开新的工作区</li>
+<li>gt 用于不同的工作区之间的切换</li>
 </ul>
 
       
@@ -488,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/linuxbasic3/" rel="next" title="linuxbasic3">
-                <i class="fa fa-chevron-left"></i> linuxbasic3
+              <a href="/2019/07/26/vimbasic1/" rel="next" title="vimbasic1">
+                <i class="fa fa-chevron-left"></i> vimbasic1
               </a>
             
           </div>
@@ -498,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/27/vimbasic2/" rel="prev" title="vimbasic2">
-                vimbasic2 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/27/linuxbasic4/" rel="prev" title="linuxbasic3">
+                linuxbasic3 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim基本操作"><span class="nav-number">1.</span> <span class="nav-text">vim基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入模式"><span class="nav-number">1.1.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令模式"><span class="nav-number">1.2.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#末行模式"><span class="nav-number">1.3.</span> <span class="nav-text">末行模式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim配置"><span class="nav-number">1.</span> <span class="nav-text">vim配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc配置文件更改"><span class="nav-number">1.1.</span> <span class="nav-text">.vimrc配置文件更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏设置"><span class="nav-number">1.2.</span> <span class="nav-text">分屏设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签页设置"><span class="nav-number">1.3.</span> <span class="nav-text">标签页设置</span></a></li></ol></li></ol></div>
             
 
           </div>
