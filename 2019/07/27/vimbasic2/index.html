@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
+  <meta name="description" content="vim配置.vimrc配置文件更改 map 按键1 按键2  特殊按键要，组合键 对应三个模式下的映射(不推荐) nmap normal imap insert vmap visual   上种映射存在冲突可能，以下方式较好 nnoremap inoremap vnoremap   “ 表示注释，配置最好做好注释防止忘记对应功能 设置leader键 let mapleader = “,” 常用逗号">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vimbasic2">
 <meta property="og:url" content="http://yoursite.com/2019/07/27/vimbasic2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
+<meta property="og:description" content="vim配置.vimrc配置文件更改 map 按键1 按键2  特殊按键要，组合键 对应三个模式下的映射(不推荐) nmap normal imap insert vmap visual   上种映射存在冲突可能，以下方式较好 nnoremap inoremap vnoremap   “ 表示注释，配置最好做好注释防止忘记对应功能 设置leader键 let mapleader = “,” 常用逗号">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T15:45:35.196Z">
+<meta property="og:updated_time" content="2019-07-29T10:41:49.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vimbasic2">
-<meta name="twitter:description" content="vim配置.vimrc配置文件更改 noremap 按键1 按键2    将按键一改为按键二 map S :w            将大写S改为一键保存,CR表示Command模式 map Q :q            将大写Q改为一键退出 map R :source $MYVIMRC 一键修改设置 syntax on  set number or nonuber        更改是否显示行">
+<meta name="twitter:description" content="vim配置.vimrc配置文件更改 map 按键1 按键2  特殊按键要，组合键 对应三个模式下的映射(不推荐) nmap normal imap insert vmap visual   上种映射存在冲突可能，以下方式较好 nnoremap inoremap vnoremap   “ 表示注释，配置最好做好注释防止忘记对应功能 设置leader键 let mapleader = “,” 常用逗号">
 
 
 
@@ -341,7 +341,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-28 23:45:35" itemprop="dateModified" datetime="2019-07-28T23:45:35+08:00">2019-07-28</time>
+                <time title="Modified: 2019-07-29 18:41:49" itemprop="dateModified" datetime="2019-07-29T18:41:49+08:00">2019-07-29</time>
               </span>
             
           
@@ -381,11 +381,30 @@
 
       
         <h1 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h1><h2 id="vimrc配置文件更改"><a href="#vimrc配置文件更改" class="headerlink" title=".vimrc配置文件更改"></a>.vimrc配置文件更改</h2><ul>
+<li>map 按键1 按键2 </li>
+<li>特殊按键要<space>，组合键<c-d></c-d></space></li>
+<li>对应三个模式下的映射(不推荐)<ul>
+<li>nmap normal</li>
+<li>imap insert</li>
+<li>vmap visual</li>
+</ul>
+</li>
+<li>上种映射存在冲突可能，以下方式较好<ul>
+<li>nnoremap</li>
+<li>inoremap</li>
+<li>vnoremap</li>
+</ul>
+</li>
+<li>“ 表示注释，配置最好做好注释防止忘记对应功能</li>
+<li>设置leader键<ul>
+<li>let mapleader = “,” 常用逗号或者空格</li>
+</ul>
+</li>
 <li>noremap 按键1 按键2    将按键一改为按键二</li>
 <li>map S :w<cr>            将大写S改为一键保存,CR表示Command模式</cr></li>
 <li>map Q :q<cr>            将大写Q改为一键退出</cr></li>
 <li>map R :source $MYVIMRC<cr> 一键修改设置</cr></li>
-<li>syntax on </li>
+<li>syntax on                语法高亮 </li>
 <li>set number or nonuber        更改是否显示行号</li>
 <li>set norelativenumber    or relativenuber 更改行号是否关联</li>
 <li>map s <nop> 取消s按键在命令模式下替换功能</nop></li>
@@ -393,7 +412,42 @@
 <li>set wrap            </li>
 <li>set showcmd        </li>
 <li>set wildmenu        自动补全命令</li>
-<li></li>
+<li>set pastetoggle=<f2> F2进入粘贴模式</f2></li>
+<li>set hlsearch    设置高亮搜索</li>
+<li>set foldmethod=indent    设置折叠方式</li>
+<li>“一些方便的映射<ul>
+<li>let mapleader=’,’</li>
+<li>let g:mapleader= ‘,’</li>
+</ul>
+</li>
+<li>inoremap jj <esc>`^    使用jj进入normal模式</esc></li>
+<li>“使用leader+ w 直接保存（感觉还是大写S好用，但是vim中w是保存为了养成习惯一定要强迫自己使用leader键加w来保存）<ul>
+<li>inoremap <leader>w <esc>:w<cr></cr></esc></leader></li>
+<li>noremap <leader>w :w<cr></cr></leader></li>
+</ul>
+</li>
+<li>“切换buffer<ul>
+<li>nnoremap <silent> [b :bprevious<cr></cr></silent></li>
+<li>nnoremap <silent> [n :bnext<cr></cr></silent></li>
+</ul>
+</li>
+<li>“use ctrl+hjkl switch window<ul>
+<li>noremap <c-h> <c-w>h</c-w></c-h></li>
+<li>noremap <c-j> <c-w>j</c-w></c-j></li>
+<li>noremap <c-k> <c-w>k</c-w></c-k></li>
+<li>noremap <c-l> <c-w>l</c-w></c-l></li>
+</ul>
+</li>
+<li>“使用:h option-list 来看配置的各个符号具体功能</li>
+<li>“sudo to write<ul>
+<li>cnoremap w!! w !sudo tee % &gt;/dev/null</li>
+</ul>
+</li>
+<li>“ json 格式化<ul>
+<li>com! FormatJSON %!python3 -m json.tool</li>
+</ul>
+</li>
+<li>笨方法学Vimscript 百度搜索电子书来看，里面有详细的配置方法</li>
 </ul>
 <h2 id="分屏设置"><a href="#分屏设置" class="headerlink" title="分屏设置"></a>分屏设置</h2><ul>
 <li><c-w> 用于分屏<c-w>表示Ctrl + w,不能直接分屏，只用于切换</c-w></c-w></li>
@@ -538,7 +592,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
