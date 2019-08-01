@@ -94,18 +94,17 @@
   };
 </script>
 
-  <meta name="description" content="linux 命令 evince PDF文档名 阅读PDF文档">
-<meta name="keywords" content="linux">
+  <meta name="description" content="vim配置noremap 无递归配置使用 将一个带有下划线单词改为全大写 并回到insertmodeviwUi 通过手动配置vim比插件更容易记忆自己配置过什么，并且可以快速定位配置位置修改，注意使用noremap用于设置防止与插件冲突  编辑时修改vimrc 例子:nnoremap ev :vsplit $MYVIMRC    以上代码可以通过leader键加ev实现纵向分屏打开配置文件，并直接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linuxbasic3">
-<meta property="og:url" content="http://yoursite.com/2019/07/27/linuxbasic4/index.html">
+<meta property="og:title" content="vimbasic5">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/vimbasic5/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="linux 命令 evince PDF文档名 阅读PDF文档">
+<meta property="og:description" content="vim配置noremap 无递归配置使用 将一个带有下划线单词改为全大写 并回到insertmodeviwUi 通过手动配置vim比插件更容易记忆自己配置过什么，并且可以快速定位配置位置修改，注意使用noremap用于设置防止与插件冲突  编辑时修改vimrc 例子:nnoremap ev :vsplit $MYVIMRC    以上代码可以通过leader键加ev实现纵向分屏打开配置文件，并直接">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-27T07:57:35.301Z">
+<meta property="og:updated_time" content="2019-08-01T06:35:30.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linuxbasic3">
-<meta name="twitter:description" content="linux 命令 evince PDF文档名 阅读PDF文档">
+<meta name="twitter:title" content="vimbasic5">
+<meta name="twitter:description" content="vim配置noremap 无递归配置使用 将一个带有下划线单词改为全大写 并回到insertmodeviwUi 通过手动配置vim比插件更容易记忆自己配置过什么，并且可以快速定位配置位置修改，注意使用noremap用于设置防止与插件冲突  编辑时修改vimrc 例子:nnoremap ev :vsplit $MYVIMRC    以上代码可以通过leader键加ev实现纵向分屏打开配置文件，并直接">
 
 
 
@@ -113,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/27/linuxbasic4/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/vimbasic5/">
 
 
 
@@ -124,7 +123,7 @@
 </script>
 
   
-  <title>linuxbasic3 | lmblog(hexo)</title>
+  <title>vimbasic5 | lmblog(hexo)</title>
   
 
 
@@ -283,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/linuxbasic4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/vimbasic5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lmfalcon">
@@ -300,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linuxbasic3
+          <h1 class="post-title" itemprop="name headline">vimbasic5
 
               
             
@@ -326,13 +325,23 @@
                 
               
 
-              <time title="Created: 2019-07-27 15:19:50 / Modified: 15:57:35" itemprop="dateCreated datePublished" datetime="2019-07-27T15:19:50+08:00">2019-07-27</time>
+              <time title="Created: 2019-07-31 14:22:50" itemprop="dateCreated datePublished" datetime="2019-07-31T14:22:50+08:00">2019-07-31</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-01 14:35:30" itemprop="dateModified" datetime="2019-08-01T14:35:30+08:00">2019-08-01</time>
+              </span>
             
           
 
@@ -370,8 +379,79 @@
       
 
       
-        <h1 id="linux-命令"><a href="#linux-命令" class="headerlink" title="linux 命令"></a>linux 命令</h1><ul>
-<li>evince PDF文档名 阅读PDF文档</li>
+        <h1 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h1><h2 id="noremap"><a href="#noremap" class="headerlink" title="noremap"></a>noremap</h2><ul>
+<li>无递归配置使用<c-u> 将一个带有下划线单词改为全大写 并回到insertmode<esc>viwU<esc>i</esc></esc></c-u></li>
+<li>通过手动配置vim比插件更容易记忆自己配置过什么，并且可以快速定位配置位置修改，注意使用noremap用于设置防止与插件冲突</li>
+</ul>
+<h2 id="编辑时修改vimrc"><a href="#编辑时修改vimrc" class="headerlink" title="编辑时修改vimrc"></a>编辑时修改vimrc</h2><ul>
+<li>例子:nnoremap <leader>ev :vsplit $MYVIMRC<cr>    以上代码可以通过leader键加ev实现纵向分屏打开配置文件，并直接添加某个映射到vimrc文件中, 命令中的<cr>相当于回车等同于执行命令。</cr></cr></leader></li>
+<li>之后nnoremap <leader>sv :source $MYVIMRC<cr>    可以重读配置文件使刚刚的配置生效，按leader键加sv即可</cr></leader></li>
+</ul>
+<h2 id="自定义纠错"><a href="#自定义纠错" class="headerlink" title="自定义纠错"></a>自定义纠错</h2><ul>
+<li>:iabbrev mlfalcon lmfalcon  将错误的拼写改为正确的拼写</li>
+<li>可以在insert，command，replace 三个模式下生效</li>
+<li>inoremap 会在任意时候更换错误拼写，而iabbrev 只会在前后字符非字母时进行替换</li>
+</ul>
+<h2 id="localleader-or-leader"><a href="#localleader-or-leader" class="headerlink" title="localleader or leader"></a>localleader or leader</h2><ul>
+<li>localleader更适合做插件给他人使用的时候设置，这样具有更好的可移植性</li>
+<li>leader自己使用时设置就好了，这样自己可以熟悉使用leader按键。</li>
+</ul>
+<h2 id><a href="#" class="headerlink" title></a><buffer></buffer></h2><ul>
+<li>nnoremap <buffer> <leader>x dd    这个设置只会在进行这个设置文件中生效其他文件不会拥有这个缓冲区，所以不会生效</leader></buffer></li>
+<li>localleader 可以使用特定缓冲区</li>
+<li>如果在一个文件的缓冲区设置了相同按键的两个指令一个有<buffer>另一个没有，结果只会执行有<buffer>的指令</buffer></buffer></li>
+</ul>
+<h2 id="setlocal"><a href="#setlocal" class="headerlink" title="setlocal"></a>setlocal</h2><ul>
+<li>这个命令只会在当前的文件生效</li>
+<li>例如:setlocal nowrap 只会在当前文件不折叠</li>
+</ul>
+<h2 id="autocmd"><a href="#autocmd" class="headerlink" title="autocmd"></a>autocmd</h2><ul>
+<li>如果建立一个文件后未保存退出，vim默认不会帮你创建文件</li>
+<li>修改方法 autocmd BufNewFile * :write 自动命令会自动执行，bufNewFile是创建新文件，*是任意文件名的通配符，：write 是写入保存。这个命令会在你创建文件时执行并保存</li>
+<li>autocmd BufWritePre *.html :normal gg=G 可以将BufWritePre 将在保存任何字符前触发:normal gg=G 将html文件的格式改为和第一行的相同，即所有行都没有缩进</li>
+<li>autocmd BufNewFile,BufRead *.html setlocal nowrap 这个命令的作用是将编辑html文件的换行取消。</li>
+<li>autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc> 在处理javascript文件时将用localleader加ｃ注释掉当前光标所在行</esc></localleader></buffer></li>
+<li>autocmd FileType Python nnoremap <buffer> <localleader>c I#<esc>作用类似上面的注释方法</esc></localleader></buffer></li>
+</ul>
+<h3 id="自动命令和缩写"><a href="#自动命令和缩写" class="headerlink" title="自动命令和缩写"></a>自动命令和缩写</h3><ul>
+<li>自动命令搭配纠错可以通过缩写实现自动补全</li>
+<li>例： autocmd FileType javascript :iabbrev <buffer> iff if:<left>autocmd FileType Python :iabbrev <buffer> iff if()<left>    这样就通过iff实现了自动补全功能</left></buffer></left></buffer></li>
+</ul>
+<p>###　自动执行组</p>
+<ol>
+<li>:augroup testgroup</li>
+<li>:autocmd BufWrite * :echom “Foo”</li>
+<li>:autocmd BufWrite * :echom “Bar”</li>
+<li>:augroup END</li>
+</ol>
+<ul>
+<li>顺序执行完上面步骤保存会打印Foo,但是不会打印Bar.如果继续在相同的组添加指令Bar也会出现，但是新指令不出现。</li>
+<li>在组中添加:autocmd!后可以清楚之前创建的所有指令，但是这条指令后添加其他指令，其他的指令依然会执行，说明组仍存在未完全清除。只有单独添加:autocmd!才会清除整个组</li>
+</ul>
+<h2 id="Operator-Pending映射"><a href="#Operator-Pending映射" class="headerlink" title="Operator-Pending映射"></a>Operator-Pending映射</h2><ul>
+<li>在normalmode下使用</li>
+<li>Operator 是操作<ul>
+<li>d 删除</li>
+<li>c （change)修改</li>
+<li>y 复制</li>
+</ul>
+</li>
+<li>Movement 是移动范围<ul>
+<li>w        到下一个单词 </li>
+<li>i(    i==inside，在括号内 </li>
+<li>in(    移动到下一个(n==nex)t的括号内</li>
+<li>il(    移动到上一个括号内，l==last</li>
+<li>t,    到逗号</li>
+<li>F)    向后移动到最近的）字符</li>
+<li>vi(    进入可视模式选中括号内的所有内容</li>
+</ul>
+</li>
+<li>可以组合上面的O-M语句实验效果</li>
+</ul>
+<h3 id="Movement-映射修改创建"><a href="#Movement-映射修改创建" class="headerlink" title="Movement 映射修改创建"></a>Movement 映射修改创建</h3><ul>
+<li>:onoremap p i( 将p改为进入括号中，normalmode中使用dp即可将括号内的语句删除</li>
+<li>:onoremap 自定义按键 /希望搜索的字符</li>
+<li></li>
 </ul>
 
       
@@ -398,15 +478,6 @@
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-        </div>
-      
 
       
       
@@ -416,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/27/vimbasic2/" rel="next" title="vimbasic2">
-                <i class="fa fa-chevron-left"></i> vimbasic2
+              <a href="/2019/07/30/vimplug/" rel="next" title="vimplug">
+                <i class="fa fa-chevron-left"></i> vimplug
               </a>
             
           </div>
@@ -425,10 +496,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/28/vimbasic3/" rel="prev" title="vimbasic3">
-                vimbasic3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -590,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-命令"><span class="nav-number">1.</span> <span class="nav-text">linux 命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim配置"><span class="nav-number">1.</span> <span class="nav-text">vim配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#noremap"><span class="nav-number">1.1.</span> <span class="nav-text">noremap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑时修改vimrc"><span class="nav-number">1.2.</span> <span class="nav-text">编辑时修改vimrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义纠错"><span class="nav-number">1.3.</span> <span class="nav-text">自定义纠错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#localleader-or-leader"><span class="nav-number">1.4.</span> <span class="nav-text">localleader or leader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setlocal"><span class="nav-number">1.6.</span> <span class="nav-text">setlocal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#autocmd"><span class="nav-number">1.7.</span> <span class="nav-text">autocmd</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动命令和缩写"><span class="nav-number">1.7.1.</span> <span class="nav-text">自动命令和缩写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operator-Pending映射"><span class="nav-number">1.8.</span> <span class="nav-text">Operator-Pending映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Movement-映射修改创建"><span class="nav-number">1.8.1.</span> <span class="nav-text">Movement 映射修改创建</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
