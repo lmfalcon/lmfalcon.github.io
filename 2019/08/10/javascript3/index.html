@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="lmblog(hexo)">
 <meta property="og:description" content="javascript对象和类内部对象 动态对象 需用new关键字来创建一个对象示例，才能使用“对象实例名.成员”的方式来访问其属性和方法    静态对象 不需要用new关键字创建对象实例，直接使用“对象名.成员”的方式来访问其属性和方法即可     Object对象 创建Object对象 1obj = new Object([value])   obj 为必选项。要赋值为Object对象的变量名">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-10T06:09:47.658Z">
+<meta property="og:updated_time" content="2019-08-10T06:58:49.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript3">
 <meta name="twitter:description" content="javascript对象和类内部对象 动态对象 需用new关键字来创建一个对象示例，才能使用“对象实例名.成员”的方式来访问其属性和方法    静态对象 不需要用new关键字创建对象实例，直接使用“对象名.成员”的方式来访问其属性和方法即可     Object对象 创建Object对象 1obj = new Object([value])   obj 为必选项。要赋值为Object对象的变量名">
@@ -326,7 +326,7 @@
                 
               
 
-              <time title="Created: 2019-08-10 11:06:23 / Modified: 14:09:47" itemprop="dateCreated datePublished" datetime="2019-08-10T11:06:23+08:00">2019-08-10</time>
+              <time title="Created: 2019-08-10 11:06:23 / Modified: 14:58:49" itemprop="dateCreated datePublished" datetime="2019-08-10T11:06:23+08:00">2019-08-10</time>
             </span>
           
 
@@ -817,6 +817,34 @@
 <td>同时按下左中右</td>
 </tr>
 </tbody></table>
+<ul>
+<li>clientX 属性<ul>
+<li>该属性获取鼠标在浏览器窗口中的X坐标，他是一个只读属性，即只能获取鼠标当前位置不能改变鼠标位置</li>
+<li>[windows.]event.clientX</li>
+</ul>
+</li>
+<li>clientY属性</li>
+<li>X属性<ul>
+<li>该属性设置或获取鼠标指针位置相对于CSS属性中有position属性的上级元素的X轴坐标。如果CSS属性中没有position属性的上级元素，默认以body元素作为参考对象</li>
+<li>[windows.]event.X </li>
+<li>如果鼠标事件触发后，鼠标移出窗口外，则返回的值为-1,。这是个只读属性，只能通过他获取鼠标当前位置，但不能用来改变鼠标位置。</li>
+</ul>
+</li>
+<li>Y属性</li>
+<li>cancelBubble属性<ul>
+<li>检测是否接受上层元素的事件的控制。如果该属性的值是false,则允许被上层元素的事件控制；否则值为true,则不被上层元素的事件控制。</li>
+<li>[windows.]event.cancelBubble[= cancelBubble]</li>
+<li>该属性的值为一个可读写的boolean,默认false</li>
+</ul>
+</li>
+<li>srcElement属性<ul>
+<li>用于设置或获取触发事件的对象</li>
+<li>是事件初始目标的HTML元素对象引用</li>
+<li>由事件通过元素容器层次进行处理，并可以在任意层次进行处理，因此由一个属性指向产生初始事件的元素很有帮助。</li>
+</ul>
+</li>
+</ul>
+<p>对象类型有点多，今天就写到这了，应该多编写代码而不是写心得，感觉打字是越来越熟练，但是打示例代码的速度还是有些慢。由于没有彻底学完HTML和CSS,javascript理解有些困难，所以暂且告一段落。待日后有时间再学习。</p>
 
       
     </div>
