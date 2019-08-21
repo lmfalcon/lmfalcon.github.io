@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="命令介绍git status 用于查看仓库中的文件状态 在哪个分支 是否有提交 是否有新的文件，是否有追踪过这个文件，是否更改过   查看工作区和缓存区内容  git add 文件名 用于追踪文件 用于将工作区的内容提交到暂存区  git commit 文件名 用于提交文件 -a 用于modified文件的提交 -m “”   引号内写下修改内容，避免打开vim编辑器添加 将暂存区内容传到本地库">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="abouthexodeploy">
-<meta property="og:url" content="http://yoursite.com/2019/07/22/abouthexodeploy/index.html">
+<meta property="og:title" content="git2">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/git2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
+<meta property="og:description" content="命令介绍git status 用于查看仓库中的文件状态 在哪个分支 是否有提交 是否有新的文件，是否有追踪过这个文件，是否更改过   查看工作区和缓存区内容  git add 文件名 用于追踪文件 用于将工作区的内容提交到暂存区  git commit 文件名 用于提交文件 -a 用于modified文件的提交 -m “”   引号内写下修改内容，避免打开vim编辑器添加 将暂存区内容传到本地库">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T16:40:34.487Z">
+<meta property="og:updated_time" content="2019-08-19T09:37:22.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="abouthexodeploy">
-<meta name="twitter:description" content="更换主题后修改作者出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。 hexo deploy 标准流程 进入blog目录 sudo su root权限 修改blog的内容 hexo clean(还不了解具体作用只是看视频中这样做） hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习） ctrl+D退出ro">
+<meta name="twitter:title" content="git2">
+<meta name="twitter:description" content="命令介绍git status 用于查看仓库中的文件状态 在哪个分支 是否有提交 是否有新的文件，是否有追踪过这个文件，是否更改过   查看工作区和缓存区内容  git add 文件名 用于追踪文件 用于将工作区的内容提交到暂存区  git commit 文件名 用于提交文件 -a 用于modified文件的提交 -m “”   引号内写下修改内容，避免打开vim编辑器添加 将暂存区内容传到本地库">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/22/abouthexodeploy/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/git2/">
 
 
 
@@ -124,7 +124,7 @@
 </script>
 
   
-  <title>abouthexodeploy | lmblog(hexo)</title>
+  <title>git2 | lmblog(hexo)</title>
   
 
 
@@ -344,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/abouthexodeploy/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/git2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lmfalcon">
@@ -361,7 +361,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">abouthexodeploy
+          <h1 class="post-title" itemprop="name headline">git2
 
               
             
@@ -387,23 +387,13 @@
                 
               
 
-              <time title="Created: 2019-07-22 16:06:08" itemprop="dateCreated datePublished" datetime="2019-07-22T16:06:08+08:00">2019-07-22</time>
+              <time title="Created: 2019-08-19 10:01:07 / Modified: 17:37:22" itemprop="dateCreated datePublished" datetime="2019-08-19T10:01:07+08:00">2019-08-19</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-26 00:40:34" itemprop="dateModified" datetime="2019-07-26T00:40:34+08:00">2019-07-26</time>
-              </span>
             
           
 
@@ -441,17 +431,109 @@
       
 
       
-        <h2 id="更换主题后修改作者"><a href="#更换主题后修改作者" class="headerlink" title="更换主题后修改作者"></a>更换主题后修改作者</h2><p>出现问题描述：localhost:4000 端口正常显示但是部署到github上public文件夹内容未改变。</p>
-<h2 id="hexo-deploy-标准流程"><a href="#hexo-deploy-标准流程" class="headerlink" title="hexo deploy 标准流程"></a>hexo deploy 标准流程</h2><ol>
-<li>进入blog目录</li>
-<li>sudo su root权限</li>
-<li>修改blog的内容</li>
-<li>hexo clean(还不了解具体作用只是看视频中这样做）</li>
-<li>hexo g（生成静态文件？视频中说hexo生成的是静态页面，具体意思未知，有待学习）</li>
-<li>ctrl+D退出root权限</li>
-<li>sudo hexo d 进行部署，讲博客部署到github上的lmfalcon.github.io（具体网址不是这个，而是新建仓库时的那个链接）上。</li>
-</ol>
-<h2 id="问题解决过程"><a href="#问题解决过程" class="headerlink" title="问题解决过程"></a>问题解决过程</h2><p>root权限可以少打sudo命令本来很方便，但是建立ssh时我用的是lmfalcon这个用户导致git部署到github上时需要用lmfalcon这个用户。所以需要标准流程中的第6步退出过程，否者部署显示成功但是实际未部署任何文件。</p>
+        <h1 id="命令介绍"><a href="#命令介绍" class="headerlink" title="命令介绍"></a>命令介绍</h1><h2 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h2><ul>
+<li>用于查看仓库中的文件状态<ul>
+<li>在哪个分支</li>
+<li>是否有提交</li>
+<li>是否有新的文件，是否有追踪过这个文件，是否更改过</li>
+</ul>
+</li>
+<li>查看工作区和缓存区内容</li>
+</ul>
+<h2 id="git-add-文件名"><a href="#git-add-文件名" class="headerlink" title="git add 文件名"></a>git add 文件名</h2><ul>
+<li>用于追踪文件</li>
+<li>用于将工作区的内容提交到暂存区</li>
+</ul>
+<h2 id="git-commit-文件名"><a href="#git-commit-文件名" class="headerlink" title="git commit 文件名"></a>git commit 文件名</h2><ul>
+<li>用于提交文件</li>
+<li>-a 用于modified文件的提交</li>
+<li>-m “”   引号内写下修改内容，避免打开vim编辑器添加</li>
+<li>将暂存区内容传到本地库</li>
+</ul>
+<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><ul>
+<li>查看历史版本</li>
+<li>–pretty=oneline    以简洁的方式显示</li>
+<li>–oneline    以最简单方式显示只显示head指针的过去版本，而不显示head指向的新版本</li>
+<li>多屏显示类似linux中的less显示</li>
+</ul>
+<h2 id="git-relog"><a href="#git-relog" class="headerlink" title="git relog"></a>git relog</h2><ul>
+<li>显示head指针需要移动多少步才能达到想要的版本</li>
+</ul>
+<h2 id="git-reset-–hard-哈希索引值"><a href="#git-reset-–hard-哈希索引值" class="headerlink" title="git reset –hard 哈希索引值"></a>git reset –hard 哈希索引值</h2><ul>
+<li>选择你想要到的版本</li>
+</ul>
+<h2 id="git-reset-–hard-HEAD"><a href="#git-reset-–hard-HEAD" class="headerlink" title="git reset –hard HEAD^"></a>git reset –hard HEAD^</h2><ul>
+<li>回退到之前版本，取决于^的数，数量表示回退补数（不建议多步）</li>
+</ul>
+<h2 id="git-reset-–hard-HEAD-步数"><a href="#git-reset-–hard-HEAD-步数" class="headerlink" title="git reset –hard HEAD~步数"></a>git reset –hard HEAD~步数</h2><ul>
+<li>显示你要后退的版本步数</li>
+</ul>
+<h2 id="git-help-reset"><a href="#git-help-reset" class="headerlink" title="git help reset"></a>git help reset</h2><ul>
+<li>reset 的帮助</li>
+</ul>
+<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2><ul>
+<li>–soft    仅仅在本地库移动HEAD指针</li>
+<li>–mixed    <ul>
+<li>在本地库移动HEAD指针</li>
+<li>重置暂存区</li>
+</ul>
+</li>
+<li>–hard    <ul>
+<li>在本地库移动HEAD指针</li>
+<li>重置暂存区</li>
+<li>重置工作区</li>
+</ul>
+</li>
+<li>找回文件的一种方式，回退到之前的版本，把之前版本的文件恢复，不过前提必须在文件存在时的状态提交到了本地库</li>
+</ul>
+<h2 id="git-diff-文件名"><a href="#git-diff-文件名" class="headerlink" title="git diff 文件名"></a>git diff 文件名</h2><ul>
+<li>将工作区文件与暂存区文件进行比较</li>
+<li>红色表示删除过</li>
+<li>前面有加号表示添加的内容</li>
+</ul>
+<h2 id="git-diff-【本地库中的历史版本】【文件名】"><a href="#git-diff-【本地库中的历史版本】【文件名】" class="headerlink" title="git diff 【本地库中的历史版本】【文件名】"></a>git diff 【本地库中的历史版本】【文件名】</h2><ul>
+<li>将工作区中的文件和本地库历史记录进行比较</li>
+<li>不带文件名比较多个文件</li>
+</ul>
+<hr>
+<h1 id="本地的仓库分类"><a href="#本地的仓库分类" class="headerlink" title="本地的仓库分类"></a>本地的仓库分类</h1><h2 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h2><ul>
+<li>历史版本<ul>
+<li>通过head指针指示当前处于的版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h2><ul>
+<li>临时存储</li>
+</ul>
+<h2 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h2><ul>
+<li>写代码</li>
+</ul>
+<hr>
+<h1 id="git的分支"><a href="#git的分支" class="headerlink" title="git的分支"></a>git的分支</h1><ul>
+<li>从多个分支对一个项目进行开发</li>
+</ul>
+<h2 id="master"><a href="#master" class="headerlink" title="master"></a>master</h2><ul>
+<li>主要分支</li>
+</ul>
+<h2 id="feature"><a href="#feature" class="headerlink" title="feature_***"></a>feature_***</h2><ul>
+<li>刚开始内容和master一样</li>
+<li>之后的内容是独立的分支，在合并之前不会对master和其他分支有影响</li>
+<li>作为一个独立的功能进行开发</li>
+</ul>
+<h2 id="hot-fix分支"><a href="#hot-fix分支" class="headerlink" title="hot_fix分支"></a>hot_fix分支</h2><ul>
+<li>用于修复bug</li>
+</ul>
+<h2 id="git-branch-v"><a href="#git-branch-v" class="headerlink" title="git branch -v"></a>git branch -v</h2><ul>
+<li>查看现有分支</li>
+</ul>
+<h2 id="git-branch-分支名"><a href="#git-branch-分支名" class="headerlink" title="git branch 分支名"></a>git branch 分支名</h2><ul>
+<li>新建分支</li>
+<li>一般以feature_***形式命名</li>
+<li>修复bug分支一般以hot_fix命名 </li>
+</ul>
+<h2 id="git-checkout-分支名"><a href="#git-checkout-分支名" class="headerlink" title="git checkout 分支名"></a>git checkout 分支名</h2><ul>
+<li>用于切换分支</li>
+</ul>
 
       
     </div>
@@ -482,7 +564,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -495,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/template2/" rel="next" title="template">
-                <i class="fa fa-chevron-left"></i> template
+              <a href="/2019/08/18/datastructure1/" rel="next" title="datastructure1">
+                <i class="fa fa-chevron-left"></i> datastructure1
               </a>
             
           </div>
@@ -505,8 +587,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/23/linuxbasic1/" rel="prev" title="linuxbasic1">
-                linuxbasic1 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/21/wirelessproblem/" rel="prev" title="wirelessproblem">
+                wirelessproblem <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -689,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题后修改作者"><span class="nav-number">1.</span> <span class="nav-text">更换主题后修改作者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-deploy-标准流程"><span class="nav-number">2.</span> <span class="nav-text">hexo deploy 标准流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决过程"><span class="nav-number">3.</span> <span class="nav-text">问题解决过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#命令介绍"><span class="nav-number">1.</span> <span class="nav-text">命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-status"><span class="nav-number">1.1.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add-文件名"><span class="nav-number">1.2.</span> <span class="nav-text">git add 文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit-文件名"><span class="nav-number">1.3.</span> <span class="nav-text">git commit 文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">1.4.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-relog"><span class="nav-number">1.5.</span> <span class="nav-text">git relog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-–hard-哈希索引值"><span class="nav-number">1.6.</span> <span class="nav-text">git reset –hard 哈希索引值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-–hard-HEAD"><span class="nav-number">1.7.</span> <span class="nav-text">git reset –hard HEAD^</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-–hard-HEAD-步数"><span class="nav-number">1.8.</span> <span class="nav-text">git reset –hard HEAD~步数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-help-reset"><span class="nav-number">1.9.</span> <span class="nav-text">git help reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset"><span class="nav-number">1.10.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff-文件名"><span class="nav-number">1.11.</span> <span class="nav-text">git diff 文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff-【本地库中的历史版本】【文件名】"><span class="nav-number">1.12.</span> <span class="nav-text">git diff 【本地库中的历史版本】【文件名】</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地的仓库分类"><span class="nav-number">2.</span> <span class="nav-text">本地的仓库分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地库"><span class="nav-number">2.1.</span> <span class="nav-text">本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存区"><span class="nav-number">2.2.</span> <span class="nav-text">暂存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区"><span class="nav-number">2.3.</span> <span class="nav-text">工作区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git的分支"><span class="nav-number">3.</span> <span class="nav-text">git的分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#master"><span class="nav-number">3.1.</span> <span class="nav-text">master</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#feature"><span class="nav-number">3.2.</span> <span class="nav-text">feature_***</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hot-fix分支"><span class="nav-number">3.3.</span> <span class="nav-text">hot_fix分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch-v"><span class="nav-number">3.4.</span> <span class="nav-text">git branch -v</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch-分支名"><span class="nav-number">3.5.</span> <span class="nav-text">git branch 分支名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout-分支名"><span class="nav-number">3.6.</span> <span class="nav-text">git checkout 分支名</span></a></li></ol></li></ol></div>
             
 
           </div>
