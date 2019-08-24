@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>git3</title>
+      <link href="/2019/08/24/git3/"/>
+      <url>/2019/08/24/git3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h1><h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><ol><li>切换到要修改的分支（被合并，增加新内容）上    git checkout[老内容分支]</li><li>执行merge命令    git merge[新内容分支]</li></ol><h3 id="产生冲突"><a href="#产生冲突" class="headerlink" title="产生冲突"></a>产生冲突</h3><ul><li>打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容</li><li>解决步骤<ul><li>删除不想要的内容</li><li>git add 文件名</li><li>git commit -m “修改内容” 注意这里现在不能加文件名否则会报错</li></ul></li></ul><h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><ul><li>一种加密算法<ul><li>将明文转换为密文</li></ul></li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>不管输入数据的数据量有多大，输入同一个哈希算法，得到的加密结果长度固定</li><li>哈希算法确定，输入数据确定，输出数据也是确定的</li><li>哈希算法确定，输入数据有变化，输出数据一定有变化而且可能有很大的变化</li><li>哈希算法不可逆</li></ul><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul><li>MD5</li><li>SHA1（字母不区分大小写，应该是代表十六进制数）</li><li>CRC32</li></ul><h2 id="与git关联"><a href="#与git关联" class="headerlink" title="与git关联"></a>与git关联</h2><ul><li>Git底层采取SHA-1 算法</li><li>哈希算法可以用来校验文件是否修改</li></ul><h1 id="git-与-svn-区别"><a href="#git-与-svn-区别" class="headerlink" title="git 与 svn 区别"></a>git 与 svn 区别</h1><ul><li>svn为集中式管理，每次保留修改部分，不存在修改部分</li><li>git 把数据看做是小型文件系统的快照，每次提交更新都会对全部文件制作一个快照保存快照索引，如果文件没有修改git不再重新储存，只保留指针指向之前文件<ul><li>提交对象及其父对象形成链表</li></ul></li><li>git的快照<ul><li>自身哈希</li><li>commit</li><li>tree</li><li>parent</li><li>author</li><li>commiter</li></ul></li></ul><h1 id="git-如何管理分支"><a href="#git-如何管理分支" class="headerlink" title="git 如何管理分支"></a>git 如何管理分支</h1><ul><li>类似链表结构</li><li>首个版本为root</li><li>开始HEAD指针指向master指针</li><li>若有新的分支则新建一个新的指针</li><li>切换分支只是改变HEAD指针位置</li></ul><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><ul><li>创建账号</li><li>创建仓库</li><li>仓库网址保存<ul><li>git remote origin(保存的仓库网址) 网址（url）将仓库网址起别名</li><li>git remote -v 查看当前所有的网址别名</li></ul></li><li>将新成员加入项目，点击setting，选择Collaborators，填写新成员github账号发送邀请，新成员接收到邀请后点击接受，新成员就可push内容到远端库了</li></ul><h1 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h1><ul><li>git push 网址 本地库提交分支<ul><li>第一次可能遇到https问题。需要删掉https试一次，在加上https试一次，然后就可以用啦</li><li>目的是将本地库推送到远程库</li></ul></li><li>新成员不能将本地库内容推送到远程库</li></ul><h1 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h1><ul><li>git clone 网址<ul><li>会完整的把远程库克隆到当前文件夹下的仓库名文件夹</li><li>创建远程库的地址别名</li><li>初始化本地库</li></ul></li><li>新成员可以克隆内容到本地库，可以在本地库进行修改，但是不能上传到远程库</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>essay_tests-civil_service_examination</title>
       <link href="/2019/08/22/essay-tests-civil-service-examination/"/>
       <url>/2019/08/22/essay-tests-civil-service-examination/</url>
