@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="lmblog(hexo)">
 <meta property="og:description" content="分支操作合并分支 切换到要修改的分支（被合并，增加新内容）上    git checkout[老内容分支] 执行merge命令    git merge[新内容分支]  产生冲突 打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容 解决步骤 删除不想要的内容 git add 文件名 git commit -m “修改内容” 注意这里现在不能加文件名否则会报错    哈希">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-24T16:01:23.740Z">
+<meta property="og:updated_time" content="2019-08-25T07:30:04.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git3">
 <meta name="twitter:description" content="分支操作合并分支 切换到要修改的分支（被合并，增加新内容）上    git checkout[老内容分支] 执行merge命令    git merge[新内容分支]  产生冲突 打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容 解决步骤 删除不想要的内容 git add 文件名 git commit -m “修改内容” 注意这里现在不能加文件名否则会报错    哈希">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-25 00:01:23" itemprop="dateModified" datetime="2019-08-25T00:01:23+08:00">2019-08-25</time>
+                <time title="Modified: 2019-08-25 15:30:04" itemprop="dateModified" datetime="2019-08-25T15:30:04+08:00">2019-08-25</time>
               </span>
             
           
@@ -502,7 +502,7 @@
 <li>创建账号</li>
 <li>创建仓库</li>
 <li>仓库网址保存<ul>
-<li>git remote origin(保存的仓库网址) 网址（url）将仓库网址起别名</li>
+<li>git remote add origin(保存的仓库网址) 网址（url）将仓库网址起别名</li>
 <li>git remote -v 查看当前所有的网址别名</li>
 </ul>
 </li>
@@ -524,6 +524,168 @@
 </ul>
 </li>
 <li>新成员可以克隆内容到本地库，可以在本地库进行修改，但是不能上传到远程库</li>
+</ul>
+<h1 id="pull拉取"><a href="#pull拉取" class="headerlink" title="pull拉取"></a>pull拉取</h1><ul>
+<li>git pull 相当于 git fetch + git merge 的合并</li>
+<li>git fetch 【远程库地址别名】【远程分支名】<ul>
+<li>不改变本地文件，只是下载到本地</li>
+<li>下载的文件到了git checkout origin/master 分支上</li>
+<li>用于查看改变而不着急更改</li>
+</ul>
+</li>
+<li>以上都是读操作不需要确定身份</li>
+<li>因为拉取有merge过程可能出现冲突问题，所以可以拆开来用</li>
+</ul>
+<h1 id="pull文件冲突"><a href="#pull文件冲突" class="headerlink" title="pull文件冲突"></a>pull文件冲突</h1><ul>
+<li>当git push 文件时远程库有了新的版本，这时的push操作是不会生效的。</li>
+<li>只能git pull 文件，当文件冲突时，会出现XXX|merge分支，这个分支操作和之前的分支冲突解决办法相同，选择删除冲突的内容。同样的git add 之后不带文件名的git commit</li>
+</ul>
+<h1 id="跨团队协作"><a href="#跨团队协作" class="headerlink" title="跨团队协作"></a>跨团队协作</h1><ul>
+<li>以其他团队成员身份希望参与他人的工程开发，可以用fork的方式将项目复制到自己的目录下，</li>
+<li>可以clone到自己的本地</li>
+<li>也可以push到自己的远程库</li>
+<li>将自己的改好的项目传回他人的团队<ul>
+<li>github上pull request，进入后点击create pull request</li>
+<li>类似发封邮件给项目创建人</li>
+<li>项目创建人查看pull request，可以回复comment，可以commit看对方提交了什么，可以看files changed 具体做的文件修改。对代码进行审核</li>
+<li>如果没问题，merge pull request合并代码，填写confirm merge填写本次操作的日志信息</li>
+</ul>
+</li>
+</ul>
+<h1 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h1><ul>
+<li>命令行下输入ssh-keygen -t rsa -C 邮箱地址</li>
+<li>生成SSH的目录，进入到目录中，可以看到两个文件 <ul>
+<li>id_rsa</li>
+<li>id_rsa.pub <ol>
+<li>内容复制，</li>
+<li>进入github</li>
+<li>进入personal settings </li>
+<li>进入SSH and GPG keys</li>
+<li>title随意，keys粘贴复制内容</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>通过 git remote add 地址别名 SSH地址</li>
+<li>git remote -v 查看SSH编码</li>
+<li>git push SSH的别名 master 推送至远程库（可以不填写账号密码）</li>
+</ul>
+<h1 id="git的图形界面"><a href="#git的图形界面" class="headerlink" title="git的图形界面"></a>git的图形界面</h1><ul>
+<li>eclipse 内置了git插件</li>
+</ul>
+<h1 id="eclipse-操作"><a href="#eclipse-操作" class="headerlink" title="eclipse 操作"></a>eclipse 操作</h1><h2 id="为项目初始化git"><a href="#为项目初始化git" class="headerlink" title="为项目初始化git"></a>为项目初始化git</h2><ul>
+<li>工程上点右键选Team</li>
+<li>选share_project</li>
+<li>选git</li>
+<li>use or create repository in parent folder of project 勾选</li>
+<li>选中项目</li>
+<li>之后点击create repository</li>
+<li>finish</li>
+</ul>
+<h2 id="为项目提交"><a href="#为项目提交" class="headerlink" title="为项目提交"></a>为项目提交</h2><ul>
+<li>工程上右键选Team</li>
+<li>选commit</li>
+<li>显示三个部分<ul>
+<li>unstaged changes</li>
+<li>staged changes</li>
+<li>commit message</li>
+</ul>
+</li>
+<li>eclipse中会有一些特定文件是eclipse中管理本地库的隐藏文件，这些文件不需要通过git上传，因为不同版本的eclipse用的特定文件也不同<ul>
+<li>.classpath</li>
+<li>.project</li>
+<li>.settings</li>
+<li>target</li>
+</ul>
+</li>
+</ul>
+<h2 id="git的忽略文件"><a href="#git的忽略文件" class="headerlink" title="git的忽略文件"></a>git的忽略文件</h2><ul>
+<li>url github.com/github/gitignore</li>
+<li>例如java 参照网址中机制，<ol>
+<li>在用户家目录中找到.gitconfig文件放在一个目录下方便一起修改</li>
+<li>新建复制网站中的代码，命名按照github上的仓库名</li>
+<li>除了这些eclipse中还要忽略<ul>
+<li>.classpath</li>
+<li>.project</li>
+<li>.settings</li>
+<li>target</li>
+</ul>
+</li>
+<li>在.gitconfig中加入下面代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	excludesfile = ~/java.gitconfig</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="eclipse-项目提交"><a href="#eclipse-项目提交" class="headerlink" title="eclipse 项目提交"></a>eclipse 项目提交</h2><ul>
+<li>工程右键选Team</li>
+<li>选择add to index</li>
+<li>之后在选择commit提交</li>
+</ul>
+<h2 id="eclipse推送到远程库"><a href="#eclipse推送到远程库" class="headerlink" title="eclipse推送到远程库"></a>eclipse推送到远程库</h2><ul>
+<li>Team </li>
+<li>remote</li>
+<li>push</li>
+<li>填写url</li>
+</ul>
+<h2 id="远程库工程放到本地"><a href="#远程库工程放到本地" class="headerlink" title="远程库工程放到本地"></a>远程库工程放到本地</h2><h3 id="高版本操作"><a href="#高版本操作" class="headerlink" title="高版本操作"></a>高版本操作</h3><ul>
+<li>import 导入工程</li>
+<li>git/projects from git</li>
+<li>clone url</li>
+<li>Destination 选择eclipse工作区目录</li>
+<li>import as general project</li>
+</ul>
+<h3 id="低版本操作"><a href="#低版本操作" class="headerlink" title="低版本操作"></a>低版本操作</h3><ul>
+<li>前面的都一样，不能导入到当前工作区目录，只能导到工作区以外的目录中</li>
+<li>Destination 非eclipse工作区目录</li>
+<li>之后的步骤相同</li>
+</ul>
+<h2 id="eclipse-解决冲突"><a href="#eclipse-解决冲突" class="headerlink" title="eclipse 解决冲突"></a>eclipse 解决冲突</h2><ul>
+<li>各自提交到本地库没问题</li>
+<li>如果推送到同一远程库，后推送会出现冲突</li>
+<li>同样的先pull文件之后处理冲突，也可以用merge tool查看多文件区别</li>
+<li>处理好后正常推送远程库即可</li>
+</ul>
+<h2 id="eclipse创建or切换分支"><a href="#eclipse创建or切换分支" class="headerlink" title="eclipse创建or切换分支"></a>eclipse创建or切换分支</h2><ul>
+<li>Team</li>
+<li>switch to </li>
+<li>New branch or other</li>
+</ul>
+<h1 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h1><h2 id="集中式工作流"><a href="#集中式工作流" class="headerlink" title="集中式工作流"></a>集中式工作流</h2><ul>
+<li>类SVN无分支</li>
+</ul>
+<h2 id="gitflow工作流"><a href="#gitflow工作流" class="headerlink" title="gitflow工作流"></a>gitflow工作流</h2><ul>
+<li>新功能开发在master下的develop分支上进行</li>
+<li>develop下还有feature_XX等分支负责具体功能开发</li>
+<li>bug在master下hotfix下进行修复并且修复后尽快合并会master分支和develop分支</li>
+<li>上线前进行最后测试需要建立一个release分支测试。</li>
+<li>将develop分支合并至release上且有bug直接修复</li>
+<li>上线时合并到master分支上和develop分支上</li>
+</ul>
+<h2 id="froking工作流"><a href="#froking工作流" class="headerlink" title="froking工作流"></a>froking工作流</h2><ul>
+<li>常用于项目外人员开发</li>
+</ul>
+<h1 id="gitlab-服务操作"><a href="#gitlab-服务操作" class="headerlink" title="gitlab 服务操作"></a>gitlab 服务操作</h1><ul>
+<li>初始化gitlab<ul>
+<li>gitlab-ctl reconfigure</li>
+</ul>
+</li>
+<li>启动gitlab<ul>
+<li>gitlab-ctl start</li>
+</ul>
+</li>
+<li>停止gitlab<ul>
+<li>gitlab-ctl stop</li>
+</ul>
+</li>
+</ul>
+<h1 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h1><ul>
+<li>可能需要停掉防火墙<ul>
+<li>service firewall stop </li>
+</ul>
+</li>
+<li>gitlab设置密码</li>
+<li>之后类似github操作 </li>
 </ul>
 
       
@@ -762,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支操作"><span class="nav-number">1.</span> <span class="nav-text">分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#合并分支"><span class="nav-number">1.1.</span> <span class="nav-text">合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生冲突"><span class="nav-number">1.1.1.</span> <span class="nav-text">产生冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希"><span class="nav-number">2.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与git关联"><span class="nav-number">2.3.</span> <span class="nav-text">与git关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-与-svn-区别"><span class="nav-number">3.</span> <span class="nav-text">git 与 svn 区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-如何管理分支"><span class="nav-number">4.</span> <span class="nav-text">git 如何管理分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推送"><span class="nav-number">6.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#克隆"><span class="nav-number">7.</span> <span class="nav-text">克隆</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支操作"><span class="nav-number">1.</span> <span class="nav-text">分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#合并分支"><span class="nav-number">1.1.</span> <span class="nav-text">合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生冲突"><span class="nav-number">1.1.1.</span> <span class="nav-text">产生冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希"><span class="nav-number">2.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与git关联"><span class="nav-number">2.3.</span> <span class="nav-text">与git关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-与-svn-区别"><span class="nav-number">3.</span> <span class="nav-text">git 与 svn 区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-如何管理分支"><span class="nav-number">4.</span> <span class="nav-text">git 如何管理分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推送"><span class="nav-number">6.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#克隆"><span class="nav-number">7.</span> <span class="nav-text">克隆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pull拉取"><span class="nav-number">8.</span> <span class="nav-text">pull拉取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pull文件冲突"><span class="nav-number">9.</span> <span class="nav-text">pull文件冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨团队协作"><span class="nav-number">10.</span> <span class="nav-text">跨团队协作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH登录"><span class="nav-number">11.</span> <span class="nav-text">SSH登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git的图形界面"><span class="nav-number">12.</span> <span class="nav-text">git的图形界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eclipse-操作"><span class="nav-number">13.</span> <span class="nav-text">eclipse 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为项目初始化git"><span class="nav-number">13.1.</span> <span class="nav-text">为项目初始化git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为项目提交"><span class="nav-number">13.2.</span> <span class="nav-text">为项目提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的忽略文件"><span class="nav-number">13.3.</span> <span class="nav-text">git的忽略文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-项目提交"><span class="nav-number">13.4.</span> <span class="nav-text">eclipse 项目提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse推送到远程库"><span class="nav-number">13.5.</span> <span class="nav-text">eclipse推送到远程库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程库工程放到本地"><span class="nav-number">13.6.</span> <span class="nav-text">远程库工程放到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高版本操作"><span class="nav-number">13.6.1.</span> <span class="nav-text">高版本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#低版本操作"><span class="nav-number">13.6.2.</span> <span class="nav-text">低版本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-解决冲突"><span class="nav-number">13.7.</span> <span class="nav-text">eclipse 解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse创建or切换分支"><span class="nav-number">13.8.</span> <span class="nav-text">eclipse创建or切换分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git工作流"><span class="nav-number">14.</span> <span class="nav-text">git工作流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中式工作流"><span class="nav-number">14.1.</span> <span class="nav-text">集中式工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitflow工作流"><span class="nav-number">14.2.</span> <span class="nav-text">gitflow工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#froking工作流"><span class="nav-number">14.3.</span> <span class="nav-text">froking工作流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-服务操作"><span class="nav-number">15.</span> <span class="nav-text">gitlab 服务操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器访问"><span class="nav-number">16.</span> <span class="nav-text">浏览器访问</span></a></li></ol></div>
             
 
           </div>
