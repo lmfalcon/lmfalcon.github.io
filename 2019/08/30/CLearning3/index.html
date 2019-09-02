@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="跨平台执行C int是整数类型便于跨平台执行">
+  <meta name="description" content="跨平台执行C int是整数类型便于跨平台执行  linuxC文件 gcc helloc.c    生成a.out文件 ./a.out        执行a.out文件 用vi可以直接执行并生成helloc的可执行文件用    ./helloc可以直接执行  cpp文件 g++ cpp.cc(c++的源文件.cc为后缀感觉好像和windows不一样啊) -o cpp.out ./cpp.out  e">
 <meta name="keywords" content="C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CLearning3">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/CLearning3/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="跨平台执行C int是整数类型便于跨平台执行">
+<meta property="og:description" content="跨平台执行C int是整数类型便于跨平台执行  linuxC文件 gcc helloc.c    生成a.out文件 ./a.out        执行a.out文件 用vi可以直接执行并生成helloc的可执行文件用    ./helloc可以直接执行  cpp文件 g++ cpp.cc(c++的源文件.cc为后缀感觉好像和windows不一样啊) -o cpp.out ./cpp.out  e">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T08:31:20.952Z">
+<meta property="og:updated_time" content="2019-09-01T06:39:43.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CLearning3">
-<meta name="twitter:description" content="跨平台执行C int是整数类型便于跨平台执行">
+<meta name="twitter:description" content="跨平台执行C int是整数类型便于跨平台执行  linuxC文件 gcc helloc.c    生成a.out文件 ./a.out        执行a.out文件 用vi可以直接执行并生成helloc的可执行文件用    ./helloc可以直接执行  cpp文件 g++ cpp.cc(c++的源文件.cc为后缀感觉好像和windows不一样啊) -o cpp.out ./cpp.out  e">
 
 
 
@@ -387,13 +387,23 @@
                 
               
 
-              <time title="Created: 2019-08-30 15:55:01 / Modified: 16:31:20" itemprop="dateCreated datePublished" datetime="2019-08-30T15:55:01+08:00">2019-08-30</time>
+              <time title="Created: 2019-08-30 15:55:01" itemprop="dateCreated datePublished" datetime="2019-08-30T15:55:01+08:00">2019-08-30</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-01 14:39:43" itemprop="dateModified" datetime="2019-09-01T14:39:43+08:00">2019-09-01</time>
+              </span>
             
           
 
@@ -434,6 +444,34 @@
         <h1 id="跨平台执行C"><a href="#跨平台执行C" class="headerlink" title="跨平台执行C"></a>跨平台执行C</h1><ul>
 <li>int是整数类型便于跨平台执行</li>
 </ul>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="C文件"><a href="#C文件" class="headerlink" title="C文件"></a>C文件</h3><ul>
+<li>gcc helloc.c    生成a.out文件</li>
+<li>./a.out        执行a.out文件</li>
+<li>用vi可以直接执行并生成helloc的可执行文件用    ./helloc可以直接执行</li>
+</ul>
+<h3 id="cpp文件"><a href="#cpp文件" class="headerlink" title="cpp文件"></a>cpp文件</h3><ul>
+<li>g++ cpp.cc(c++的源文件.cc为后缀感觉好像和windows不一样啊) -o cpp.out</li>
+<li>./cpp.out</li>
+</ul>
+<h3 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h3><ul>
+<li>linux建议上使用</li>
+</ul>
+<h3 id="codeblocks"><a href="#codeblocks" class="headerlink" title="codeblocks"></a>codeblocks</h3><ul>
+<li>linux上建议使用</li>
+</ul>
+<h3 id="Qt"><a href="#Qt" class="headerlink" title="Qt"></a>Qt</h3><ul>
+<li>可以多平台运行，找到了linux版的但是./***.run文件打不开，下次尝试安装，现在windows下运行吧</li>
+<li>android下运行C<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;android/log.h&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	__android_log-print(ANROID_LOGDEBUG,&quot;itcast&quot;,&quot;输入你想输入内容&quot;);	//输出调试信息 itcast是头</span><br><span class="line">	return 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="android开发"><a href="#android开发" class="headerlink" title="android开发"></a>android开发</h2><ul>
+<li>先编写一个hello.c文件</li>
+<li>之后编写Android.mk文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH := $(call my-dir)</span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line">LOCAL_MODULE := hello</span><br><span class="line">LOCAL_SRC_FILES := hello.c</span><br><span class="line">LOCAL_LDLIBS	:= -1log</span><br><span class="line">include $(BULID_EXECUABLE)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>….不写了，没工具</p>
 
       
     </div>
@@ -486,6 +524,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/01/CLearning4/" rel="prev" title="CLearning4">
+                CLearning4 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -557,7 +599,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -616,7 +658,9 @@
         
           
         
-        <span class="site-state-item-count">20</span>
+          
+        
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -677,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨平台执行C"><span class="nav-number">1.</span> <span class="nav-text">跨平台执行C</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨平台执行C"><span class="nav-number">1.</span> <span class="nav-text">跨平台执行C</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux"><span class="nav-number">1.1.</span> <span class="nav-text">linux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C文件"><span class="nav-number">1.1.1.</span> <span class="nav-text">C文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cpp文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">cpp文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eclipse"><span class="nav-number">1.1.3.</span> <span class="nav-text">eclipse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#codeblocks"><span class="nav-number">1.1.4.</span> <span class="nav-text">codeblocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qt"><span class="nav-number">1.1.5.</span> <span class="nav-text">Qt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android开发"><span class="nav-number">1.2.</span> <span class="nav-text">android开发</span></a></li></ol></li></ol></div>
             
 
           </div>
