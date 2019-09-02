@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="markdown-preview 折腾了很久发现可以用了，但是还是有一些问题 只能在root命令下使用">
-<meta name="keywords" content="plugin,vim">
+  <meta name="description" content="markdown-preview插件系列 折腾了很久发现可以用了，但是还是有一些问题  只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog 不能进入报错，某个rpc的依赖插件打不开   解决方案  换个插件  安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg  发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是">
+<meta name="keywords" content="plugin,vim,vim-plug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim-plug2">
 <meta property="og:url" content="http://yoursite.com/2019/09/02/vim-plug2/index.html">
 <meta property="og:site_name" content="lmblog(hexo)">
-<meta property="og:description" content="markdown-preview 折腾了很久发现可以用了，但是还是有一些问题 只能在root命令下使用">
+<meta property="og:description" content="markdown-preview插件系列 折腾了很久发现可以用了，但是还是有一些问题  只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog 不能进入报错，某个rpc的依赖插件打不开   解决方案  换个插件  安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg  发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-02T16:59:04.017Z">
+<meta property="og:updated_time" content="2019-09-02T17:38:41.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim-plug2">
-<meta name="twitter:description" content="markdown-preview 折腾了很久发现可以用了，但是还是有一些问题 只能在root命令下使用">
+<meta name="twitter:description" content="markdown-preview插件系列 折腾了很久发现可以用了，但是还是有一些问题  只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog 不能进入报错，某个rpc的依赖插件打不开   解决方案  换个插件  安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg  发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是">
 
 
 
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-03 00:59:04" itemprop="dateModified" datetime="2019-09-03T00:59:04+08:00">2019-09-03</time>
+                <time title="Modified: 2019-09-03 01:38:41" itemprop="dateModified" datetime="2019-09-03T01:38:41+08:00">2019-09-03</time>
               </span>
             
           
@@ -441,9 +441,51 @@
       
 
       
-        <h1 id="markdown-preview"><a href="#markdown-preview" class="headerlink" title="markdown-preview"></a>markdown-preview</h1><ul>
-<li>折腾了很久发现可以用了，但是还是有一些问题<ol>
-<li>只能在root命令下使用</li>
+        <h1 id="markdown-preview插件系列"><a href="#markdown-preview插件系列" class="headerlink" title="markdown-preview插件系列"></a>markdown-preview插件系列</h1><ul>
+<li><p>折腾了很久发现可以用了，但是还是有一些问题</p>
+<ol>
+<li>只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog</li>
+<li>不能进入报错，某个rpc的依赖插件打不开</li>
+</ol>
+</li>
+<li><p>解决方案</p>
+<ol>
+<li><p>换个插件</p>
+</li>
+<li><p>安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg</p>
+</li>
+<li><p>发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是这些插件打开浏览器firefox是我登录用户的，所以打不开。</p>
+</li>
+<li><p>当然我尝试了以下直接用firefox打开markdown，firefox安装了markdown文件的显示插件和自动重载页面，代码如下（改的vimrc文件）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;t :call Preview() &lt;CR&gt;</span><br><span class="line">func! Preview()</span><br><span class="line">	if &amp;filetype == &apos;markdown&apos; ||  &amp;filetype == &apos;md&apos;</span><br><span class="line">		exec &quot;firefox %&quot;</span><br><span class="line">	endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行报错Running Firefox as root in a regular user’s session is not supported。我估计那两个插件没有料到我会遇到这样的问题，毕竟是浏览器打不开插件运行是正常的。</p>
+</li>
+<li><p>只能改掉blog目录下所有文件的拥有者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R 我的用户名 blog目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新进入可以使用了，一切恢复正常</p>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="vim-plug插件管理器问题"><a href="#vim-plug插件管理器问题" class="headerlink" title="vim-plug插件管理器问题"></a>vim-plug插件管理器问题</h1><ul>
+<li><p>大部分插件是可以直接安装的但是第一次安装失败后退出安装界面，再进入就显示安装完成了</p>
+</li>
+<li><p>怀疑是不是只检测是否有这个文件目录就算安装了插件</p>
+</li>
+<li><p>解决办法</p>
+<ol>
+<li><p>最有效的方式是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">删除或者注释掉.vimrc中未安装成功的插件相关的内容</span><br><span class="line">执行:PlugClean清除插件（可能清除失败，目录没删掉）</span><br><span class="line">因为我用的是vim所以目录为~/.vim/plugged/中，删掉文件夹即可</span><br><span class="line">之后重新安装依赖或者重新安装</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接找到依赖包安装，说不定插件是安装好的只是少依赖再或者就如markdown-preview中的问题，插件安装成功依赖也是完整的，只是用户组问题这样的bug插件本身无法检测也无任何报错导致插件打不开。（文档读着都累，而且markdown-preview还不知道怎么查文档的我，一步步慢慢试水分析原因浪费了大量时间）</p>
+</li>
+<li><p>依赖安装不成功很可能是依赖的环境变量没有设置好或者只是局部变量没办法在全局引用中查找到（所以安装中 -g 很重要）。再或者就是我之前的问题root用户和自己的用户在vim中未作区分，导致有些无法执行。有些就算区分了在vim中也没办法执行,下面的方法我用了之后可以在vim中使用firefox了，但是对插件你仍不知道去哪里改插件问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;t :call Preview() &lt;CR&gt;</span><br><span class="line">func! Preview()</span><br><span class="line">	if &amp;filetype == &apos;markdown&apos; ||  &amp;filetype == &apos;md&apos;</span><br><span class="line">		exec &quot;!sudo -u lmfalcon firefox %&quot;</span><br><span class="line">	endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ol>
 </li>
 </ul>
@@ -477,7 +519,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/plugin-vim/" rel="tag"># plugin,vim</a>
+            <a href="/tags/plugin-vim-vim-plug/" rel="tag"># plugin,vim,vim-plug</a>
           
         </div>
       
@@ -499,6 +541,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/03/aboutthexonew/" rel="prev" title="aboutthehexonew">
+                aboutthehexonew <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -570,7 +616,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -692,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview"><span class="nav-number">1.</span> <span class="nav-text">markdown-preview</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview插件系列"><span class="nav-number">1.</span> <span class="nav-text">markdown-preview插件系列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-plug插件管理器问题"><span class="nav-number">2.</span> <span class="nav-text">vim-plug插件管理器问题</span></a></li></ol></div>
             
 
           </div>
