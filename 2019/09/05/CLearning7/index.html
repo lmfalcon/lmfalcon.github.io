@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="lmblog(hexo)">
 <meta property="og:description" content="bool类型 C++有bool类型的变量，C语言没有。 C中bool类型可以用char和int类型代替  块语句 用大括号包起来的语句块 C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量 同一块语句中变量不能重名  算法表示 伪代码法 算法不能有二义性   流程图法 起止框                椭圆形 输入输出框            平行四边形 处理">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-05T16:46:05.113Z">
+<meta property="og:updated_time" content="2019-09-07T13:19:11.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CLearning7">
 <meta name="twitter:description" content="bool类型 C++有bool类型的变量，C语言没有。 C中bool类型可以用char和int类型代替  块语句 用大括号包起来的语句块 C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量 同一块语句中变量不能重名  算法表示 伪代码法 算法不能有二义性   流程图法 起止框                椭圆形 输入输出框            平行四边形 处理">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-06 00:46:05" itemprop="dateModified" datetime="2019-09-06T00:46:05+08:00">2019-09-06</time>
+                <time title="Modified: 2019-09-07 21:19:11" itemprop="dateModified" datetime="2019-09-07T21:19:11+08:00">2019-09-07</time>
               </span>
             
           
@@ -467,11 +467,33 @@
 </ul>
 <h1 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h1><ul>
 <li><p>分治思想</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;windows&gt;</span><br><span class="line"></span><br><span class="line">void openBaidu()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;http://www.baidu.com&quot;,0)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void closeBaidu()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im iexplore.exe&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void clickBaidu()&#123;</span><br><span class="line">	SetCursorPos(40,40);	//设置鼠标位置</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	while(1)&#123;</span><br><span class="line">		openBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		clickBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		closeBaidu();</span><br><span class="line">		Sleep(1000);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openBaidu()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;http://www.baidu.com&quot;,0)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void closeBaidu()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im iexplore.exe&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void clickBaidu()&#123;</span><br><span class="line">	SetCursorPos(40,40);	//设置鼠标位置</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	while(1)&#123;</span><br><span class="line">		openBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		clickBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		closeBaidu();</span><br><span class="line">		Sleep(1000);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过不同的函数实现不同的功能，面向对象是对分治最好的体现。</p>
 </li>
 </ul>
+<h1 id="windows输入输出"><a href="#windows输入输出" class="headerlink" title="windows输入输出"></a>windows输入输出</h1><ul>
+<li>cmd中切换到操作目录</li>
+<li>ipconfig&lt;0.txt&gt;10.txt</li>
+<li>上一步操作会将0.txt中的操作输入到ipconfig中（实际上没有做任何事）之后将ipconfig中的内容输入到10.txt中</li>
+<li>在windows做这个操作会会覆盖之前的文档内容，Ubuntu中只是添加内容。</li>
+<li>ubuntu的命令行操作不同例如查询ip：ifconfig&gt;&gt;10.txt</li>
+</ul>
+<h1 id="if选择分支结构"><a href="#if选择分支结构" class="headerlink" title="if选择分支结构"></a>if选择分支结构</h1><ul>
+<li>可以嵌套，但是还是容易乱建议减少嵌套，而是单独设计函数，这样简介清晰</li>
+<li>if else嵌套时注意一定要配套，不要漏写，多写。</li>
+</ul>
+<h1 id="switch-case多分支选择语句"><a href="#switch-case多分支选择语句" class="headerlink" title="switch case多分支选择语句"></a>switch case多分支选择语句</h1><ul>
+<li>case 后的常量值不能重合</li>
+<li>多个case可以共用一个语句块</li>
+<li>default分支不限定在最后，内部任何分支没有先后顺序。</li>
+<li>case相当一个开关，如果不加break会一直执行下去。</li>
+<li>不加break说明你希望连续执行多个分支</li>
+<li>switch语句一般用于处理枚举类型数据</li>
+<li>switch的表达式只能是整数或者字符，只能用于处理常量（因为case中只能是常量，只能判断相等）</li>
+</ul>
+<h1 id="循环实现移动窗口"><a href="#循环实现移动窗口" class="headerlink" title="循环实现移动窗口"></a>循环实现移动窗口</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#incldue&lt;Windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openQQ()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;\&quot;C:\\Program File (x86)\\Tencent\\QQ....QQ的位置&quot;,0,0,1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void moveQQ()&#123;</span><br><span class="line">	HWND win = FindWindowA(&quot;TXGuiFoundation&quot;,&quot;QQ2013&quot;);		//HWND QQ窗口编号</span><br><span class="line">	//FindWindowA根据类名和标题寻找窗口</span><br><span class="line">	if(win == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;QQ失踪&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	int y =0;</span><br><span class="line">	while(i &lt; 900)</span><br><span class="line">	&#123;</span><br><span class="line">		SetWindowPos(win,NULL,y*16/9,y,400,400,0);	//设置窗口大小，以及窗口位置</span><br><span class="line">		Sleep(50)</span><br><span class="line">		y += 10;</span><br><span class="line">		if(y/10%2==1)&#123;</span><br><span class="line">			ShowWindow(win,SW_HIDE);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			ShowWindow(win,SW_SHOW);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void main()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im QQ.exe);</span><br><span class="line">	openQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	moveQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -524,6 +546,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/07/CLearning8/" rel="prev" title="CLearning8">
+                CLearning8 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -595,7 +621,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -658,7 +684,9 @@
         
           
         
-        <span class="site-state-item-count">22</span>
+          
+        
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -719,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bool类型"><span class="nav-number">1.</span> <span class="nav-text">bool类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块语句"><span class="nav-number">2.</span> <span class="nav-text">块语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法表示"><span class="nav-number">3.</span> <span class="nav-text">算法表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构化程序设计"><span class="nav-number">4.</span> <span class="nav-text">结构化程序设计</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bool类型"><span class="nav-number">1.</span> <span class="nav-text">bool类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块语句"><span class="nav-number">2.</span> <span class="nav-text">块语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法表示"><span class="nav-number">3.</span> <span class="nav-text">算法表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构化程序设计"><span class="nav-number">4.</span> <span class="nav-text">结构化程序设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows输入输出"><span class="nav-number">5.</span> <span class="nav-text">windows输入输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if选择分支结构"><span class="nav-number">6.</span> <span class="nav-text">if选择分支结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch-case多分支选择语句"><span class="nav-number">7.</span> <span class="nav-text">switch case多分支选择语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环实现移动窗口"><span class="nav-number">8.</span> <span class="nav-text">循环实现移动窗口</span></a></li></ol></div>
             
 
           </div>
