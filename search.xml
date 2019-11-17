@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>network4</title>
+      <link href="/2019/11/17/network4/"/>
+      <url>/2019/11/17/network4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="缩写及一些单词简介"><a href="#缩写及一些单词简介" class="headerlink" title="缩写及一些单词简介"></a>缩写及一些单词简介</h1><ul><li>WAN(Wide Area Network)</li><li>LAN(Local Area Network)</li><li>TSS(Time Sharing System)分时系统</li><li>www (World Wide Web)</li><li>IPX(Internet Work Packet Exchange)因特网包交换</li><li>SPX(Sequenced Packet Exchange)序列包交换</li><li>ISO(International Organization for Standard)国际标准化组织</li><li>OSI(Open System Interconnection)开放系统互连</li><li>IETF(Internet Engineering Task force)因特网工程部</li><li>protocol 协议</li><li>MAC(Media Access Control)介质访问控制</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linuxbasic7</title>
+      <link href="/2019/11/17/linuxbasic7/"/>
+      <url>/2019/11/17/linuxbasic7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="jobs命令"><a href="#jobs命令" class="headerlink" title="jobs命令"></a>jobs命令</h1><ul><li>可以查看ctrl + z 暂停的命令</li><li>可以在将运行中的程序同过ctrl + c 退出</li><li>可以通过fg or bg 将暂停的程序唤醒，需输入对应暂停程序的序列号</li><li>注意在i3中暂停的程序在任何窗口都不能使用，因为i3可能将所有窗口默认为一个桌面</li></ul><h1 id="程序运行"><a href="#程序运行" class="headerlink" title="程序运行"></a>程序运行</h1><ul><li>程序名 &amp; 可以将程序放置在后台运行</li><li>例如 firefox &amp; 会打开火狐浏览器并创建进程号，且此时可以将命令行的窗口关闭不影响浏览器的正常运行</li><li>当一个i3的窗口暂停了firefox 后通过bg 再唤起，此时在别的窗口可以直接打开firefox，也会出现一个 firefox &amp;，bg 表明程序在后台运行</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>i3wm</title>
+      <link href="/2019/11/17/i3wm/"/>
+      <url>/2019/11/17/i3wm/</url>
+      
+        <content type="html"><![CDATA[<h1 id="i3的基本使用"><a href="#i3的基本使用" class="headerlink" title="i3的基本使用"></a>i3的基本使用</h1><ul><li>i3的配置文件在~/.config/i3/config 中记不得使用方式可以直接查询</li><li>mod键默认设置为super键</li><li>mod + Enter 打开命令行</li><li>mod + Shift + q 退出窗口</li><li>mod + 数字 切换/不存在时生成 不同窗口</li><li>mod + Shift + 数字 切换程序到不同的窗口</li><li>mod + r 调整窗口的大小</li><li>mod + hjkl 调整需使用窗口，也可以通过方向键调整</li><li>mod + d 小命令行，不显示运行结果但是可以执行命令，还可以提示当前系统有什么命令可以执行</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> i3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python</title>
+      <link href="/2019/11/17/python/"/>
+      <url>/2019/11/17/python/</url>
+      
+        <content type="html"><![CDATA[<p># </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network3</title>
+      <link href="/2019/09/15/network3/"/>
+      <url>/2019/09/15/network3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="信道类型"><a href="#信道类型" class="headerlink" title="信道类型"></a>信道类型</h3><ul><li>点到点信道</li><li>广播信道</li></ul><h3 id="链路和数据链路"><a href="#链路和数据链路" class="headerlink" title="链路和数据链路"></a>链路和数据链路</h3><h4 id="链路"><a href="#链路" class="headerlink" title="链路"></a>链路</h4><ul><li>点到点的物理路线段，中间没有任何点</li><li>一条链路是一条通路的组成部分</li></ul><h4 id="数据链路"><a href="#数据链路" class="headerlink" title="数据链路"></a>数据链路</h4><ul><li>除了物理路线外，还必须有通信协议来控制这些数据的传输。若把实现这些协议的硬件软件加到链路上，就构成了数据链路。</li><li>最常用的方法就是用适配器（网卡），来协调软硬件</li><li>一般适配器都包含数据链路层和物理层</li></ul><h3 id="传输内容"><a href="#传输内容" class="headerlink" title="传输内容"></a>传输内容</h3><ul><li>帧</li><li>将网络层的数据装入帧，分为帧的开始和帧的结束。</li></ul><h2 id="三个基本问题"><a href="#三个基本问题" class="headerlink" title="三个基本问题"></a>三个基本问题</h2><h3 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h3><ul><li>IP数据报分成帧的数据部分最大不能超过MTU（一般1500字节）</li><li>然后两头加上帧首部（SOH）和帧尾部(EOT)</li><li>帧首部开始发送，到帧尾部结束，整个构成数据链路层的帧长</li><li>必须头尾都收到否则不算完整帧丢弃</li></ul><h3 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h3><ul><li>如传输ASCII码中不会出问题</li><li>如传输数据不光可打印字符，可能出现帧首部和帧尾部的二进制表示，导致真正的帧首部或尾部被丢弃，造成数据帧传输错误。</li><li>所以如果出现上面的情况一般会在数据中的相同表示前加上转义字符通常是ESC，进行完字符填充一般不会出错。</li><li>如有ESC则需再加个ESC进行转义。</li><li>以上整个过程对于实际使用者是透明的，自动进行。</li></ul><h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><ul><li>误码率(BER)：在一段时间内，传输错误的比特占所传输总比特的比率</li><li>误码率与信噪比有关<h4 id="循环冗余检验-CRC"><a href="#循环冗余检验-CRC" class="headerlink" title="循环冗余检验(CRC)"></a>循环冗余检验(CRC)</h4></li><li>用于差错控制</li><li>用到二进制的除法</li><li>除数位数n，余数位数为n-1。所以要在被除数后补n-1位</li><li>除数越大这个方法越可靠<h4 id="帧检验序列（FCS）"><a href="#帧检验序列（FCS）" class="headerlink" title="帧检验序列（FCS）"></a>帧检验序列（FCS）</h4></li><li>定义：在数据后面添加上的冗余码</li><li>CRC算出来的内容</li></ul><h2 id="两种情况下使用数据链路层"><a href="#两种情况下使用数据链路层" class="headerlink" title="两种情况下使用数据链路层"></a>两种情况下使用数据链路层</h2><h3 id="使用点对点"><a href="#使用点对点" class="headerlink" title="使用点对点"></a>使用点对点</h3><h4 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h4><ul><li>简单，封装成帧</li><li>透明性</li><li>多层网络协议</li><li>多种类型链路</li><li>差错检测</li><li>检测连接状态</li><li>最大传送单元</li><li>网络层地址协商</li><li>数据压缩协商<h5 id="PPP协议帧格式"><a href="#PPP协议帧格式" class="headerlink" title="PPP协议帧格式"></a>PPP协议帧格式</h5></li></ul><p>F　　A　　 C 　协议　　　  信息部分　　　　　FCS　　　Ｆ </p><p>7E　FF　　03　　　　　　　　　　　　　  　　　　　　　7E</p><p>1　　１　　１　　２　不超过１５００字节　　　２　　　　１　　　　　　　　　</p><ul><li>FAC协议为首部</li><li>FCSF为尾部</li><li>协议用来表示信息部分的内容</li><li>信息部分出现7E进行拆分保证透明性<ul><li>7E变7D和5E的方式进行字节填充</li><li>零比特填充方法次；‘’；；中间插入一个0</li></ul></li></ul><h3 id="使用广播信道"><a href="#使用广播信道" class="headerlink" title="使用广播信道"></a>使用广播信道</h3><h2 id="以太局域网"><a href="#以太局域网" class="headerlink" title="以太局域网"></a>以太局域网</h2><h2 id="扩展以太网"><a href="#扩展以太网" class="headerlink" title="扩展以太网"></a>扩展以太网</h2><h2 id="高速以太网"><a href="#高速以太网" class="headerlink" title="高速以太网"></a>高速以太网</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network2</title>
       <link href="/2019/09/15/network2/"/>
       <url>/2019/09/15/network2/</url>
@@ -644,7 +739,7 @@
     
     
     <entry>
-      <title>linuxbasic3</title>
+      <title>linuxbasic4</title>
       <link href="/2019/07/27/linuxbasic4/"/>
       <url>/2019/07/27/linuxbasic4/</url>
       
