@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>hexo_test</title>
+      <link href="/2020/11/12/hexo-test/"/>
+      <url>/2020/11/12/hexo-test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="重新使用hexo写技术blog"><a href="#重新使用hexo写技术blog" class="headerlink" title="重新使用hexo写技术blog"></a>重新使用hexo写技术blog</h1><p>已经有一年没有用hexo，linux，vim，很多原来很熟悉的操作现在已经忘记了。未来不知道什么时候可能也会放弃这个工具。但是现在又想用回来记录一些东西，所谓熟能生巧，第二遍使用会比第一遍学习来得更快，当然这是没有更新的前提下。</p><hr><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>首先还是hexo</p><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><ul><li>hexo new 文件名，之后文件名也是你的文章名。</li><li>hexo在～目录下的blog文件夹内，文章在~/blog/source/_posts中。</li><li>hexo g 生成静态文件不过没试过</li><li>hexo d 是部署</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo,blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network4</title>
       <link href="/2019/11/17/network4/"/>
       <url>/2019/11/17/network4/</url>
