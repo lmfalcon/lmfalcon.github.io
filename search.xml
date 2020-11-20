@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ubuntu_arm64_mirrors_change</title>
+      <link href="/2020/11/20/ubuntu-arm64-mirrors-change/"/>
+      <url>/2020/11/20/ubuntu-arm64-mirrors-change/</url>
+      
+        <content type="html"><![CDATA[<h1 id="在树莓派上安装Ubuntu系统"><a href="#在树莓派上安装Ubuntu系统" class="headerlink" title="在树莓派上安装Ubuntu系统"></a>在树莓派上安装Ubuntu系统</h1><p>1.找到适合的系统，我用的是树莓派4B8G内存版本，所以使用的树莓派系统是arm64<br>2.建议直接在镜像源网站上找到对应的系统下载，官网下载太慢了<br>3.SD卡用老板给的格式化软件格式化，再用老板给的烧录软件烧录镜像文件进SD卡<br>4.发现可以开机了<br>5.装好之后要改变系统源和软件源</p><h1 id="系统源和软件源设置"><a href="#系统源和软件源设置" class="headerlink" title="系统源和软件源设置"></a>系统源和软件源设置</h1><p>首先找到一个镜像网站一般是mirrors.XXXX.xxx<br>其次命令行进入/etc/apt/找到sources.list文件。建议用sudo su 进入管理员模式编辑，vi 打开文件参照底下原有配置更改，一般是deb <a href="https://mirrors.XXX.xxx/ubuntu-ports/" target="_blank" rel="noopener">https://mirrors.XXX.xxx/ubuntu-ports/</a> groovy（我的是这个不同的系统不同，需要参照原文件底下内容进行更改。arm64 系统的源在ubuntu-ports文件目录下。如果用ubuntu目录会报错未发现arm64。按照网上的方案复制进来即可，对应进行修改。<br>最后修改完成sudo apt-get update 和 sudo apt-get upgrade 升级系统更新软件源系统源。</p><h1 id="豆制品、茄子、莴笋、鱼、蛋类感觉都是我爱吃的，在吃上差别有些大。-gt-lt-以后点菜要注意了。"><a href="#豆制品、茄子、莴笋、鱼、蛋类感觉都是我爱吃的，在吃上差别有些大。-gt-lt-以后点菜要注意了。" class="headerlink" title="豆制品、茄子、莴笋、鱼、蛋类感觉都是我爱吃的，在吃上差别有些大。(&gt;/\&lt;)!!以后点菜要注意了。"></a>豆制品、茄子、莴笋、鱼、蛋类感觉都是我爱吃的，在吃上差别有些大。(&gt;/\&lt;)!!以后点菜要注意了。</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ubuntu,mirror,arm64 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pythonbasic1</title>
       <link href="/2020/11/15/pythonbasic1/"/>
       <url>/2020/11/15/pythonbasic1/</url>
