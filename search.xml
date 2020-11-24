@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>python1.md</title>
+      <link href="/2020/11/24/python1-md/"/>
+      <url>/2020/11/24/python1-md/</url>
+      
+        <content type="html"><![CDATA[<h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><h2 id="创建元组"><a href="#创建元组" class="headerlink" title="创建元组"></a>创建元组</h2><p>tuple1 = () ＃小括号创建一个新的元组</p><p>tuple1 = (‘abc’,1,4,4,56,7,[1,2,’asdf’],(1,2))</p><p>#注意创建一个元素的元组时必须加逗号</p><p>tuple2 = (1,)</p><p>list1 = [1,2,3,4,5]</p><p>tuple(list1) #进行强制类型转换</p><h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p>len(tuple1)</p><p>tuple1[3] #索引查找元素<br>tuple1[-2] #可以通过索引寻找元素，但是没法通过索引对元素进行修改</p><p>tuple1[1:3] #切片<br>tuple1[5:3:-1] #倒切片</p><p>tuple1+tuple2  #连接两个元组</p><p>tuple1*3 #复制</p><p>tuple2[0] = 1<br>del tuple[0]  #元组元素不能修改和删除</p><p>del tuple1 #可以删除元组</p><p>max(tuple1)<br>min(tuple1) #取最大最小值</p><p>tuple1.count(6) #对元组内元素进行计数</p><h2 id="学习问题"><a href="#学习问题" class="headerlink" title="学习问题"></a>学习问题</h2><p>感觉这套课程缺乏使用实例，比如元组有啥用，怎么用，可能后面会介绍，可能一直不会介绍。不过我百度找到了</p><h2 id="元组的用途"><a href="#元组的用途" class="headerlink" title="元组的用途"></a>元组的用途</h2><p>元组比列表的操作速度快<br>如果定义的数据是常量可以使用元组<br>元组不可变，可以作为字典的键(key)</p><h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="集合的定义"><a href="#集合的定义" class="headerlink" title="集合的定义"></a>集合的定义</h2><p>集合是无序的，所以无索引，<br>集合元素是不重复的，可以使用集合对列表进行去重操作</p><h2 id="集合基本操作"><a href="#集合基本操作" class="headerlink" title="集合基本操作"></a>集合基本操作</h2><p>set1 = {} #空集合</p><p>set2 = set([1,2,3,4])</p><p>type(set1)</p><p>set1.add(60) #集合中加元素</p><p>set2.update(set1) #将set1加入至set2中</p><p>set1.remove(6) #将6从集合中删除</p><h2 id="集合的运算"><a href="#集合的运算" class="headerlink" title="集合的运算"></a>集合的运算</h2><p>set1-set2 #集合的差集</p><p>set1 | set2 #集合的并集</p><p>set1 &amp; set2 #集合的交集</p><p>set1 ^ set2 #返回只被set1包含或者只被set2 包含的元素集合</p><p>set1 &gt; set2 #如果set1真包含set2,返回true,否则返回false</p><h2 id="集合的常用操作"><a href="#集合的常用操作" class="headerlink" title="集合的常用操作"></a>集合的常用操作</h2><p>list(set([1,1,1,2,2,4,5,6])) #列表去重</p><h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>突然想到芋圆好像是爱吃四季豆，爱吃辣，对于海鲜好像也比较喜欢，感觉好像对肉类都可以接受(最近不爱吃鱼）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python,datastructure </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu_arm64_mirrors_change</title>
       <link href="/2020/11/20/ubuntu-arm64-mirrors-change/"/>
       <url>/2020/11/20/ubuntu-arm64-mirrors-change/</url>
