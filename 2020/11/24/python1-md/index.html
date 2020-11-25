@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="lmblog(hexo)">
 <meta property="og:description" content="元组创建元组tuple1 = () ＃小括号创建一个新的元组 tuple1 = (‘abc’,1,4,4,56,7,[1,2,’asdf’],(1,2)) #注意创建一个元素的元组时必须加逗号 tuple2 = (1,) list1 = [1,2,3,4,5] tuple(list1) #进行强制类型转换 常用操作len(tuple1) tuple1[3] #索引查找元素tuple1[-2] #可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-24T15:43:34.349Z">
+<meta property="og:updated_time" content="2020-11-25T16:06:49.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python1.md">
 <meta name="twitter:description" content="元组创建元组tuple1 = () ＃小括号创建一个新的元组 tuple1 = (‘abc’,1,4,4,56,7,[1,2,’asdf’],(1,2)) #注意创建一个元素的元组时必须加逗号 tuple2 = (1,) list1 = [1,2,3,4,5] tuple(list1) #进行强制类型转换 常用操作len(tuple1) tuple1[3] #索引查找元素tuple1[-2] #可">
@@ -387,13 +387,23 @@
                 
               
 
-              <time title="Created: 2020-11-24 23:04:15 / Modified: 23:43:34" itemprop="dateCreated datePublished" datetime="2020-11-24T23:04:15+08:00">2020-11-24</time>
+              <time title="Created: 2020-11-24 23:04:15" itemprop="dateCreated datePublished" datetime="2020-11-24T23:04:15+08:00">2020-11-24</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-11-26 00:06:49" itemprop="dateModified" datetime="2020-11-26T00:06:49+08:00">2020-11-26</time>
+              </span>
             
           
 
@@ -462,6 +472,35 @@
 <p>set1 &gt; set2 #如果set1真包含set2,返回true,否则返回false</p>
 <h2 id="集合的常用操作"><a href="#集合的常用操作" class="headerlink" title="集合的常用操作"></a>集合的常用操作</h2><p>list(set([1,1,1,2,2,4,5,6])) #列表去重</p>
 <h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>突然想到芋圆好像是爱吃四季豆，爱吃辣，对于海鲜好像也比较喜欢，感觉好像对肉类都可以接受(最近不爱吃鱼）</p>
+<h2 id="基本用途"><a href="#基本用途" class="headerlink" title="基本用途"></a>基本用途</h2><p>字典表示的是一一对应的关系，由key键value值,键值之间用“：”分隔，不同的键值对之间用逗号分隔，字典用大括号括起来，字典无序用键取数据</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>dict1 = {} #空字典</p>
+<p>dict2 = {‘age1’ : 18,’age2’ : 19}</p>
+<p>dict1 = dict([(‘age3’,23),(‘age4’,45)]) #可以用dict()创建字典，放入列表套元组。</p>
+<p>dict2 = dict(([‘age6’,23],[‘age7’,24]))#通过元组套列表创建字典</p>
+<p>dict1[‘age3’]#访问键对应值如果查找的值不在字典里会报错</p>
+<p>print(dict1,keys())#返回所有的键的列表</p>
+<p>print(dict,values())#返回所有的值的列表</p>
+<p>dict1.items()#返回包含所有键值的列表</p>
+<p>del dict1[‘age1’]#删除键值对</p>
+<p>print（dict1）</p>
+<p>del dict1</p>
+<p>dict1.clear() #删除字典中所有元素的，将字典变成空字典</p>
+<p>dict1.update(dict2) #将字典dict2中的键值对添加到dict1中</p>
+<p>for key in dict1.keys():#遍历字典只需要遍历它的键<br>    print(key,dict1[key])</p>
+<h2 id="实际例子"><a href="#实际例子" class="headerlink" title="实际例子"></a>实际例子</h2><ul>
+<li>有一列人名，有一列电话号码的excel表格，如何建立字典</li>
+</ul>
+<p>name = [‘name1’,’name2’,’name3’,’name4’,’name5’]<br>phone_number = [‘phone_number1’,’phone_number2’,’phone_number3’,’phone_number4’,’phone_number5’]<br>zip1 = zip(name,phone_number)#zip函数将索引值一一对应组成元组<br>dict_phone = dict(list(zip1))</p>
+<p>dict2 = dict1<br>dict1[‘age1’] = x<br>print(dict2[‘age1’])#会发现虽然赋值虽然发生在前面，但是改变字典1，字典2也会发生改变，print的结果是x</p>
+<p>list2= list1<br>list1[0] = 0<br>print(list2[0])#和字典1一样<br>id(list1)#id()函数用于获取对象的内存地址</p>
+<ul>
+<li>数据结构的赋值操作直接将内存地址对应</li>
+<li>解决方法：</li>
+</ul>
+<p>import copy #深拷贝可以用引入copy模块实现<br>list1=[1,2]<br>list2 = list1<br>list2 = copy.deepcopy(list1)#这样直接赋值内容，list2和list1的地址不会一样</p>
+<ul>
+<li>芋圆很不喜欢吃面食，以后做饭注意点</li>
+</ul>
 
       
     </div>
@@ -723,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#元组"><span class="nav-number">1.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建元组"><span class="nav-number">1.1.</span> <span class="nav-text">创建元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习问题"><span class="nav-number">1.3.</span> <span class="nav-text">学习问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组的用途"><span class="nav-number">1.4.</span> <span class="nav-text">元组的用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的定义"><span class="nav-number">2.1.</span> <span class="nav-text">集合的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合基本操作"><span class="nav-number">2.2.</span> <span class="nav-text">集合基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的运算"><span class="nav-number">2.3.</span> <span class="nav-text">集合的运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的常用操作"><span class="nav-number">2.4.</span> <span class="nav-text">集合的常用操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">3.</span> <span class="nav-text">字典</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#元组"><span class="nav-number">1.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建元组"><span class="nav-number">1.1.</span> <span class="nav-text">创建元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习问题"><span class="nav-number">1.3.</span> <span class="nav-text">学习问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组的用途"><span class="nav-number">1.4.</span> <span class="nav-text">元组的用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的定义"><span class="nav-number">2.1.</span> <span class="nav-text">集合的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合基本操作"><span class="nav-number">2.2.</span> <span class="nav-text">集合基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的运算"><span class="nav-number">2.3.</span> <span class="nav-text">集合的运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的常用操作"><span class="nav-number">2.4.</span> <span class="nav-text">集合的常用操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">3.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用途"><span class="nav-number">3.1.</span> <span class="nav-text">基本用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">3.2.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际例子"><span class="nav-number">3.3.</span> <span class="nav-text">实际例子</span></a></li></ol></li></ol></div>
             
 
           </div>
