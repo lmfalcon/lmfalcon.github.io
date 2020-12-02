@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>mini_programs</title>
+      <link href="/2020/11/30/mini-programs/"/>
+      <url>/2020/11/30/mini-programs/</url>
+      
+        <content type="html"><![CDATA[<h1 id="微信小程序入门"><a href="#微信小程序入门" class="headerlink" title="微信小程序入门"></a>微信小程序入门</h1><h1 id="开发者工具熟悉，APPID"><a href="#开发者工具熟悉，APPID" class="headerlink" title="开发者工具熟悉，APPID"></a>开发者工具熟悉，APPID</h1><h1 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h1><h2 id="微信小程序的框架"><a href="#微信小程序的框架" class="headerlink" title="微信小程序的框架"></a>微信小程序的框架</h2><ul><li>MINA 微信小程序的原生框架</li><li>微信小程序提供了自己的视图层语言WXML（标签）和WXSS（样式），以及JavaScript(写逻辑），</li></ul><h1 id="小程序的配置文件"><a href="#小程序的配置文件" class="headerlink" title="小程序的配置文件"></a>小程序的配置文件</h1><h2 id="全局配置文件app-json"><a href="#全局配置文件app-json" class="headerlink" title="全局配置文件app.json"></a>全局配置文件app.json</h2><ol><li>pages 字段————可以描述当前小程序所有的页面路径，这是为了微信客户端知道当前你的小程序页面定义在哪个目录</li><li>windows 字段————定义小程序所有页面的顶部背景颜色，文字颜色等定义<br>写了一部分感觉官方文档写的好仔细应该看文档就可以学会很多吧。<br>接下来专心看视频记录关键就好</li></ol><ul><li>navigationbar 这部分指的是导航栏</li></ul><p>3.tabbar底部导航</p><ul><li>和pages、windows一样的文件层级输入tabbar回车会自动补全所需默认代码，但是如果加上“”就不会自动补全了。</li><li>pagepath表示点击后的连接路径</li><li>text 文字</li><li>iconpath 表示未选中图标路径</li><li>selecticonpath 表示选中图标路径</li><li>list中包含以上这些，一个list代表一个图标一个路径</li></ul><h2 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h2><p>具体网页中的json文件用于配置具体文件的，可以配置小程序页面相关内容，也可以单独配置页面的上拉下拉刷新，</p><h2 id="sitemap-配置"><a href="#sitemap-配置" class="headerlink" title="sitemap 配置"></a>sitemap 配置</h2><p>项目中的sitemap.json文件。用于设置微信索引你的小程序。</p><h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><p>WXML（weixin Makeup Language)框架设计的标签语言</p><h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> wechat,miniprogram </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>community</title>
       <link href="/2020/11/27/community/"/>
       <url>/2020/11/27/community/</url>
@@ -27,7 +46,7 @@
       <link href="/2020/11/27/english/"/>
       <url>/2020/11/27/english/</url>
       
-        <content type="html"><![CDATA[<h1 id="grammar"><a href="#grammar" class="headerlink" title="grammar"></a>grammar</h1><h2 id="part-of-speech-functional"><a href="#part-of-speech-functional" class="headerlink" title="part of speech/functional"></a>part of speech/functional</h2><p>1.preposition(介词）<br>2.article(冠词）<br>3.noun（名词）<br>4.pronoun（代词）<br>5.numeral(数词）<br>6.adverb（副词）<br>7.adjective(形容词)<br>8.verb(动词）<br>9.conjunction(连词）<br>10.interjection（感叹词）</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="grammar"><a href="#grammar" class="headerlink" title="grammar"></a>grammar</h1><h2 id="part-of-speech-functional"><a href="#part-of-speech-functional" class="headerlink" title="part of speech/functional"></a>part of speech/functional</h2><p>1.preposition(介词）<br>2.article(冠词）<br>3.noun（名词）<br>4.pronoun（代词）<br>5.numeral(数词）<br>6.adverb（副词）<br>7.adjective(形容词)<br>8.verb(动词）<br>9.conjunction(连词）<br>10.interjection（感叹词）</p><h1 id="spoken-language-colloquialism"><a href="#spoken-language-colloquialism" class="headerlink" title="spoken language - - colloquialism"></a>spoken language - - colloquialism</h1><h2 id="shanxi-or-shaanxi-山西or-陕西）"><a href="#shanxi-or-shaanxi-山西or-陕西）" class="headerlink" title="shanxi or shaanxi(山西or 陕西）"></a>shanxi or shaanxi(山西or 陕西）</h2><p>I‘m from Shaanxi.You can visit the TerraCotta Warriors there.<br>The food in Shannxi is great.</p><h2 id="I’m-not-gonna-let-you-get-away-with-this"><a href="#I’m-not-gonna-let-you-get-away-with-this" class="headerlink" title="I’m not gonna let you get away with this!"></a>I’m not gonna let you get away with this!</h2><p>get away with something 逍遥法外，逃脱 meaning not have to shoulder responsibility for the deeds that somebody has done</p>]]></content>
       
       
       
