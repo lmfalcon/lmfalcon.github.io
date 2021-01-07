@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>machineLearning</title>
+      <link href="/2021/01/07/machineLearning/"/>
+      <url>/2021/01/07/machineLearning/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="吴恩达机器学习课程多遍学习感悟"><a href="#吴恩达机器学习课程多遍学习感悟" class="headerlink" title="吴恩达机器学习课程多遍学习感悟"></a>吴恩达机器学习课程多遍学习感悟</h1><hr><h2 id="P1-P5什么是机器学习，监督学习，无监督学习，模型描述"><a href="#P1-P5什么是机器学习，监督学习，无监督学习，模型描述" class="headerlink" title="P1-P5什么是机器学习，监督学习，无监督学习，模型描述"></a>P1-P5什么是机器学习，监督学习，无监督学习，模型描述</h2><hr><h3 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h3><p>学多了才会有更深的感悟，这里没必要多解释，直接进入下一个内容</p><hr><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在我看来课程主要讲了监督学习的概念：在确定数据库样本中的分类的情况下，看机器是否能将数据进行分类。</span><br><span class="line">两种监督学习的例子：分类和回归</span><br></pre></td></tr></table></figure><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似与离散函数，只有0,1选项的选择，试用的是小的数据样本，数据样本并不连续，数量也不多</span><br></pre></td></tr></table></figure><h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似于连续函数，数据的样本多且相对比较连续，可以拟合出相应的曲线。</span><br></pre></td></tr></table></figure><hr><h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">无监督学习的概念：在不确定数据库样本的分类前提下让计算机自己进行分类，机器可以在数据中选出有相同特征的类/簇。</span><br><span class="line">无监督学的相关算法叫聚类算法。</span><br></pre></td></tr></table></figure><hr><h3 id="模型描述"><a href="#模型描述" class="headerlink" title="模型描述"></a>模型描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">课程用的是简单的一元线性回归说明的模型，</span><br><span class="line">两个变量，两个参数一个方法：</span><br><span class="line">变量一：输入（input，x）</span><br><span class="line">变量二：输出（output,y,h(x))</span><br><span class="line">方法：在我的理解是映射课程中用的是假说/假设（hoyphisi算了拼不出来（&gt;\/&lt;))的条件下</span><br><span class="line">用类似h(x)=a+bx的一次函数拟合数据的例子，其中a,b就是其中的参数，</span><br><span class="line">要得到合适的函数a,b的取值很重要，但是更重要的方法，学会调参在我看来没有选择方法重要，可能工作中调参的情况更多。</span><br><span class="line">这就是一个简单的模型</span><br></pre></td></tr></table></figure><hr>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 吴恩达,machineLearning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mini_programs</title>
       <link href="/2020/11/30/mini-programs/"/>
       <url>/2020/11/30/mini-programs/</url>
