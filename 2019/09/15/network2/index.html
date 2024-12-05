@@ -1,23 +1,453 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="物理层基本概念 解决在各种计算机传输媒体上传输数据比特流 主要任务描述为确定与传输媒体接口的一些特性     特性 举例    机械特性 接口形状大小，引线数目   电气特性 规定电压范围   功能特性 规定-5V表示0,5V表示1   过程特性 规定建立连接时各个相关部件工作的步骤   数据通信的基础知识典型的数据通信模型 PC机将文字转换为数字比特流 调制解调器将数字比特流转换为模拟信号 模拟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="network2">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/network2/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="物理层基本概念 解决在各种计算机传输媒体上传输数据比特流 主要任务描述为确定与传输媒体接口的一些特性     特性 举例    机械特性 接口形状大小，引线数目   电气特性 规定电压范围   功能特性 规定-5V表示0,5V表示1   过程特性 规定建立连接时各个相关部件工作的步骤   数据通信的基础知识典型的数据通信模型 PC机将文字转换为数字比特流 调制解调器将数字比特流转换为模拟信号 模拟">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-15T04:16:53.000Z">
+<meta property="article:modified_time" content="2019-09-15T14:59:23.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="network">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/09/15/network2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/09/15/network2/","path":"2019/09/15/network2/","title":"network2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>network2 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">物理层基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">数据通信的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">典型的数据通信模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%B8%AA%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90"><span class="nav-number">1.1.2.</span> <span class="nav-text">几个概念解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.3.</span> <span class="nav-text">信道的几个基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%B8%A6%EF%BC%88baseband%EF%BC%89%E4%BF%A1%E5%8F%B7%E5%92%8C%E5%B8%A6%E9%80%9A-band-pass-%E4%BF%A1%E5%8F%B7"><span class="nav-number">1.1.4.</span> <span class="nav-text">基带（baseband）信号和带通(band pass)信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.5.</span> <span class="nav-text">调制方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BC%96%E7%A0%81"><span class="nav-number">1.1.6.</span> <span class="nav-text">常用编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="nav-number">1.1.7.</span> <span class="nav-text">信道的极限容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="nav-number">1.1.8.</span> <span class="nav-text">奈氏准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E5%99%AA%E6%AF%94"><span class="nav-number">1.1.9.</span> <span class="nav-text">信噪比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99%E5%92%8C%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.1.10.</span> <span class="nav-text">奈氏准则和香农公式适用范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="nav-number">1.2.</span> <span class="nav-text">传输媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2"><span class="nav-number">1.2.1.</span> <span class="nav-text">电磁波</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%90%91%E4%BC%A0%E6%92%AD%E5%AA%92%E4%BD%93"><span class="nav-number">1.2.2.</span> <span class="nav-text">导向传播媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%BB%9E%E7%BA%BF"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">双绞线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E8%BD%B4%E7%94%B5%E7%BC%86"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">同轴电缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E7%BA%A4"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">光纤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%AF%BC%E5%90%91%E4%BC%A0%E8%BE%93%E5%AA%92%E4%BD%93"><span class="nav-number">1.2.3.</span> <span class="nav-text">非导向传输媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%AD%E6%B3%A2%E9%80%9A%E4%BF%A1"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">短波通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AE%E6%B3%A2%E9%80%9A%E4%BF%A1"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">微波通信</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E7%BA%BF%E5%99%A8"><span class="nav-number">1.2.4.</span> <span class="nav-text">集线器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.5.</span> <span class="nav-text">信道复用技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%91%E5%88%86%E5%A4%8D%E7%94%A8"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">频分复用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">时分复用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">统计时分复用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A2%E5%88%86%E5%A4%8D%E7%94%A8"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">波分复用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%81%E5%88%86%E5%A4%8D%E7%94%A8"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">码分复用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.6.</span> <span class="nav-text">数字传输系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%BD%E5%B8%A6%E6%8E%A5%E5%85%A5%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.7.</span> <span class="nav-text">宽带接入技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#xDSL"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">xDSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E7%BA%A4%E5%90%8C%E8%BD%B4%E6%B7%B7%E5%90%88%E7%BD%91HFC"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">光纤同轴混合网HFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FTTx%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">FTTx技术</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/network2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="network2 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          network2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2019-09-15 12:16:53 / 修改时间：22:59:23" itemprop="dateCreated datePublished" datetime="2019-09-15T12:16:53+08:00">2019-09-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="物理层基本概念"><a href="#物理层基本概念" class="headerlink" title="物理层基本概念"></a>物理层基本概念</h1><ul>
+<li>解决在各种计算机传输媒体上传输数据比特流</li>
+<li>主要任务描述为确定与传输媒体接口的一些特性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机械特性</td>
+<td>接口形状大小，引线数目</td>
+</tr>
+<tr>
+<td>电气特性</td>
+<td>规定电压范围</td>
+</tr>
+<tr>
+<td>功能特性</td>
+<td>规定-5V表示0,5V表示1</td>
+</tr>
+<tr>
+<td>过程特性</td>
+<td>规定建立连接时各个相关部件工作的步骤</td>
+</tr>
+</tbody></table>
+<h2 id="数据通信的基础知识"><a href="#数据通信的基础知识" class="headerlink" title="数据通信的基础知识"></a>数据通信的基础知识</h2><h3 id="典型的数据通信模型"><a href="#典型的数据通信模型" class="headerlink" title="典型的数据通信模型"></a>典型的数据通信模型</h3><ol>
+<li>PC机将文字转换为数字比特流</li>
+<li>调制解调器将数字比特流转换为模拟信号</li>
+<li>模拟信号传入公共电话网到达目标调制解调器下</li>
+<li>调制解调器将模拟信号转换回数字比特流</li>
+<li>目标PC机将数字比特流转换为显示汉字</li>
+</ol>
+<h3 id="几个概念解析"><a href="#几个概念解析" class="headerlink" title="几个概念解析"></a>几个概念解析</h3><p>模拟信号：代表消息的参数的取值是连续的</p>
+<p>数字信号：代表消息的参数的取值是离散的</p>
+<p>码元code：在使用时间域的波形表示数字信号时，则代表不同离散数值的基本波形就成为码元。</p>
+<p>在数字通信中常常使用时间间隔相同的符号来表示一个二进制数字，这样的时间间隔内的信号成为二进制的码元。而这个间隔的长度被称为码元长度。1码元可以携带nbit的信息量。</p>
+<h3 id="信道的几个基本概念"><a href="#信道的几个基本概念" class="headerlink" title="信道的几个基本概念"></a>信道的几个基本概念</h3><p>信道一般表示向一个方向传送信息的媒体，所以平常的通信路线往往包含一条发送信息的信道和一条接受信息的信道</p>
+<p>单向通信（单工通信）——只能有一个方向的通信而没有反方向的交互。</p>
+<ul>
+<li>电视</li>
+<li>广播</li>
+</ul>
+<p>双向交替通信（半双工通信）——通信的双方都可以发送信息，但不能同时发送（也不能同时接收）</p>
+<ul>
+<li>对讲机</li>
+</ul>
+<p>双向同时通信（全双工通信）——通信双方可以同时发送和接收信息</p>
+<h3 id="基带（baseband）信号和带通-band-pass-信号"><a href="#基带（baseband）信号和带通-band-pass-信号" class="headerlink" title="基带（baseband）信号和带通(band pass)信号"></a>基带（baseband）信号和带通(band pass)信号</h3><p>基带信号（基本频带信号）——来自信源的信号。发出的直接表达要传输信息的信号。传播距离较近，远距离失真。</p>
+<p>带通信号——把基带信号经过载波调制后，把信号的频率范围搬移到较高的频段以便在信道中传输（即仅在一段频率范围内能够通过信道）。 远距传播减少信号衰减。</p>
+<h3 id="调制方法"><a href="#调制方法" class="headerlink" title="调制方法"></a>调制方法</h3><ul>
+<li>调幅（AM）</li>
+<li>调频（FM）</li>
+<li>调相（PM）</li>
+</ul>
+<h3 id="常用编码"><a href="#常用编码" class="headerlink" title="常用编码"></a>常用编码</h3><ul>
+<li>单极性不归零码（高电压1，没电压0）</li>
+<li>双极性不归零码（正负电平分别表01，正负值相等）</li>
+<li>双极性归零码（正负零三个电平，信号本身携带同步信息）</li>
+<li>曼彻斯特编码（相同单位时间，由低到高代表0，由高到低代表1，必须经过两次采样才能得到1bit数据。可携带时钟信号，可以表示没信号传输）</li>
+<li>差分曼彻斯特编码（bit中间有信号跳变，bit与bit之间也有信号跳变，表示下一个bit为0。bit中间有信号跳变，bit与bit之间无信号跳变，表示下一个bit为1。性能与曼彻斯特编码相同，抗干扰能力强）</li>
+</ul>
+<h3 id="信道的极限容量"><a href="#信道的极限容量" class="headerlink" title="信道的极限容量"></a>信道的极限容量</h3><p>实际信道传输中带宽受限，有噪声，干扰，失真，可能发生信号的波形变化。</p>
+<ul>
+<li>有失真可识别</li>
+<li>不可识别</li>
+</ul>
+<h3 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h3><ul>
+<li>作用：假定理想状态下，为了避免码间串扰，码元的传输速率的上限值。</li>
+<li>原因：任何信道中，码元传输的速率是用上限的，否则就会出现码间串扰的问题，使接收端对码元的判决（即识别）成为不可能。</li>
+<li>理想低通信道的最高码元传输速率&#x3D;2WBaud<ul>
+<li>W是理想低通信道的带宽，单位Hz</li>
+<li>Baud是波特，是码元传输速率的单位。如果一个码元含有3个bit信息量，1波特&#x3D;3bit&#x2F;s</li>
+</ul>
+</li>
+</ul>
+<h3 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h3><p>香农用信息论的理论推导出了带宽受限且有高斯白噪声干扰的信道的极限，无差错的信息传输速率。</p>
+<p>信道的极限信息传输速率C&#x3D; Wlog2(1+S&#x2F;N)   单位b&#x2F;s</p>
+<ul>
+<li>W 为信道的带宽（Hz）</li>
+<li>S 为信道内所传信号的平均功率</li>
+<li>N 为信道内部的高斯噪声功率</li>
+<li>上面的公式是香农公式</li>
+</ul>
+<p>其中的C不可能无限大，因为N不可能很小<br>S&#x2F;N 为信噪比</p>
+<h3 id="奈氏准则和香农公式适用范围"><a href="#奈氏准则和香农公式适用范围" class="headerlink" title="奈氏准则和香农公式适用范围"></a>奈氏准则和香农公式适用范围</h3><p>——-&gt; 源点———&gt;发送器———&gt;传输系统——–&gt;接收器——-&gt;终点——&gt;<br>输入信息　　输入数据　　发送信号　　　接收信号  　　输出数据　 输出信息</p>
+<p>发送信号到接收信号的过程码元传输速率受奈氏准则的限制</p>
+<p>输入数据到输出数据之间信息传输速率受香农公式限制</p>
+<h2 id="传输媒体"><a href="#传输媒体" class="headerlink" title="传输媒体"></a>传输媒体</h2><h3 id="电磁波"><a href="#电磁波" class="headerlink" title="电磁波"></a>电磁波</h3><h3 id="导向传播媒体"><a href="#导向传播媒体" class="headerlink" title="导向传播媒体"></a>导向传播媒体</h3><h4 id="双绞线"><a href="#双绞线" class="headerlink" title="双绞线"></a>双绞线</h4><ul>
+<li>屏蔽双绞线STP</li>
+<li>非屏蔽双绞线UTP</li>
+</ul>
+<h4 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h4><ul>
+<li>50Ω 用于数字传输</li>
+<li>75Ω 用于模拟传输</li>
+</ul>
+<h4 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h4><ul>
+<li>单模光纤 </li>
+<li>多模光纤</li>
+</ul>
+<h3 id="非导向传输媒体"><a href="#非导向传输媒体" class="headerlink" title="非导向传输媒体"></a>非导向传输媒体</h3><h4 id="短波通信"><a href="#短波通信" class="headerlink" title="短波通信"></a>短波通信</h4><ul>
+<li>依靠电离层反射</li>
+</ul>
+<h4 id="微波通信"><a href="#微波通信" class="headerlink" title="微波通信"></a>微波通信</h4><ul>
+<li>直线传播</li>
+<li>依靠卫星和地面信号塔</li>
+</ul>
+<h3 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h3><ul>
+<li>有放大信号的作用和重发作用</li>
+<li>半双通</li>
+<li>有冲突域</li>
+<li>不安全</li>
+<li>数量越多带宽越少</li>
+</ul>
+<h3 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h3><h4 id="频分复用"><a href="#频分复用" class="headerlink" title="频分复用"></a>频分复用</h4><ul>
+<li>每个用户固定频率</li>
+<li>不同频率调制</li>
+<li>信号复用</li>
+<li>传输完成后拆分</li>
+</ul>
+<h4 id="时分复用"><a href="#时分复用" class="headerlink" title="时分复用"></a>时分复用</h4><ul>
+<li>每个设备设定时间段</li>
+<li>按顺序收按顺序发</li>
+<li>缺点：可能有空数据</li>
+</ul>
+<h4 id="统计时分复用"><a href="#统计时分复用" class="headerlink" title="统计时分复用"></a>统计时分复用</h4><ul>
+<li>不同用户用不同标记</li>
+</ul>
+<h4 id="波分复用"><a href="#波分复用" class="headerlink" title="波分复用"></a>波分复用</h4><h4 id="码分复用"><a href="#码分复用" class="headerlink" title="码分复用"></a>码分复用</h4><ul>
+<li>简称 CDMA</li>
+<li>频率相同的信号都可以接收，但是不同用户使用不同的码型不会干扰</li>
+<li>码片：每一个比特时间划分为m个短的间隔</li>
+<li>利用正交向量的规则，保证格式化内积值只有1,-1,0。且无关码片的值一定是0</li>
+</ul>
+<h3 id="数字传输系统"><a href="#数字传输系统" class="headerlink" title="数字传输系统"></a>数字传输系统</h3><ul>
+<li>电话局之间的中继线上传送多路的电话</li>
+<li>脉码调制PCM<ul>
+<li>北美T1</li>
+<li>欧洲E1</li>
+</ul>
+</li>
+</ul>
+<h3 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h3><h4 id="xDSL"><a href="#xDSL" class="headerlink" title="xDSL"></a>xDSL</h4><ul>
+<li>用不同频率传不同的信号</li>
+<li>低频给电话</li>
+<li>高频留给上网</li>
+</ul>
+<h4 id="光纤同轴混合网HFC"><a href="#光纤同轴混合网HFC" class="headerlink" title="光纤同轴混合网HFC"></a>光纤同轴混合网HFC</h4><h4 id="FTTx技术"><a href="#FTTx技术" class="headerlink" title="FTTx技术"></a>FTTx技术</h4><ul>
+<li>光纤到户</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/network/" rel="tag"># network</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/15/network1/" rel="prev" title="network1">
+                  <i class="fa fa-angle-left"></i> network1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/15/network3/" rel="next" title="network3">
+                  network3 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

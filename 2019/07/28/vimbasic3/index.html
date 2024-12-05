@@ -1,23 +1,353 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="vim基本用法3文本操作 [number][text object] number 次数 command 命令，d(elete),c(hange),y(ank) text object 文本对象，单词w，句子s,段落p   vaw 改变括号，引号等被包裹起来的所有词包括空格 viw 改变包裹起来的所有词不包括结尾的空格  复制粘贴 设置了autoindent，可能导致代码缩进错乱 解决方式用:se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vimbasic3">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/vimbasic3/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="vim基本用法3文本操作 [number][text object] number 次数 command 命令，d(elete),c(hange),y(ank) text object 文本对象，单词w，句子s,段落p   vaw 改变括号，引号等被包裹起来的所有词包括空格 viw 改变包裹起来的所有词不包括结尾的空格  复制粘贴 设置了autoindent，可能导致代码缩进错乱 解决方式用:se">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-28T00:36:20.000Z">
+<meta property="article:modified_time" content="2019-07-29T07:32:56.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/07/28/vimbasic3/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/07/28/vimbasic3/","path":"2019/07/28/vimbasic3/","title":"vimbasic3"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vimbasic3 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%953"><span class="nav-number">1.</span> <span class="nav-text">vim基本用法3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">文本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4"><span class="nav-number">1.2.</span> <span class="nav-text">复制粘贴</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim%E4%BD%BF%E7%94%A8%E6%97%A0%E5%90%8D%E5%AF%84%E5%AD%98%E5%99%A8%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E5%A4%8D%E5%88%B6%E5%86%85%E5%AE%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">vim使用无名寄存器用于保存复制内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E7%B1%BB%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">各类寄存器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-number">1.3.</span> <span class="nav-text">宏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/vimbasic3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vimbasic3 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vimbasic3
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-28 08:36:20" itemprop="dateCreated datePublished" datetime="2019-07-28T08:36:20+08:00">2019-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-07-29 15:32:56" itemprop="dateModified" datetime="2019-07-29T15:32:56+08:00">2019-07-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="vim基本用法3"><a href="#vim基本用法3" class="headerlink" title="vim基本用法3"></a>vim基本用法3</h1><h2 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h2><ul>
+<li>[number]<command>[text object]<ul>
+<li>number 次数</li>
+<li>command 命令，d(elete),c(hange),y(ank)</li>
+<li>text object 文本对象，单词w，句子s,段落p</li>
+</ul>
+</li>
+<li>vaw 改变括号，引号等被包裹起来的所有词包括空格</li>
+<li>viw 改变包裹起来的所有词不包括结尾的空格</li>
+</ul>
+<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><ul>
+<li>设置了autoindent，可能导致代码缩进错乱<ul>
+<li>解决方式用:set paste和:set nopaste</li>
+<li>可以用插件直接解决</li>
+</ul>
+</li>
+<li>使用xp可以快速调换两个字符</li>
+</ul>
+<h3 id="vim使用无名寄存器用于保存复制内容"><a href="#vim使用无名寄存器用于保存复制内容" class="headerlink" title="vim使用无名寄存器用于保存复制内容"></a>vim使用无名寄存器用于保存复制内容</h3><ul>
+<li>“指定寄存器名，不指定为默认的无名寄存器</li>
+<li>“ayiw 复制一个单词到寄存器a中，”bdd 删除当前行到b寄存器中</li>
+<li>“”表示无名寄存器</li>
+</ul>
+<h3 id="各类寄存器"><a href="#各类寄存器" class="headerlink" title="各类寄存器"></a>各类寄存器</h3><ul>
+<li>“0 复制专用寄存器</li>
+<li>“+ 复制到系统剪贴板</li>
+<li>:echo has(‘clipboard’)查看是否有这个，1表示有，0表示无</li>
+<li>貌似直接<c-sh-v>可以复制系统剪贴版的内容到vim中即使是python文件也没有问题</li>
+<li></li>
+</ul>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><ul>
+<li>q 用于录制和退出</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><ul>
+<li>将下面的操作全部变成列表</li>
+<li>用qa命令开始录制并将录制结果保存在a寄存器中</li>
+<li>成功后出现recording @a </li>
+<li>按i进入插入模式</li>
+<li>输入-加空格</li>
+<li>此时结束录制，底端的recording @a也会消失</li>
+<li>按V行选择</li>
+<li>按G直接选择至尾行</li>
+<li>按:发现左下角出现’&lt;,’&gt;</li>
+<li>输入normal @a</li>
+<li>完成列表</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"># vim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/07/27/linuxbasic4/" rel="prev" title="linuxbasic4">
+                  <i class="fa fa-angle-left"></i> linuxbasic4
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/07/29/vimbasic4/" rel="next" title="vimbasic4">
+                  vimbasic4 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
