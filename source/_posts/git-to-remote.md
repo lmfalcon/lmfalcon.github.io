@@ -15,10 +15,10 @@ tags: git,hexo
 
 ## 旧电脑
 clone新的分支到本地，这个步骤其实就是要里面的.git文件，其实可以通过git直接上传到这个分支的方式实现。
-'''
+```
 git clone ssh://git@ssh.github.com:443/lmfalcon/lmfalcon.github.io.git
 下次访问限值22端口可以试试官方的443端口。
-'''
+```
 
 下载的文件夹里仅留下.git的文件夹，并复制到我们制作blog的文件夹中。
 
@@ -26,14 +26,14 @@ blog文件夹里增加.gitignore文件（就是设置不上传的文件，文件
 
 如果原本的themes主题是clone下来的那么主题文件中可能有.git文件夹，如果有删掉。
 
-'''
+```
 
 git add .
 
 git commit -m add_branch
 
 git push
-'''
+```
 这里可以将文件推送到远程库分支hexo
 
 其实新建一个仓库也是可以的，但是毕竟是一类放一起比较好。
@@ -52,14 +52,14 @@ clone 下来。新电脑需要改变的较多git，nodejs和npm淘宝源都需�
 
 新的blog文件夹下把clone的文件复制过来，之后
 
-'''
+```
 npm install hexo 
 npm install
 npm install hexo-deployer-git
 hexo g
 hexo s
 hexo d
-'''
+```
 
 后续的步骤其实和旧电脑一样进行操作。其实新电脑的还没有尝试完。之后看效果吧
 
