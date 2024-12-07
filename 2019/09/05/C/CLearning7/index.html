@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="bool类型 C++有bool类型的变量，C语言没有。 C中bool类型可以用char和int类型代替  块语句 用大括号包起来的语句块 C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量 同一块语句中变量不能重名  算法表示 伪代码法 算法不能有二义性   流程图法 起止框				椭圆形 输入输出框			平行四边形 处理框				正方形		完成某些操作 判断框">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CLearning7">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/C/CLearning7/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="bool类型 C++有bool类型的变量，C语言没有。 C中bool类型可以用char和int类型代替  块语句 用大括号包起来的语句块 C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量 同一块语句中变量不能重名  算法表示 伪代码法 算法不能有二义性   流程图法 起止框				椭圆形 输入输出框			平行四边形 处理框				正方形		完成某些操作 判断框">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-05T15:45:34.000Z">
+<meta property="article:modified_time" content="2019-09-07T13:19:11.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="C,C++">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/09/05/C/CLearning7/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/09/05/C/CLearning7/","path":"2019/09/05/C/CLearning7/","title":"CLearning7"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CLearning7 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bool%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">bool类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9D%97%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.</span> <span class="nav-text">块语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%A1%A8%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">算法表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">结构化程序设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">windows输入输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if%E9%80%89%E6%8B%A9%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">if选择分支结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch-case%E5%A4%9A%E5%88%86%E6%94%AF%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="nav-number">7.</span> <span class="nav-text">switch case多分支选择语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-number">8.</span> <span class="nav-text">循环实现移动窗口</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/C/CLearning7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CLearning7 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CLearning7
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-05 23:45:34" itemprop="dateCreated datePublished" datetime="2019-09-05T23:45:34+08:00">2019-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-09-07 21:19:11" itemprop="dateModified" datetime="2019-09-07T21:19:11+08:00">2019-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="bool类型"><a href="#bool类型" class="headerlink" title="bool类型"></a>bool类型</h1><ul>
+<li>C++有bool类型的变量，C语言没有。</li>
+<li>C中bool类型可以用char和int类型代替</li>
+</ul>
+<h1 id="块语句"><a href="#块语句" class="headerlink" title="块语句"></a>块语句</h1><ul>
+<li>用大括号包起来的语句块</li>
+<li>C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量</li>
+<li>同一块语句中变量不能重名</li>
+</ul>
+<h1 id="算法表示"><a href="#算法表示" class="headerlink" title="算法表示"></a>算法表示</h1><ul>
+<li>伪代码法<ul>
+<li>算法不能有二义性</li>
+</ul>
+</li>
+<li>流程图法<ul>
+<li>起止框				椭圆形</li>
+<li>输入输出框			平行四边形</li>
+<li>处理框				正方形		完成某些操作</li>
+<li>判断框				菱形		</li>
+<li>连接点				小圆		流程图太大则用于分解连接</li>
+<li>流程线				带箭头线	表示执行方向</li>
+</ul>
+</li>
+</ul>
+<h1 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h1><ul>
+<li>分治思想<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openBaidu()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;http://www.baidu.com&quot;,0)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void closeBaidu()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im iexplore.exe&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void clickBaidu()&#123;</span><br><span class="line">	SetCursorPos(40,40);	//设置鼠标位置</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	while(1)&#123;</span><br><span class="line">		openBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		clickBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		closeBaidu();</span><br><span class="line">		Sleep(1000);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>通过不同的函数实现不同的功能，面向对象是对分治最好的体现。</li>
+</ul>
+<h1 id="windows输入输出"><a href="#windows输入输出" class="headerlink" title="windows输入输出"></a>windows输入输出</h1><ul>
+<li>cmd中切换到操作目录</li>
+<li>ipconfig&lt;0.txt&gt;10.txt</li>
+<li>上一步操作会将0.txt中的操作输入到ipconfig中（实际上没有做任何事）之后将ipconfig中的内容输入到10.txt中</li>
+<li>在windows做这个操作会会覆盖之前的文档内容，Ubuntu中只是添加内容。</li>
+<li>ubuntu的命令行操作不同例如查询ip：ifconfig&gt;&gt;10.txt</li>
+</ul>
+<h1 id="if选择分支结构"><a href="#if选择分支结构" class="headerlink" title="if选择分支结构"></a>if选择分支结构</h1><ul>
+<li>可以嵌套，但是还是容易乱建议减少嵌套，而是单独设计函数，这样简介清晰</li>
+<li>if else嵌套时注意一定要配套，不要漏写，多写。</li>
+</ul>
+<h1 id="switch-case多分支选择语句"><a href="#switch-case多分支选择语句" class="headerlink" title="switch case多分支选择语句"></a>switch case多分支选择语句</h1><ul>
+<li>case 后的常量值不能重合</li>
+<li>多个case可以共用一个语句块</li>
+<li>default分支不限定在最后，内部任何分支没有先后顺序。</li>
+<li>case相当一个开关，如果不加break会一直执行下去。</li>
+<li>不加break说明你希望连续执行多个分支</li>
+<li>switch语句一般用于处理枚举类型数据</li>
+<li>switch的表达式只能是整数或者字符，只能用于处理常量（因为case中只能是常量，只能判断相等）</li>
+</ul>
+<h1 id="循环实现移动窗口"><a href="#循环实现移动窗口" class="headerlink" title="循环实现移动窗口"></a>循环实现移动窗口</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#incldue&lt;Windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openQQ()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;\&quot;C:\\Program File (x86)\\Tencent\\QQ....QQ的位置&quot;,0,0,1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void moveQQ()&#123;</span><br><span class="line">	HWND win = FindWindowA(&quot;TXGuiFoundation&quot;,&quot;QQ2013&quot;);		//HWND QQ窗口编号</span><br><span class="line">	//FindWindowA根据类名和标题寻找窗口</span><br><span class="line">	if(win == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;QQ失踪&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	int y =0;</span><br><span class="line">	while(i &lt; 900)</span><br><span class="line">	&#123;</span><br><span class="line">		SetWindowPos(win,NULL,y*16/9,y,400,400,0);	//设置窗口大小，以及窗口位置</span><br><span class="line">		Sleep(50)</span><br><span class="line">		y += 10;</span><br><span class="line">		if(y/10%2==1)&#123;</span><br><span class="line">			ShowWindow(win,SW_HIDE);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			ShowWindow(win,SW_SHOW);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void main()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im QQ.exe);</span><br><span class="line">	openQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	moveQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C-C/" rel="tag"># C,C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/04/hexolearn/noroot/" rel="prev" title="noroot">
+                  <i class="fa fa-angle-left"></i> noroot
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/07/C/CLearning8/" rel="next" title="CLearning8">
+                  CLearning8 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

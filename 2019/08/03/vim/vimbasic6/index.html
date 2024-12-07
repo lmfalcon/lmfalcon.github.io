@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="vim插件nerdtree 目录插件 github搜索获取 leaderev+Plug ‘github目录’ leadersv+PlugInstall 开vim自启动,autocmd vimenter * NERDTree 开关目录快捷键设置nnoremap n :NERDTreeTOggle 打开文件所在目录位置 快捷键设置为 f :NERDTreeFind  vim-markdown插件 折叠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vimbasic6">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/vim/vimbasic6/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="vim插件nerdtree 目录插件 github搜索获取 leaderev+Plug ‘github目录’ leadersv+PlugInstall 开vim自启动,autocmd vimenter * NERDTree 开关目录快捷键设置nnoremap n :NERDTreeTOggle 打开文件所在目录位置 快捷键设置为 f :NERDTreeFind  vim-markdown插件 折叠">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-03T13:27:43.000Z">
+<meta property="article:modified_time" content="2019-08-04T13:54:03.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/03/vim/vimbasic6/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/03/vim/vimbasic6/","path":"2019/08/03/vim/vimbasic6/","title":"vimbasic6"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vimbasic6 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim%E6%8F%92%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">vim插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nerdtree"><span class="nav-number">1.1.</span> <span class="nav-text">nerdtree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-markdown%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">vim-markdown插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easymotion%E6%8F%92%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">easymotion插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctrlp%E6%8F%92%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">ctrlp插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instant-markdown"><span class="nav-number">1.5.</span> <span class="nav-text">instant-markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimsurround-%E6%9B%B4%E6%94%B9%E6%88%90%E5%AF%B9%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.6.</span> <span class="nav-text">vimsurround 更改成对出现的符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fzf-vim%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2"><span class="nav-number">1.7.</span> <span class="nav-text">fzf.vim模糊搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#far-vim%E6%90%9C%E7%B4%A2%E6%9B%BF%E6%8D%A2%E6%8F%92%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">far.vim搜索替换插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-go"><span class="nav-number">1.9.</span> <span class="nav-text">vim-go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-mode%E6%89%93%E9%80%A0%E8%BD%BB%E9%87%8F%E7%BA%A7PythonIDE"><span class="nav-number">1.10.</span> <span class="nav-text">python-mode打造轻量级PythonIDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-tagbar"><span class="nav-number">1.11.</span> <span class="nav-text">vim tagbar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-interestingwords"><span class="nav-number">1.12.</span> <span class="nav-text">vim-interestingwords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deoplete-nvim"><span class="nav-number">1.13.</span> <span class="nav-text">deoplete.nvim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coc-vim"><span class="nav-number">1.14.</span> <span class="nav-text">coc.vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E6%A3%80%E6%9F%A5"><span class="nav-number">1.15.</span> <span class="nav-text">代码格式检查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Neoformat"><span class="nav-number">1.15.1.</span> <span class="nav-text">Neoformat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-autoformat"><span class="nav-number">1.15.2.</span> <span class="nav-text">vim-autoformat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%A3%80%E6%9F%A5"><span class="nav-number">1.15.3.</span> <span class="nav-text">静态检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%B3%A8%E9%87%8A"><span class="nav-number">1.16.</span> <span class="nav-text">快速注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6"><span class="nav-number">1.17.</span> <span class="nav-text">git相关插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fugitive"><span class="nav-number">1.17.1.</span> <span class="nav-text">Fugitive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-gitgutter"><span class="nav-number">1.17.2.</span> <span class="nav-text">vim-gitgutter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gv-vim"><span class="nav-number">1.17.3.</span> <span class="nav-text">gv.vim</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/vim/vimbasic6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vimbasic6 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vimbasic6
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-03 21:27:43" itemprop="dateCreated datePublished" datetime="2019-08-03T21:27:43+08:00">2019-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-08-04 21:54:03" itemprop="dateModified" datetime="2019-08-04T21:54:03+08:00">2019-08-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="vim插件"><a href="#vim插件" class="headerlink" title="vim插件"></a>vim插件</h1><h2 id="nerdtree"><a href="#nerdtree" class="headerlink" title="nerdtree"></a>nerdtree</h2><ul>
+<li>目录插件</li>
+<li>github搜索获取</li>
+<li>leaderev+Plug ‘github目录’</li>
+<li>leadersv+PlugInstall</li>
+<li>开vim自启动,autocmd vimenter * NERDTree</li>
+<li>开关目录快捷键设置nnoremap <leader>n :NERDTreeTOggle<CR></li>
+<li>打开文件所在目录位置 快捷键设置为 <leader>f :NERDTreeFind<cr></li>
+</ul>
+<h2 id="vim-markdown插件"><a href="#vim-markdown插件" class="headerlink" title="vim-markdown插件"></a>vim-markdown插件</h2><ul>
+<li>折叠相关<ul>
+<li>zo打开</li>
+<li>zc关闭</li>
+<li>zR解开全部折叠</li>
+</ul>
+</li>
+</ul>
+<h2 id="easymotion插件"><a href="#easymotion插件" class="headerlink" title="easymotion插件"></a>easymotion插件</h2><ul>
+<li>功能快速跳转</li>
+<li>快捷键ss</li>
+<li>搜索之后光标快速移动到指定位置，相较于vim本身的斜杠更好用</li>
+<li>ss功能只能搜索到显示能看到的地方，不知道为啥，但是可以用来快速定位光标到所见未知也是不错的</li>
+</ul>
+<h2 id="ctrlp插件"><a href="#ctrlp插件" class="headerlink" title="ctrlp插件"></a>ctrlp插件</h2><ul>
+<li>快捷键ctrlp模糊搜索文件</li>
+</ul>
+<h2 id="instant-markdown"><a href="#instant-markdown" class="headerlink" title="instant-markdown"></a>instant-markdown</h2><ul>
+<li>这个用不了，npm安装后，配置文件中找不到要用的插件位置</li>
+</ul>
+<h2 id="vimsurround-更改成对出现的符号"><a href="#vimsurround-更改成对出现的符号" class="headerlink" title="vimsurround 更改成对出现的符号"></a>vimsurround 更改成对出现的符号</h2><ul>
+<li>cs 将成对符号更改<ul>
+<li>例 cs’” 将单引号改为双引号</li>
+</ul>
+</li>
+<li>ys <ul>
+<li>例 ysiw” 将这个单词加双引号</li>
+</ul>
+</li>
+<li>ds<ul>
+<li>例 ds”  删除双引号</li>
+</ul>
+</li>
+<li>安装过程<ul>
+<li>github搜索安装即可，同上</li>
+</ul>
+</li>
+</ul>
+<h2 id="fzf-vim模糊搜索"><a href="#fzf-vim模糊搜索" class="headerlink" title="fzf.vim模糊搜索"></a>fzf.vim模糊搜索</h2><ul>
+<li><a href="https://github.com/junegunn/fzf.vim">fzf.vim</a> 参考官方文档的command</li>
+<li>常用命令<ul>
+<li>Ag[PATTERN]模糊搜索字符串,这个功能不会用！</li>
+<li>Files[PATH]模糊搜索目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="far-vim搜索替换插件"><a href="#far-vim搜索替换插件" class="headerlink" title="far.vim搜索替换插件"></a>far.vim搜索替换插件</h2><ul>
+<li>:Far 被替换词 替换词 \**&#x2F;* <ul>
+<li>\**表示上层目录所有文件类型</li>
+<li>\*表示当前目录所有文件类型</li>
+<li>回车后会生成预览文件，没问题就可以替换</li>
+</ul>
+</li>
+<li>预览文件没问题需要执行Fardo命令进行替换</li>
+</ul>
+<h2 id="vim-go"><a href="#vim-go" class="headerlink" title="vim-go"></a>vim-go</h2><ul>
+<li>已经预装了，所以没有装，但是这台linux上没有golang的运行环境需要自己安装</li>
+</ul>
+<h2 id="python-mode打造轻量级PythonIDE"><a href="#python-mode打造轻量级PythonIDE" class="headerlink" title="python-mode打造轻量级PythonIDE"></a>python-mode打造轻量级PythonIDE</h2><ul>
+<li><p>需要注意的是安装库可能会花些时间</p>
+</li>
+<li><p>:help pymode 查询帮助信息,注意设置了打开文件类型，只有Python文件才可以打开插件</p>
+</li>
+<li><p>Support Python version 2.6+ and 3.2+</p>
+</li>
+<li><p>Syntax highlighting</p>
+</li>
+<li><p>Virtualenv support</p>
+</li>
+<li><p>Run python code (<leader>r)-    </p>
+</li>
+<li><p>Add&#x2F;remove breakpoints (<leader>b)-    </p>
+</li>
+<li><p>Improved Python indentation-     </p>
+</li>
+<li><p>Python motions and operators (]], 3[[, ]]M, vaC, viM, daC, ciM, …)-    </p>
+</li>
+<li><p>Improved Python folding-     </p>
+</li>
+<li><p>Run multiple code checkers simultaneously (:PymodeLint)-    </p>
+</li>
+<li><p>Autofix PEP8 errors (:PymodeLintAuto)-    </p>
+</li>
+<li><p>Search in python documentation (<leader>K)-    </p>
+</li>
+<li><p>Code refactoring-    </p>
+</li>
+<li><p>Intellisense code-completion-     </p>
+</li>
+<li><p>Go to definition (<C-c>g)-    </p>
+</li>
+<li><p>And more, more …- -</p>
+</li>
+</ul>
+<h2 id="vim-tagbar"><a href="#vim-tagbar" class="headerlink" title="vim tagbar"></a>vim tagbar</h2><ul>
+<li>安装前需要先安装ctag</li>
+<li>同样的插件github安装</li>
+<li>更改配置文件快速切换<ul>
+<li>nnoremap <leader>tb :TagbarToggle<CR></li>
+</ul>
+</li>
+</ul>
+<h2 id="vim-interestingwords"><a href="#vim-interestingwords" class="headerlink" title="vim-interestingwords"></a>vim-interestingwords</h2><ul>
+<li>高亮单词</li>
+<li>找到需要高亮的单词<leader>k,全文高亮需要单词</li>
+<li><leader>K,用于高亮需要单词</li>
+</ul>
+<h2 id="deoplete-nvim"><a href="#deoplete-nvim" class="headerlink" title="deoplete.nvim"></a>deoplete.nvim</h2><ul>
+<li>实现代码补全功能</li>
+<li><C-xo>代码补全</li>
+</ul>
+<h2 id="coc-vim"><a href="#coc-vim" class="headerlink" title="coc.vim"></a>coc.vim</h2><ul>
+<li>实现代码补全未安装，但是推荐说是很好用</li>
+</ul>
+<h2 id="代码格式检查"><a href="#代码格式检查" class="headerlink" title="代码格式检查"></a>代码格式检查</h2><ul>
+<li>自动格式化</li>
+<li>静态检查</li>
+</ul>
+<h3 id="Neoformat"><a href="#Neoformat" class="headerlink" title="Neoformat"></a>Neoformat</h3><ul>
+<li>这个插件有问题啊，没办法格式化，就算安装autopep8，也没办法格式化python代码</li>
+</ul>
+<h3 id="vim-autoformat"><a href="#vim-autoformat" class="headerlink" title="vim-autoformat"></a>vim-autoformat</h3><ul>
+<li>相较于Neoformat这个更好用，刚开始也出现了无法使用的问题，解决方法不用pip安装autopep8，改用sudo apt install python-autopep8 </li>
+<li>上面的Neoformat用了之后可以使用，但是有些缩进仍不规范</li>
+</ul>
+<h3 id="静态检查"><a href="#静态检查" class="headerlink" title="静态检查"></a>静态检查</h3><ul>
+<li>neomake</li>
+<li>ale<ul>
+<li>可以参考官方文档自定义检查功能，让报的错少些</li>
+</ul>
+</li>
+</ul>
+<h2 id="快速注释"><a href="#快速注释" class="headerlink" title="快速注释"></a>快速注释</h2><ul>
+<li>vim-commentary<ul>
+<li>gcc使用</li>
+<li>gcgc取消<br>  -多行也是gc注释和取消</li>
+</ul>
+</li>
+</ul>
+<h2 id="git相关插件"><a href="#git相关插件" class="headerlink" title="git相关插件"></a>git相关插件</h2><h3 id="Fugitive"><a href="#Fugitive" class="headerlink" title="Fugitive"></a>Fugitive</h3><ul>
+<li>在vim里使用git</li>
+</ul>
+<h3 id="vim-gitgutter"><a href="#vim-gitgutter" class="headerlink" title="vim-gitgutter"></a>vim-gitgutter</h3><ul>
+<li>显示git文件变动</li>
+</ul>
+<h3 id="gv-vim"><a href="#gv-vim" class="headerlink" title="gv.vim"></a>gv.vim</h3><ul>
+<li>查看命令行git项目提交记录</li>
+<li>:GV 即可打开gitbrowser</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"># vim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/07/31/vim/vimbasic5/" rel="prev" title="vimbasic5">
+                  <i class="fa fa-angle-left"></i> vimbasic5
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/04/linux/tmux-vim/" rel="next" title="tmux_vim">
+                  tmux_vim <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

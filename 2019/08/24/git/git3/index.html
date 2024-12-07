@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="分支操作合并分支 切换到要修改的分支（被合并，增加新内容）上	git checkout[老内容分支] 执行merge命令	git merge[新内容分支]  产生冲突 打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容 解决步骤 删除不想要的内容 git add 文件名 git commit -m “修改内容” 注意这里现在不能加文件名否则会报错    哈希 一种加密算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git3">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/git/git3/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="分支操作合并分支 切换到要修改的分支（被合并，增加新内容）上	git checkout[老内容分支] 执行merge命令	git merge[新内容分支]  产生冲突 打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容 解决步骤 删除不想要的内容 git add 文件名 git commit -m “修改内容” 注意这里现在不能加文件名否则会报错    哈希 一种加密算法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-24T13:31:59.000Z">
+<meta property="article:modified_time" content="2019-08-25T07:30:04.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/24/git/git3/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/24/git/git3/","path":"2019/08/24/git/git3/","title":"git3"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>git3 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-number">1.1.</span> <span class="nav-text">合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E7%94%9F%E5%86%B2%E7%AA%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">产生冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C"><span class="nav-number">2.</span> <span class="nav-text">哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8Egit%E5%85%B3%E8%81%94"><span class="nav-number">2.3.</span> <span class="nav-text">与git关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-%E4%B8%8E-svn-%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">git 与 svn 区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">git 如何管理分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">5.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E9%80%81"><span class="nav-number">6.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%8B%E9%9A%86"><span class="nav-number">7.</span> <span class="nav-text">克隆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pull%E6%8B%89%E5%8F%96"><span class="nav-number">8.</span> <span class="nav-text">pull拉取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pull%E6%96%87%E4%BB%B6%E5%86%B2%E7%AA%81"><span class="nav-number">9.</span> <span class="nav-text">pull文件冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%A8%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C"><span class="nav-number">10.</span> <span class="nav-text">跨团队协作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH%E7%99%BB%E5%BD%95"><span class="nav-number">11.</span> <span class="nav-text">SSH登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E7%9A%84%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-number">12.</span> <span class="nav-text">git的图形界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eclipse-%E6%93%8D%E4%BD%9C"><span class="nav-number">13.</span> <span class="nav-text">eclipse 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96git"><span class="nav-number">13.1.</span> <span class="nav-text">为项目初始化git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4"><span class="nav-number">13.2.</span> <span class="nav-text">为项目提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E7%9A%84%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-number">13.3.</span> <span class="nav-text">git的忽略文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4"><span class="nav-number">13.4.</span> <span class="nav-text">eclipse 项目提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="nav-number">13.5.</span> <span class="nav-text">eclipse推送到远程库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%BA%93%E5%B7%A5%E7%A8%8B%E6%94%BE%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="nav-number">13.6.</span> <span class="nav-text">远程库工程放到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%89%88%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">13.6.1.</span> <span class="nav-text">高版本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8E%E7%89%88%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">13.6.2.</span> <span class="nav-text">低版本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">13.7.</span> <span class="nav-text">eclipse 解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse%E5%88%9B%E5%BB%BAor%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">13.8.</span> <span class="nav-text">eclipse创建or切换分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">14.</span> <span class="nav-text">git工作流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">14.1.</span> <span class="nav-text">集中式工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">14.2.</span> <span class="nav-text">gitflow工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#froking%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">14.3.</span> <span class="nav-text">froking工作流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-%E6%9C%8D%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="nav-number">15.</span> <span class="nav-text">gitlab 服务操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE"><span class="nav-number">16.</span> <span class="nav-text">浏览器访问</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/git/git3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="git3 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git3
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-24 21:31:59" itemprop="dateCreated datePublished" datetime="2019-08-24T21:31:59+08:00">2019-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-08-25 15:30:04" itemprop="dateModified" datetime="2019-08-25T15:30:04+08:00">2019-08-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h1><h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><ol>
+<li>切换到要修改的分支（被合并，增加新内容）上	git checkout[老内容分支]</li>
+<li>执行merge命令	git merge[新内容分支]</li>
+</ol>
+<h3 id="产生冲突"><a href="#产生冲突" class="headerlink" title="产生冲突"></a>产生冲突</h3><ul>
+<li>打开冲突文件，head到等号是当前分支内容，等号到新内容分支名为冲突修改内容</li>
+<li>解决步骤<ul>
+<li>删除不想要的内容</li>
+<li>git add 文件名</li>
+<li>git commit -m “修改内容” 注意这里现在不能加文件名否则会报错</li>
+</ul>
+</li>
+</ul>
+<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><ul>
+<li>一种加密算法<ul>
+<li>将明文转换为密文</li>
+</ul>
+</li>
+</ul>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>不管输入数据的数据量有多大，输入同一个哈希算法，得到的加密结果长度固定</li>
+<li>哈希算法确定，输入数据确定，输出数据也是确定的</li>
+<li>哈希算法确定，输入数据有变化，输出数据一定有变化而且可能有很大的变化</li>
+<li>哈希算法不可逆</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li>MD5</li>
+<li>SHA1（字母不区分大小写，应该是代表十六进制数）</li>
+<li>CRC32</li>
+</ul>
+<h2 id="与git关联"><a href="#与git关联" class="headerlink" title="与git关联"></a>与git关联</h2><ul>
+<li>Git底层采取SHA-1 算法</li>
+<li>哈希算法可以用来校验文件是否修改</li>
+</ul>
+<h1 id="git-与-svn-区别"><a href="#git-与-svn-区别" class="headerlink" title="git 与 svn 区别"></a>git 与 svn 区别</h1><ul>
+<li>svn为集中式管理，每次保留修改部分，不存在修改部分</li>
+<li>git 把数据看做是小型文件系统的快照，每次提交更新都会对全部文件制作一个快照保存快照索引，如果文件没有修改git不再重新储存，只保留指针指向之前文件<ul>
+<li>提交对象及其父对象形成链表</li>
+</ul>
+</li>
+<li>git的快照<ul>
+<li>自身哈希</li>
+<li>commit</li>
+<li>tree</li>
+<li>parent</li>
+<li>author</li>
+<li>commiter</li>
+</ul>
+</li>
+</ul>
+<h1 id="git-如何管理分支"><a href="#git-如何管理分支" class="headerlink" title="git 如何管理分支"></a>git 如何管理分支</h1><ul>
+<li>类似链表结构</li>
+<li>首个版本为root</li>
+<li>开始HEAD指针指向master指针</li>
+<li>若有新的分支则新建一个新的指针</li>
+<li>切换分支只是改变HEAD指针位置</li>
+</ul>
+<h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><ul>
+<li>创建账号</li>
+<li>创建仓库</li>
+<li>仓库网址保存<ul>
+<li>git remote add origin(保存的仓库网址) 网址（url）将仓库网址起别名</li>
+<li>git remote -v 查看当前所有的网址别名</li>
+</ul>
+</li>
+<li>将新成员加入项目，点击setting，选择Collaborators，填写新成员github账号发送邀请，新成员接收到邀请后点击接受，新成员就可push内容到远端库了</li>
+</ul>
+<h1 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h1><ul>
+<li>git push 网址 本地库提交分支<ul>
+<li>第一次可能遇到https问题。需要删掉https试一次，在加上https试一次，然后就可以用啦</li>
+<li>目的是将本地库推送到远程库</li>
+</ul>
+</li>
+<li>新成员不能将本地库内容推送到远程库</li>
+</ul>
+<h1 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h1><ul>
+<li>git clone 网址<ul>
+<li>会完整的把远程库克隆到当前文件夹下的仓库名文件夹</li>
+<li>创建远程库的地址别名</li>
+<li>初始化本地库</li>
+</ul>
+</li>
+<li>新成员可以克隆内容到本地库，可以在本地库进行修改，但是不能上传到远程库</li>
+</ul>
+<h1 id="pull拉取"><a href="#pull拉取" class="headerlink" title="pull拉取"></a>pull拉取</h1><ul>
+<li>git pull 相当于 git fetch + git merge 的合并</li>
+<li>git fetch 【远程库地址别名】【远程分支名】<ul>
+<li>不改变本地文件，只是下载到本地</li>
+<li>下载的文件到了git checkout origin&#x2F;master 分支上</li>
+<li>用于查看改变而不着急更改</li>
+</ul>
+</li>
+<li>以上都是读操作不需要确定身份</li>
+<li>因为拉取有merge过程可能出现冲突问题，所以可以拆开来用</li>
+</ul>
+<h1 id="pull文件冲突"><a href="#pull文件冲突" class="headerlink" title="pull文件冲突"></a>pull文件冲突</h1><ul>
+<li>当git push 文件时远程库有了新的版本，这时的push操作是不会生效的。</li>
+<li>只能git pull 文件，当文件冲突时，会出现XXX|merge分支，这个分支操作和之前的分支冲突解决办法相同，选择删除冲突的内容。同样的git add 之后不带文件名的git commit</li>
+</ul>
+<h1 id="跨团队协作"><a href="#跨团队协作" class="headerlink" title="跨团队协作"></a>跨团队协作</h1><ul>
+<li>以其他团队成员身份希望参与他人的工程开发，可以用fork的方式将项目复制到自己的目录下，</li>
+<li>可以clone到自己的本地</li>
+<li>也可以push到自己的远程库</li>
+<li>将自己的改好的项目传回他人的团队<ul>
+<li>github上pull request，进入后点击create pull request</li>
+<li>类似发封邮件给项目创建人</li>
+<li>项目创建人查看pull request，可以回复comment，可以commit看对方提交了什么，可以看files changed 具体做的文件修改。对代码进行审核</li>
+<li>如果没问题，merge pull request合并代码，填写confirm merge填写本次操作的日志信息</li>
+</ul>
+</li>
+</ul>
+<h1 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h1><ul>
+<li>命令行下输入ssh-keygen -t rsa -C 邮箱地址</li>
+<li>生成SSH的目录，进入到目录中，可以看到两个文件 <ul>
+<li>id_rsa</li>
+<li>id_rsa.pub <ol>
+<li>内容复制，</li>
+<li>进入github</li>
+<li>进入personal settings </li>
+<li>进入SSH and GPG keys</li>
+<li>title随意，keys粘贴复制内容</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>通过 git remote add 地址别名 SSH地址</li>
+<li>git remote -v 查看SSH编码</li>
+<li>git push SSH的别名 master 推送至远程库（可以不填写账号密码）</li>
+</ul>
+<h1 id="git的图形界面"><a href="#git的图形界面" class="headerlink" title="git的图形界面"></a>git的图形界面</h1><ul>
+<li>eclipse 内置了git插件</li>
+</ul>
+<h1 id="eclipse-操作"><a href="#eclipse-操作" class="headerlink" title="eclipse 操作"></a>eclipse 操作</h1><h2 id="为项目初始化git"><a href="#为项目初始化git" class="headerlink" title="为项目初始化git"></a>为项目初始化git</h2><ul>
+<li>工程上点右键选Team</li>
+<li>选share_project</li>
+<li>选git</li>
+<li>use or create repository in parent folder of project 勾选</li>
+<li>选中项目</li>
+<li>之后点击create repository</li>
+<li>finish</li>
+</ul>
+<h2 id="为项目提交"><a href="#为项目提交" class="headerlink" title="为项目提交"></a>为项目提交</h2><ul>
+<li>工程上右键选Team</li>
+<li>选commit</li>
+<li>显示三个部分<ul>
+<li>unstaged changes</li>
+<li>staged changes</li>
+<li>commit message</li>
+</ul>
+</li>
+<li>eclipse中会有一些特定文件是eclipse中管理本地库的隐藏文件，这些文件不需要通过git上传，因为不同版本的eclipse用的特定文件也不同<ul>
+<li>.classpath</li>
+<li>.project</li>
+<li>.settings</li>
+<li>target</li>
+</ul>
+</li>
+</ul>
+<h2 id="git的忽略文件"><a href="#git的忽略文件" class="headerlink" title="git的忽略文件"></a>git的忽略文件</h2><ul>
+<li>url github.com&#x2F;github&#x2F;gitignore</li>
+<li>例如java 参照网址中机制，<ol>
+<li>在用户家目录中找到.gitconfig文件放在一个目录下方便一起修改</li>
+<li>新建复制网站中的代码，命名按照github上的仓库名</li>
+<li>除了这些eclipse中还要忽略<ul>
+<li>.classpath</li>
+<li>.project</li>
+<li>.settings</li>
+<li>target</li>
+</ul>
+</li>
+<li>在.gitconfig中加入下面代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	excludesfile = ~/java.gitconfig</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<h2 id="eclipse-项目提交"><a href="#eclipse-项目提交" class="headerlink" title="eclipse 项目提交"></a>eclipse 项目提交</h2><ul>
+<li>工程右键选Team</li>
+<li>选择add to index</li>
+<li>之后在选择commit提交</li>
+</ul>
+<h2 id="eclipse推送到远程库"><a href="#eclipse推送到远程库" class="headerlink" title="eclipse推送到远程库"></a>eclipse推送到远程库</h2><ul>
+<li>Team </li>
+<li>remote</li>
+<li>push</li>
+<li>填写url</li>
+</ul>
+<h2 id="远程库工程放到本地"><a href="#远程库工程放到本地" class="headerlink" title="远程库工程放到本地"></a>远程库工程放到本地</h2><h3 id="高版本操作"><a href="#高版本操作" class="headerlink" title="高版本操作"></a>高版本操作</h3><ul>
+<li>import 导入工程</li>
+<li>git&#x2F;projects from git</li>
+<li>clone url</li>
+<li>Destination 选择eclipse工作区目录</li>
+<li>import as general project</li>
+</ul>
+<h3 id="低版本操作"><a href="#低版本操作" class="headerlink" title="低版本操作"></a>低版本操作</h3><ul>
+<li>前面的都一样，不能导入到当前工作区目录，只能导到工作区以外的目录中</li>
+<li>Destination 非eclipse工作区目录</li>
+<li>之后的步骤相同</li>
+</ul>
+<h2 id="eclipse-解决冲突"><a href="#eclipse-解决冲突" class="headerlink" title="eclipse 解决冲突"></a>eclipse 解决冲突</h2><ul>
+<li>各自提交到本地库没问题</li>
+<li>如果推送到同一远程库，后推送会出现冲突</li>
+<li>同样的先pull文件之后处理冲突，也可以用merge tool查看多文件区别</li>
+<li>处理好后正常推送远程库即可</li>
+</ul>
+<h2 id="eclipse创建or切换分支"><a href="#eclipse创建or切换分支" class="headerlink" title="eclipse创建or切换分支"></a>eclipse创建or切换分支</h2><ul>
+<li>Team</li>
+<li>switch to </li>
+<li>New branch or other</li>
+</ul>
+<h1 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h1><h2 id="集中式工作流"><a href="#集中式工作流" class="headerlink" title="集中式工作流"></a>集中式工作流</h2><ul>
+<li>类SVN无分支</li>
+</ul>
+<h2 id="gitflow工作流"><a href="#gitflow工作流" class="headerlink" title="gitflow工作流"></a>gitflow工作流</h2><ul>
+<li>新功能开发在master下的develop分支上进行</li>
+<li>develop下还有feature_XX等分支负责具体功能开发</li>
+<li>bug在master下hotfix下进行修复并且修复后尽快合并会master分支和develop分支</li>
+<li>上线前进行最后测试需要建立一个release分支测试。</li>
+<li>将develop分支合并至release上且有bug直接修复</li>
+<li>上线时合并到master分支上和develop分支上</li>
+</ul>
+<h2 id="froking工作流"><a href="#froking工作流" class="headerlink" title="froking工作流"></a>froking工作流</h2><ul>
+<li>常用于项目外人员开发</li>
+</ul>
+<h1 id="gitlab-服务操作"><a href="#gitlab-服务操作" class="headerlink" title="gitlab 服务操作"></a>gitlab 服务操作</h1><ul>
+<li>初始化gitlab<ul>
+<li>gitlab-ctl reconfigure</li>
+</ul>
+</li>
+<li>启动gitlab<ul>
+<li>gitlab-ctl start</li>
+</ul>
+</li>
+<li>停止gitlab<ul>
+<li>gitlab-ctl stop</li>
+</ul>
+</li>
+</ul>
+<h1 id="浏览器访问"><a href="#浏览器访问" class="headerlink" title="浏览器访问"></a>浏览器访问</h1><ul>
+<li>可能需要停掉防火墙<ul>
+<li>service firewall stop</li>
+</ul>
+</li>
+<li>gitlab设置密码</li>
+<li>之后类似github操作</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/21/other/wirelessproblem/" rel="prev" title="wirelessproblem">
+                  <i class="fa fa-angle-left"></i> wirelessproblem
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/29/linux/tmux-zsh-ranger/" rel="next" title="tmux_zsh_ranger">
+                  tmux_zsh_ranger <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

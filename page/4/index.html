@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="lmblog(hexo)">
@@ -75,6 +75,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -82,12 +83,38 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -119,9 +146,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
@@ -159,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/tmux-zsh-ranger/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/other/golang1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,7 +209,100 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/29/tmux-zsh-ranger/" class="post-title-link" itemprop="url">tmux_zsh_ranger</a>
+          <a href="/2019/08/29/other/golang1/" class="post-title-link" itemprop="url">golang1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2019-08-29 14:05:33 / 修改时间：14:21:45" itemprop="dateCreated datePublished" datetime="2019-08-29T14:05:33+08:00">2019-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="golang"><a href="#golang" class="headerlink" title="golang"></a>golang</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>不建议用sudo apt install 安装，因为版本太老了</li>
+<li><a href="https://golang.google.cn/">官网</a></li>
+<li>建议安装地址 &#x2F;usr&#x2F;local&#x2F;	解压会自动建一个go文件夹</li>
+<li>tar -C &#x2F;usr&#x2F;local -xzf go1.12.9.linux-amd64.tar.gz</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>之前安装了gcc 所以配置时默认的是这个老版本go</li>
+<li>用go version查看当前版本</li>
+<li>用go env 查看go的运行环境</li>
+<li>用which go 查看go的可执行文件位置</li>
+<li>用whereis go 查看用多少go文件地址</li>
+<li>配置环境在.bashrc中<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># go path</span><br><span class="line">export GOPATH=$HOME/go</span><br><span class="line">export GOROOT=/usr/local/go</span><br><span class="line">export PATH=$PATH:$GOROOT/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure></li>
+<li>网上说GOROOT和GOPATH地址不能一样</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/linux/tmux-zsh-ranger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/08/29/linux/tmux-zsh-ranger/" class="post-title-link" itemprop="url">tmux_zsh_ranger</a>
         </h2>
 
         <div class="post-meta-container">
@@ -190,6 +315,15 @@
       
 
       <time title="创建时间：2019-08-29 12:25:48 / 修改时间：14:04:49" itemprop="dateCreated datePublished" datetime="2019-08-29T12:25:48+08:00">2019-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
     </span>
 
   
@@ -293,7 +427,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/git3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/git/git3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -311,7 +445,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/24/git3/" class="post-title-link" itemprop="url">git3</a>
+          <a href="/2019/08/24/git/git3/" class="post-title-link" itemprop="url">git3</a>
         </h2>
 
         <div class="post-meta-container">
@@ -330,6 +464,15 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2019-08-25 15:30:04" itemprop="dateModified" datetime="2019-08-25T15:30:04+08:00">2019-08-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
     </span>
 
   
@@ -612,7 +755,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/wirelessproblem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/other/wirelessproblem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -630,7 +773,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/21/wirelessproblem/" class="post-title-link" itemprop="url">wirelessproblem</a>
+          <a href="/2019/08/21/other/wirelessproblem/" class="post-title-link" itemprop="url">wirelessproblem</a>
         </h2>
 
         <div class="post-meta-container">
@@ -643,6 +786,15 @@
       
 
       <time title="创建时间：2019-08-21 22:37:57 / 修改时间：23:27:14" itemprop="dateCreated datePublished" datetime="2019-08-21T22:37:57+08:00">2019-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a>
+        </span>
     </span>
 
   
@@ -715,7 +867,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/git2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/git/git2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -733,7 +885,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/19/git2/" class="post-title-link" itemprop="url">git2</a>
+          <a href="/2019/08/19/git/git2/" class="post-title-link" itemprop="url">git2</a>
         </h2>
 
         <div class="post-meta-container">
@@ -746,6 +898,15 @@
       
 
       <time title="创建时间：2019-08-19 10:01:07 / 修改时间：17:37:22" itemprop="dateCreated datePublished" datetime="2019-08-19T10:01:07+08:00">2019-08-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
     </span>
 
   
@@ -887,7 +1048,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/datastructure1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/datastructrue/datastructure1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -905,7 +1066,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/18/datastructure1/" class="post-title-link" itemprop="url">datastructure1</a>
+          <a href="/2019/08/18/datastructrue/datastructure1/" class="post-title-link" itemprop="url">datastructure1</a>
         </h2>
 
         <div class="post-meta-container">
@@ -915,9 +1076,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2019-08-18 09:41:46 / 修改时间：14:24:22" itemprop="dateCreated datePublished" datetime="2019-08-18T09:41:46+08:00">2019-08-18</time>
+      <time title="创建时间：2019-08-18 09:41:46" itemprop="dateCreated datePublished" datetime="2019-08-18T09:41:46+08:00">2019-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:21:11" itemprop="dateModified" datetime="2024-12-07T16:21:11+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/datastructrue/" itemprop="url" rel="index"><span itemprop="name">datastructrue</span></a>
+        </span>
     </span>
 
   
@@ -1003,7 +1179,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/nextthemes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/hexolearn/nextthemes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1021,7 +1197,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/13/nextthemes/" class="post-title-link" itemprop="url">nextthemes</a>
+          <a href="/2019/08/13/hexolearn/nextthemes/" class="post-title-link" itemprop="url">nextthemes</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1034,6 +1210,15 @@
       
 
       <time title="创建时间：2019-08-13 15:21:14 / 修改时间：15:29:54" itemprop="dateCreated datePublished" datetime="2019-08-13T15:21:14+08:00">2019-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexolearn/" itemprop="url" rel="index"><span itemprop="name">hexolearn</span></a>
+        </span>
     </span>
 
   
@@ -1084,7 +1269,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/linuxshell/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/linux/linuxshell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1102,7 +1287,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/13/linuxshell/" class="post-title-link" itemprop="url">linuxshell</a>
+          <a href="/2019/08/13/linux/linuxshell/" class="post-title-link" itemprop="url">linuxshell</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1115,6 +1300,15 @@
       
 
       <time title="创建时间：2019-08-13 11:37:24 / 修改时间：12:48:49" itemprop="dateCreated datePublished" datetime="2019-08-13T11:37:24+08:00">2019-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
     </span>
 
   
@@ -1184,7 +1378,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/linuxbasic6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/linux/linuxbasic6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1202,7 +1396,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/12/linuxbasic6/" class="post-title-link" itemprop="url">linuxbasic6</a>
+          <a href="/2019/08/12/linux/linuxbasic6/" class="post-title-link" itemprop="url">linuxbasic6</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1215,6 +1409,15 @@
       
 
       <time title="创建时间：2019-08-12 12:45:29 / 修改时间：19:44:44" itemprop="dateCreated datePublished" datetime="2019-08-12T12:45:29+08:00">2019-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
     </span>
 
   
@@ -1332,7 +1535,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/ideaIDE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/other/ideaIDE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1350,7 +1553,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/11/ideaIDE/" class="post-title-link" itemprop="url">ideaIDE</a>
+          <a href="/2019/08/11/other/ideaIDE/" class="post-title-link" itemprop="url">ideaIDE</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1360,9 +1563,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2019-08-11 21:47:05 / 修改时间：22:33:11" itemprop="dateCreated datePublished" datetime="2019-08-11T21:47:05+08:00">2019-08-11</time>
+      <time title="创建时间：2019-08-11 21:47:05" itemprop="dateCreated datePublished" datetime="2019-08-11T21:47:05+08:00">2019-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:36:45" itemprop="dateModified" datetime="2024-12-07T16:36:45+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a>
+        </span>
     </span>
 
   
@@ -1411,7 +1629,7 @@
 <li>可以设置leader键，但是不能使用插件</li>
 </ul>
 </li>
-<li>重启进入idea生效配置后使用vim编辑器，建议还是多设置写commandmode的leader快捷键，这样可以讲编辑的影响降到最低</li>
+<li>重启进入idea生效配置后使用vim编辑器，建议还是多设置写commandmode的leader快捷键，这样可以将编辑的影响降到最低</li>
 <li>:actionlist可以查看vim能设置的idea相关快捷键</li>
 <li>设置方法nnoremap <leader>gc :action GotoClass<CR></li>
 </ul>
@@ -1449,250 +1667,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/javascript3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lmfalcon">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lmblog(hexo)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | lmblog(hexo)">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/10/javascript3/" class="post-title-link" itemprop="url">javascript3</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2019-08-10 11:06:23 / 修改时间：14:58:49" itemprop="dateCreated datePublished" datetime="2019-08-10T11:06:23+08:00">2019-08-10</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="javascript对象和类"><a href="#javascript对象和类" class="headerlink" title="javascript对象和类"></a>javascript对象和类</h1><h2 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h2><ul>
-<li>动态对象<ul>
-<li>需用new关键字来创建一个对象示例，才能使用“对象实例名.成员”的方式来访问其属性和方法</li>
-</ul>
-</li>
-<li>静态对象<ul>
-<li>不需要用new关键字创建对象实例，直接使用“对象名.成员”的方式来访问其属性和方法即可</li>
-</ul>
-</li>
-</ul>
-<h3 id="Object对象"><a href="#Object对象" class="headerlink" title="Object对象"></a>Object对象</h3><ul>
-<li><p>创建Object对象</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj = new Object([value])</span><br></pre></td></tr></table></figure>
-<ul>
-<li>obj 为必选项。要赋值为Object对象的变量名</li>
-<li>value 可选项。任意一种Jscript基本数据类型（Number、Boolean or String）如果value是一个对象，返回不做改动的该对象。如果value为null,undefined or 没有给出，则产生一个没有内容的对象。</li>
-</ul>
-</li>
-<li><p>Object 对象的属性</p>
-<ul>
-<li>prototype属性</li>
-</ul>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">objectName.prototype</span><br><span class="line">## 该属性返回对象类型原型的引用</span><br><span class="line">## 参数说明： objectName:对象名称</span><br><span class="line">## 用prototype属性可以提供对象的类的一组基本功能。对象的新实例“继承”赋予该对象原型的操作</span><br><span class="line"></span><br><span class="line">function array_max()&#123;</span><br><span class="line">	var i,max = this[0];</span><br><span class="line">	for(i = 1;i &lt; this.length; i++)&#123;</span><br><span class="line">		if(max &lt; this[i])</span><br><span class="line">			max = this[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return max</span><br><span class="line">&#125;</span><br><span class="line">Array.prototype.max = array_max;	//注意这里没有括号</span><br><span class="line">var x = new Array(1,2,3,4,5,6);</span><br><span class="line">var y = x.max();</span><br><span class="line"></span><br><span class="line">//上面的代码执行后，y保存数组x的最大值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>constructor属性  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// object.constructor</span><br><span class="line">// 参数说明object:必选项对象或者函数的名称。constructor属性是所有具有prototype的对象的成员。他们包括除了Global和MAth对象以外的所有Jscript固有对象。constructor属性保存了对构造特定对象市里的函数引用</span><br><span class="line"></span><br><span class="line">x= new String(&quot;Hi&quot;);</span><br><span class="line">if(x.constructor == String)</span><br><span class="line">//进行处理（条件为真）</span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">function MyFunc()&#123;</span><br><span class="line">//函数体</span><br><span class="line">&#125;</span><br><span class="line">y = new MyFunc;</span><br><span class="line">if(y.constructor == MyFunc)</span><br><span class="line">//进行处理（条件为真）</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h3 id="Object对象的方法"><a href="#Object对象的方法" class="headerlink" title="Object对象的方法"></a>Object对象的方法</h3><h4 id="toLocaleString-方法"><a href="#toLocaleString-方法" class="headerlink" title="toLocaleString()方法"></a>toLocaleString()方法</h4><ul>
-<li>该方法返回一个日期，该日期使用当前区域设置并已被转换为字符串</li>
-<li>dataObj.toLocaleString()<ul>
-<li>参数说明dataObj:必选项。为任意Data对象</li>
-<li>toLocaleString()方法返回一个String对象，该对象中包括了用当前区域设置的默认格式表示的日期（需要注意在不同时间段的时间显示格式是不同的注意区分）</li>
-</ul>
-</li>
-</ul>
-<h4 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString() 方法"></a>toString() 方法</h4><ul>
-<li>该方法返回对象的字符串表示</li>
-<li>objectname.toString([radix])<ul>
-<li>参数说明objectname必选项。要得到字符串表示的对象</li>
-<li>radix 可选项，指定将数字值转换为字符串时的进制</li>
-</ul>
-</li>
-</ul>
-<p>| 对象|操作|<br>|-:-|-:-|<br>|Array|将Array的元素转换为字符串，结果字符串由逗号分隔且连接起来|<br>|Boolean|如果Boolean值是true,则返回true;否则返回false|<br>|Date|返回日期的文字表示法|<br>|Error|返回一个包含相关错误消息的字符串|<br>|Function|返回如下格式的字符串，其中functionname 是被调用的toString()方法函数的名称：function functionname(){[native code]}|<br>|Number|返回数字的文字表示|<br>|String|返回String 对象的值|<br>|默认|返回[object objectname],其中objectname是对象类型的名称|</p>
-<h4 id="valueOf-方法"><a href="#valueOf-方法" class="headerlink" title="valueOf()方法"></a>valueOf()方法</h4><ul>
-<li>返回指定对象的原始值</li>
-<li>object.valueOf()<ul>
-<li>object是任意固有javascript对象<br>|对象|返回值|<br>|-:-|-:-|<br>|Array|数组的元素被转换为字符串，这些字符串由逗号分隔，并连接在一起。其操作与Array.toString和Array.join方法相同|<br>|boolean|Boolean值|<br>|Date|储存的时间是从1970年1月1日午夜开始记得毫秒数|<br>|Function|函数本身|<br>|Number|数字值|<br>|Object|对象本身，这是默认情况|<br>|String|字符串值|</li>
-</ul>
-</li>
-</ul>
-<h2 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h2><ul>
-<li>动态对象</li>
-<li>主要用于处理和格式化文本字符串以及定位字符串中的子字符串</li>
-</ul>
-<h3 id="创建String对象"><a href="#创建String对象" class="headerlink" title="创建String对象"></a>创建String对象</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ul>
-<li>var newstr &#x3D; new String(StringText)<ul>
-<li>newstr 创建的String对象名</li>
-<li>StringText 字符串文本</li>
-<li>例 var newstr &#x3D; new String(“欢迎使用JavaScript脚本”)</li>
-<li>实际上任意引号引起来的字符串常量都是String对象，可以直接使用String对象的方法和属性</li>
-<li>字符串返回的是String类型,但是String对象返回的是Object类型</li>
-</ul>
-</li>
-</ul>
-<h3 id="String对象的属性"><a href="#String对象的属性" class="headerlink" title="String对象的属性"></a>String对象的属性</h3><h4 id="length属性"><a href="#length属性" class="headerlink" title="length属性"></a>length属性</h4><ul>
-<li>stringObject.length</li>
-<li>用于获得当前字符串的长度</li>
-</ul>
-<h4 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h4><ul>
-<li>Object.constructor</li>
-<li>对当前对象的函数引用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 作用1类似于Object对象的使用，下面展示另一种应用</span><br><span class="line">// 获取当前对象所引用的函数代码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function chronicle(name,year)</span><br><span class="line">&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.year = year;</span><br><span class="line">&#125;</span><br><span class="line">var fred = new chronicle(&quot;Year&quot;,2007);</span><br><span class="line">alert(fred.constructor);	//显示对象中的函数代码</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a>prototype属性</h4><ul>
-<li>可以为对象添加属性和方法</li>
-<li>object.prototype.name &#x3D; value<ul>
-<li>object 对象名or字符串变量</li>
-<li>name 要添加的属性名</li>
-<li>value 添加的属性值</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function personnel(name.age)</span><br><span class="line">&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">var information = new personnel(&quot;张三哦&quot;, 27);</span><br><span class="line">personel.prototype.salary = null;	//向对象中添加属性，书上是这样写得但是这个是个类啊，对象应该是information才对</span><br><span class="line">information.salary = 1700;</span><br><span class="line">alert(information.salary);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="String-对象的方法"><a href="#String-对象的方法" class="headerlink" title="String 对象的方法"></a>String 对象的方法</h4><p>|方法|说明|<br>|-:-|-:-|<br>|anchor()|创建HTML锚|<br>|big()|使用大号字体显示字符串|<br>|small()|使用小号字体显示字符串|<br>|fontsize()|使用指定的尺寸来显示字符串|<br>|bold()|使用粗体来显示字符串|<br>|italics()|使用斜体来显示字符串|<br>|link()|将字符串显示为链接|<br>|strike()|使用删除线来显示字符串|<br>|blink()|显示闪动字符串，该方法不支持IE浏览器|<br>|fixed()|以打字机文本显示字符串|<br>|charAt()|返回指定位置的字符（返回的字符编码）|<br>|charCodeAt()|返回指定位置的字符（返回的是字符子串）|<br>|concat()|连接字符串|<br>|fontcolor()|使用指定颜色来显示字符串|<br>|fromCharCode()|从字符编码创建一个字符串|<br>|indexOf()|检索字符串|<br>|lastIndexOf|从后向前搜索字符串|<br>|localeCompare|用本地特定的顺序来比较两个字符串|<br>|match()|在字符串内检索指定的值或找到一个或多个与正则表达式相匹配的文本|<br>|repalce()|替换与正则表达式匹配的子串|<br>|search()|检索与正则表达式相匹配的值|<br>|split()|把字符串分割为字符串数组|<br>|substr()|从起始索引号提取字符串中指定数目的字符|<br>|substring()|提取字符串中两个指定的索引号之间的字符|<br>|slice()|提取字符串的片段并在新的字符串中返回被提取的部分|<br>|sub()|把字符串显示为下标|<br>|sup()|把字符串显示为上标|<br>|toLocaleLowerCase()|按照本地方式把字符串转换为小写|<br>|toLocaleUpperCase()|按照本地方式把字符串转换为大写|<br>|toLowerCase()|把字符串转换为小写|<br>|toUpperCase()|把字符串转换为大写|<br>|toSource()|代表对象的源代码|<br>|valueOf()|返回某个字符串对象的原始值|</p>
-<h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><ul>
-<li>用于在网页中实现时间日期</li>
-</ul>
-<h3 id="创建Date对象"><a href="#创建Date对象" class="headerlink" title="创建Date对象"></a>创建Date对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dataObj = new Date();</span><br><span class="line">dateObj = new Date(dateVal);</span><br><span class="line">dateObj = new Date(year, month, date[,hours[,minutes[,seconds[,ms]]]]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>|参数|说明|<br>|-:-|-:-|<br>|dateObj|必选项，要赋值为Date对象的变量名|<br>|dateVal|必选项，如果是数字，从1970年1月1日计算，如果字符串，按parse方法中的规则解析，也可以从某些ActiveX(R)对象返回的VT_DATE值|<br>|year|必选项，需要完整年份如1970|<br>|month|必选项，0-11之间|<br>|date|必选项，1-31之间|<br>|hours|可选，有下级必选，0-23|<br>|minutes|可选，0-59|<br>|seconds|可选，0-59|<br>|ms|可选，0-999|</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var newDate = new Date(&quot;Jan 2,2008 19:41:40&quot;);</span><br><span class="line">document.write(newDate);</span><br><span class="line"></span><br><span class="line">//运行结果 Wed Jan 2 19:41:40 UTC+0800 2008</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Date对象的属性"><a href="#Date对象的属性" class="headerlink" title="Date对象的属性"></a>Date对象的属性</h3><ul>
-<li>constructor</li>
-<li>prototype</li>
-<li>类似用法不讲解了</li>
-</ul>
-<h3 id="Date对象的方法"><a href="#Date对象的方法" class="headerlink" title="Date对象的方法"></a>Date对象的方法</h3><ul>
-<li>好多啊不想打了，查吧</li>
-<li>大致分为这几类<ul>
-<li>Date()</li>
-<li>get…()</li>
-<li>parse()</li>
-<li>set…()</li>
-<li>to…()</li>
-<li>UTC()</li>
-<li>valueOf()</li>
-</ul>
-</li>
-</ul>
-<h2 id="event-对象"><a href="#event-对象" class="headerlink" title="event 对象"></a>event 对象</h2><ul>
-<li>主要用来描述JavaScript的事件<ul>
-<li>事件发生元素</li>
-<li>键盘状态</li>
-<li>鼠标位置</li>
-<li>鼠标按钮状态</li>
-</ul>
-</li>
-</ul>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
-<li>IE中event可以全局引用例： event.propertyName</li>
-<li>W3C 中引用event对象<ul>
-<li>必须明确的将event作为参数传递到事件处理函数中</li>
-<li>例： onKeyUp &#x3D; “example(this,event)” or function example(widget,event){…}</li>
-<li>尽量避免event作为传入参数变量名</li>
-</ul>
-</li>
-</ul>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
-<li>altLeft属性<ul>
-<li>获取左alt键的当前状态，true为关闭，false不关闭 </li>
-<li>[windows.]event.altLeft</li>
-</ul>
-</li>
-<li>ctrlLeft属性</li>
-<li>shiftLeft属性</li>
-<li>button属性<ul>
-<li>设置或获取事件发生时用户所按的鼠标键</li>
-<li>[windows.]event.button</li>
-<li>此属性仅用于onmousedown,onmouseup,onmousemove事件，其他事件都返回0</li>
-</ul>
-</li>
-</ul>
-<p>|button属性的值|说明|<br>|-:-|-:-|<br>|0|表示没有按键|<br>|1|按下左键|<br>|2|按下右键|<br>|3|同时按下左键和右键|<br>|4|按下中键|<br>|5|同时按下左中|<br>|6|同时按下右中|<br>|7|同时按下左中右|</p>
-<ul>
-<li>clientX 属性<ul>
-<li>该属性获取鼠标在浏览器窗口中的X坐标，他是一个只读属性，即只能获取鼠标当前位置不能改变鼠标位置</li>
-<li>[windows.]event.clientX</li>
-</ul>
-</li>
-<li>clientY属性</li>
-<li>X属性<ul>
-<li>该属性设置或获取鼠标指针位置相对于CSS属性中有position属性的上级元素的X轴坐标。如果CSS属性中没有position属性的上级元素，默认以body元素作为参考对象</li>
-<li>[windows.]event.X </li>
-<li>如果鼠标事件触发后，鼠标移出窗口外，则返回的值为-1,。这是个只读属性，只能通过他获取鼠标当前位置，但不能用来改变鼠标位置。</li>
-</ul>
-</li>
-<li>Y属性</li>
-<li>cancelBubble属性<ul>
-<li>检测是否接受上层元素的事件的控制。如果该属性的值是false,则允许被上层元素的事件控制；否则值为true,则不被上层元素的事件控制。</li>
-<li>[windows.]event.cancelBubble[&#x3D; cancelBubble]</li>
-<li>该属性的值为一个可读写的boolean,默认false</li>
-</ul>
-</li>
-<li>srcElement属性<ul>
-<li>用于设置或获取触发事件的对象</li>
-<li>是事件初始目标的HTML元素对象引用</li>
-<li>由事件通过元素容器层次进行处理，并可以在任意层次进行处理，因此由一个属性指向产生初始事件的元素很有帮助。</li>
-</ul>
-</li>
-</ul>
-<p>对象类型有点多，今天就写到这了，应该多编写代码而不是写心得，感觉打字是越来越熟练，但是打示例代码的速度还是有些慢。由于没有彻底学完HTML和CSS,javascript理解有些困难，所以暂且告一段落。待日后有时间再学习。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1736,7 +1712,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
 
 
 

@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="lmblog(hexo)">
@@ -75,6 +75,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -82,12 +83,38 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </header>
         
@@ -119,9 +146,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
@@ -159,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/noroot/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/C/CLearning7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,7 +209,141 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/04/noroot/" class="post-title-link" itemprop="url">noroot</a>
+          <a href="/2019/09/05/C/CLearning7/" class="post-title-link" itemprop="url">CLearning7</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-05 23:45:34" itemprop="dateCreated datePublished" datetime="2019-09-05T23:45:34+08:00">2019-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-09-07 21:19:11" itemprop="dateModified" datetime="2019-09-07T21:19:11+08:00">2019-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="bool类型"><a href="#bool类型" class="headerlink" title="bool类型"></a>bool类型</h1><ul>
+<li>C++有bool类型的变量，C语言没有。</li>
+<li>C中bool类型可以用char和int类型代替</li>
+</ul>
+<h1 id="块语句"><a href="#块语句" class="headerlink" title="块语句"></a>块语句</h1><ul>
+<li>用大括号包起来的语句块</li>
+<li>C中块语句定义的变量单独开辟一块内存空间，作为局部变量。而且块语句外可以定义同名变量</li>
+<li>同一块语句中变量不能重名</li>
+</ul>
+<h1 id="算法表示"><a href="#算法表示" class="headerlink" title="算法表示"></a>算法表示</h1><ul>
+<li>伪代码法<ul>
+<li>算法不能有二义性</li>
+</ul>
+</li>
+<li>流程图法<ul>
+<li>起止框				椭圆形</li>
+<li>输入输出框			平行四边形</li>
+<li>处理框				正方形		完成某些操作</li>
+<li>判断框				菱形		</li>
+<li>连接点				小圆		流程图太大则用于分解连接</li>
+<li>流程线				带箭头线	表示执行方向</li>
+</ul>
+</li>
+</ul>
+<h1 id="结构化程序设计"><a href="#结构化程序设计" class="headerlink" title="结构化程序设计"></a>结构化程序设计</h1><ul>
+<li>分治思想<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openBaidu()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;http://www.baidu.com&quot;,0)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void closeBaidu()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im iexplore.exe&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void clickBaidu()&#123;</span><br><span class="line">	SetCursorPos(40,40);	//设置鼠标位置</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);	//鼠标左键按下</span><br><span class="line">	mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);	//鼠标左键弹起</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	while(1)&#123;</span><br><span class="line">		openBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		clickBaidu();</span><br><span class="line">		Sleep(5000);</span><br><span class="line">		closeBaidu();</span><br><span class="line">		Sleep(1000);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>通过不同的函数实现不同的功能，面向对象是对分治最好的体现。</li>
+</ul>
+<h1 id="windows输入输出"><a href="#windows输入输出" class="headerlink" title="windows输入输出"></a>windows输入输出</h1><ul>
+<li>cmd中切换到操作目录</li>
+<li>ipconfig&lt;0.txt&gt;10.txt</li>
+<li>上一步操作会将0.txt中的操作输入到ipconfig中（实际上没有做任何事）之后将ipconfig中的内容输入到10.txt中</li>
+<li>在windows做这个操作会会覆盖之前的文档内容，Ubuntu中只是添加内容。</li>
+<li>ubuntu的命令行操作不同例如查询ip：ifconfig&gt;&gt;10.txt</li>
+</ul>
+<h1 id="if选择分支结构"><a href="#if选择分支结构" class="headerlink" title="if选择分支结构"></a>if选择分支结构</h1><ul>
+<li>可以嵌套，但是还是容易乱建议减少嵌套，而是单独设计函数，这样简介清晰</li>
+<li>if else嵌套时注意一定要配套，不要漏写，多写。</li>
+</ul>
+<h1 id="switch-case多分支选择语句"><a href="#switch-case多分支选择语句" class="headerlink" title="switch case多分支选择语句"></a>switch case多分支选择语句</h1><ul>
+<li>case 后的常量值不能重合</li>
+<li>多个case可以共用一个语句块</li>
+<li>default分支不限定在最后，内部任何分支没有先后顺序。</li>
+<li>case相当一个开关，如果不加break会一直执行下去。</li>
+<li>不加break说明你希望连续执行多个分支</li>
+<li>switch语句一般用于处理枚举类型数据</li>
+<li>switch的表达式只能是整数或者字符，只能用于处理常量（因为case中只能是常量，只能判断相等）</li>
+</ul>
+<h1 id="循环实现移动窗口"><a href="#循环实现移动窗口" class="headerlink" title="循环实现移动窗口"></a>循环实现移动窗口</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#incldue&lt;Windows.h&gt;</span><br><span class="line"></span><br><span class="line">void openQQ()&#123;</span><br><span class="line">	ShellExecuteA(0,&quot;open&quot;,&quot;\&quot;C:\\Program File (x86)\\Tencent\\QQ....QQ的位置&quot;,0,0,1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void moveQQ()&#123;</span><br><span class="line">	HWND win = FindWindowA(&quot;TXGuiFoundation&quot;,&quot;QQ2013&quot;);		//HWND QQ窗口编号</span><br><span class="line">	//FindWindowA根据类名和标题寻找窗口</span><br><span class="line">	if(win == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;QQ失踪&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	int y =0;</span><br><span class="line">	while(i &lt; 900)</span><br><span class="line">	&#123;</span><br><span class="line">		SetWindowPos(win,NULL,y*16/9,y,400,400,0);	//设置窗口大小，以及窗口位置</span><br><span class="line">		Sleep(50)</span><br><span class="line">		y += 10;</span><br><span class="line">		if(y/10%2==1)&#123;</span><br><span class="line">			ShowWindow(win,SW_HIDE);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			ShowWindow(win,SW_SHOW);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void main()&#123;</span><br><span class="line">	system(&quot;taskkill /f /im QQ.exe);</span><br><span class="line">	openQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">	moveQQ();</span><br><span class="line">	Sleep(5000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/hexolearn/noroot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/09/04/hexolearn/noroot/" class="post-title-link" itemprop="url">noroot</a>
         </h2>
 
         <div class="post-meta-container">
@@ -190,6 +356,15 @@
       
 
       <time title="创建时间：2019-09-04 12:53:08 / 修改时间：13:06:57" itemprop="dateCreated datePublished" datetime="2019-09-04T12:53:08+08:00">2019-09-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexolearn/" itemprop="url" rel="index"><span itemprop="name">hexolearn</span></a>
+        </span>
     </span>
 
   
@@ -235,7 +410,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/CLearning6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/C/CLearning6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -253,7 +428,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/04/CLearning6/" class="post-title-link" itemprop="url">CLearning6</a>
+          <a href="/2019/09/04/C/CLearning6/" class="post-title-link" itemprop="url">CLearning6</a>
         </h2>
 
         <div class="post-meta-container">
@@ -272,6 +447,15 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2019-09-05 17:47:17" itemprop="dateModified" datetime="2019-09-05T17:47:17+08:00">2019-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -510,7 +694,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/CLearning5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/C/CLearning5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -528,7 +712,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/03/CLearning5/" class="post-title-link" itemprop="url">CLearning5</a>
+          <a href="/2019/09/03/C/CLearning5/" class="post-title-link" itemprop="url">CLearning5</a>
         </h2>
 
         <div class="post-meta-container">
@@ -541,6 +725,15 @@
       
 
       <time title="创建时间：2019-09-03 13:08:28 / 修改时间：16:30:10" itemprop="dateCreated datePublished" datetime="2019-09-03T13:08:28+08:00">2019-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -644,7 +837,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/aboutthexonew/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/hexolearn/aboutthexonew/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -662,7 +855,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/03/aboutthexonew/" class="post-title-link" itemprop="url">aboutthehexonew</a>
+          <a href="/2019/09/03/hexolearn/aboutthexonew/" class="post-title-link" itemprop="url">aboutthehexonew</a>
         </h2>
 
         <div class="post-meta-container">
@@ -672,9 +865,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2019-09-03 02:01:26 / 修改时间：02:18:32" itemprop="dateCreated datePublished" datetime="2019-09-03T02:01:26+08:00">2019-09-03</time>
+      <time title="创建时间：2019-09-03 02:01:26" itemprop="dateCreated datePublished" datetime="2019-09-03T02:01:26+08:00">2019-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:19:24" itemprop="dateModified" datetime="2024-12-07T16:19:24+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexolearn/" itemprop="url" rel="index"><span itemprop="name">hexolearn</span></a>
+        </span>
     </span>
 
   
@@ -727,7 +935,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/vim-plug2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/vim/vim-plug2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -745,7 +953,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/02/vim-plug2/" class="post-title-link" itemprop="url">vim-plug2</a>
+          <a href="/2019/09/02/vim/vim-plug2/" class="post-title-link" itemprop="url">vim-plug2</a>
         </h2>
 
         <div class="post-meta-container">
@@ -764,6 +972,15 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2019-09-03 01:38:41" itemprop="dateModified" datetime="2019-09-03T01:38:41+08:00">2019-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a>
+        </span>
     </span>
 
   
@@ -829,7 +1046,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/CLearning4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/C/CLearning4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -847,7 +1064,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/01/CLearning4/" class="post-title-link" itemprop="url">CLearning4</a>
+          <a href="/2019/09/01/C/CLearning4/" class="post-title-link" itemprop="url">CLearning4</a>
         </h2>
 
         <div class="post-meta-container">
@@ -866,6 +1083,15 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2019-09-02 00:29:50" itemprop="dateModified" datetime="2019-09-02T00:29:50+08:00">2019-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -924,7 +1150,7 @@ a = a / b;
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/CLearning3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/C/CLearning3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -942,7 +1168,7 @@ a = a / b;
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/30/CLearning3/" class="post-title-link" itemprop="url">CLearning3</a>
+          <a href="/2019/08/30/C/CLearning3/" class="post-title-link" itemprop="url">CLearning3</a>
         </h2>
 
         <div class="post-meta-container">
@@ -961,6 +1187,15 @@ a = a / b;
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2019-09-01 14:39:43" itemprop="dateModified" datetime="2019-09-01T14:39:43+08:00">2019-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -1026,7 +1261,7 @@ a = a / b;
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/CLearning2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/C/CLearning2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1044,7 +1279,7 @@ a = a / b;
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/30/CLearning2/" class="post-title-link" itemprop="url">CLearning2</a>
+          <a href="/2019/08/30/C/CLearning2/" class="post-title-link" itemprop="url">CLearning2</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1057,6 +1292,15 @@ a = a / b;
       
 
       <time title="创建时间：2019-08-30 13:40:52 / 修改时间：15:54:39" itemprop="dateCreated datePublished" datetime="2019-08-30T13:40:52+08:00">2019-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -1292,7 +1536,7 @@ a = a / b;
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/CLearning1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/C/CLearning1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1310,7 +1554,7 @@ a = a / b;
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/29/CLearning1/" class="post-title-link" itemprop="url">CLearning1</a>
+          <a href="/2019/08/29/C/CLearning1/" class="post-title-link" itemprop="url">CLearning1</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1320,9 +1564,24 @@ a = a / b;
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2019-08-29 14:23:25 / 修改时间：16:22:35" itemprop="dateCreated datePublished" datetime="2019-08-29T14:23:25+08:00">2019-08-29</time>
+      <time title="创建时间：2019-08-29 14:23:25" itemprop="dateCreated datePublished" datetime="2019-08-29T14:23:25+08:00">2019-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:19:36" itemprop="dateModified" datetime="2024-12-07T16:19:36+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
     </span>
 
   
@@ -1391,92 +1650,8 @@ a = a / b;
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/golang1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lmfalcon">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lmblog(hexo)">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | lmblog(hexo)">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/29/golang1/" class="post-title-link" itemprop="url">golang1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2019-08-29 14:05:33 / 修改时间：14:21:45" itemprop="dateCreated datePublished" datetime="2019-08-29T14:05:33+08:00">2019-08-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="golang"><a href="#golang" class="headerlink" title="golang"></a>golang</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>不建议用sudo apt install 安装，因为版本太老了</li>
-<li><a href="https://golang.google.cn/">官网</a></li>
-<li>建议安装地址 &#x2F;usr&#x2F;local&#x2F;	解压会自动建一个go文件夹</li>
-<li>tar -C &#x2F;usr&#x2F;local -xzf go1.12.9.linux-amd64.tar.gz</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
-<li>之前安装了gcc 所以配置时默认的是这个老版本go</li>
-<li>用go version查看当前版本</li>
-<li>用go env 查看go的运行环境</li>
-<li>用which go 查看go的可执行文件位置</li>
-<li>用whereis go 查看用多少go文件地址</li>
-<li>配置环境在.bashrc中<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># go path</span><br><span class="line">export GOPATH=$HOME/go</span><br><span class="line">export GOROOT=/usr/local/go</span><br><span class="line">export PATH=$PATH:$GOROOT/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure></li>
-<li>网上说GOROOT和GOPATH地址不能一样</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1520,7 +1695,9 @@ a = a / b;
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
 
 
 

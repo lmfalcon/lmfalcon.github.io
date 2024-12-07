@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="idea配置idea安装位置 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;  idea配置文件 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;idea.vmoptions文件 文件可以改变idea的运存缓存等信息  idea的启动文件 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ideaIDE">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/other/ideaIDE/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="idea配置idea安装位置 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;  idea配置文件 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;idea.vmoptions文件 文件可以改变idea的运存缓存等信息  idea的启动文件 &#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;i">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-11T13:47:05.000Z">
+<meta property="article:modified_time" content="2024-12-07T08:36:45.411Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="idea">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/11/other/ideaIDE/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/11/other/ideaIDE/","path":"2019/08/11/other/ideaIDE/","title":"ideaIDE"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ideaIDE | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#idea%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">idea配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#idea%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">idea安装位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">idea配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea%E7%9A%84%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">idea的启动文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea%E7%9A%84%E5%AE%B6%E7%9B%AE%E5%BD%95%E4%B8%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">idea的家目录下配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea%E9%A1%B9%E7%9B%AE%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">idea项目位置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#src%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">2.1.</span> <span class="nav-text">src文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#out%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">2.2.</span> <span class="nav-text">out文件夹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">idea的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ideavim"><span class="nav-number">3.1.</span> <span class="nav-text">ideavim</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">4.</span> <span class="nav-text">idea快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%97%B6%E9%97%B4%E5%86%8D%E8%A1%A5%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%97%E8%A1%A8"><span class="nav-number">4.1.</span> <span class="nav-text">有时间再补快捷键列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea%E6%A8%A1%E6%9D%BF"><span class="nav-number">5.</span> <span class="nav-text">idea模板</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/other/ideaIDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ideaIDE | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ideaIDE
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-11 21:47:05" itemprop="dateCreated datePublished" datetime="2019-08-11T21:47:05+08:00">2019-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:36:45" itemprop="dateModified" datetime="2024-12-07T16:36:45+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="idea配置"><a href="#idea配置" class="headerlink" title="idea配置"></a>idea配置</h1><h2 id="idea安装位置"><a href="#idea安装位置" class="headerlink" title="idea安装位置"></a>idea安装位置</h2><ul>
+<li>&#x2F;usr&#x2F;local&#x2F;idea&#x2F;</li>
+</ul>
+<h2 id="idea配置文件"><a href="#idea配置文件" class="headerlink" title="idea配置文件"></a>idea配置文件</h2><ul>
+<li>&#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;idea.vmoptions文件</li>
+<li>文件可以改变idea的运存缓存等信息</li>
+</ul>
+<h2 id="idea的启动文件"><a href="#idea的启动文件" class="headerlink" title="idea的启动文件"></a>idea的启动文件</h2><ul>
+<li>&#x2F;usr&#x2F;local&#x2F;idea&#x2F;bin&#x2F;idea.sh文件</li>
+<li>快速打开可以将  sudo ln -s &#x2F;idea安装目录&#x2F;bin&#x2F;idea.sh &#x2F;usr&#x2F;bin&#x2F; 这样就可以在命令行启动idea</li>
+</ul>
+<h2 id="idea的家目录下配置文件"><a href="#idea的家目录下配置文件" class="headerlink" title="idea的家目录下配置文件"></a>idea的家目录下配置文件</h2><ul>
+<li>第一次启动后会在~&#x2F;.IdeaIC20XX.X文件夹，里面有两个文件夹<ul>
+<li>config 中记录了在idea的部分setting中的用户配置</li>
+<li>system 中记录了缓存，编译，日志，框架等用户配置信息</li>
+</ul>
+</li>
+<li>config 中也有idea64.vmoptions文件，建议修改这个文件，加快idea运行速度。</li>
+</ul>
+<h1 id="idea项目位置"><a href="#idea项目位置" class="headerlink" title="idea项目位置"></a>idea项目位置</h1><ul>
+<li>~&#x2F;IdeaProjects&#x2F;</li>
+<li>类似于eclipse中的workspaces</li>
+<li>新建java项目后会多出项目的文件夹</li>
+</ul>
+<h2 id="src文件夹"><a href="#src文件夹" class="headerlink" title="src文件夹"></a>src文件夹</h2><ul>
+<li>随项目建立，存放包和java文件</li>
+</ul>
+<h2 id="out文件夹"><a href="#out文件夹" class="headerlink" title="out文件夹"></a>out文件夹</h2><ul>
+<li>随着项目运行建立，存放编译好的class文件</li>
+</ul>
+<h1 id="idea的插件"><a href="#idea的插件" class="headerlink" title="idea的插件"></a>idea的插件</h1><h2 id="ideavim"><a href="#ideavim" class="headerlink" title="ideavim"></a>ideavim</h2><ul>
+<li>默认在插件列表了，安装即可</li>
+<li>配置文件存放在~&#x2F;.ideavimrc<ul>
+<li>可以设置leader键，但是不能使用插件</li>
+</ul>
+</li>
+<li>重启进入idea生效配置后使用vim编辑器，建议还是多设置写commandmode的leader快捷键，这样可以将编辑的影响降到最低</li>
+<li>:actionlist可以查看vim能设置的idea相关快捷键</li>
+<li>设置方法nnoremap <leader>gc :action GotoClass<CR></li>
+</ul>
+<h1 id="idea快捷键"><a href="#idea快捷键" class="headerlink" title="idea快捷键"></a>idea快捷键</h1><ul>
+<li>可以设置成类似eclipse的快捷键，当然还是有一部分会不一样。我还是决定是适应新快捷键</li>
+<li>设置位置setting中的keymap</li>
+</ul>
+<h2 id="有时间再补快捷键列表"><a href="#有时间再补快捷键列表" class="headerlink" title="有时间再补快捷键列表"></a>有时间再补快捷键列表</h2><h1 id="idea模板"><a href="#idea模板" class="headerlink" title="idea模板"></a>idea模板</h1><ul>
+<li>插入文档注释<ul>
+<li>Setting 中的File and Code Templates中设置</li>
+</ul>
+</li>
+<li>Setting 中的Live Templateplates中设置简写补全模板<ul>
+<li>main 补全public static void main(String[] args){</li>
+<li>sout 补全System.out.println()</li>
+<li>可以自己设置</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/idea/" rel="tag"># idea</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/10/javascript/javascript3/" rel="prev" title="javascript3">
+                  <i class="fa fa-angle-left"></i> javascript3
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/12/linux/linuxbasic6/" rel="next" title="linuxbasic6">
+                  linuxbasic6 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

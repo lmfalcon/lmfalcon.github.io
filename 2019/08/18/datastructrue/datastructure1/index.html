@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="abstract优缺点|数据结构|优点|缺点||-:-|-:-|-:-||数组|插入快，如果知道下标可以非常快的存取|查找慢，删除慢，大小固定||有序数组|比无序数组查找快|删除和插入慢，大小固定||栈|提供后进先出方式的存取|存取其他项很慢||队列|提供先进先出方式存取|存取其他项很慢||链表|插入快，删除快|查找慢||二叉树|查找、插入、删除都快（如果树平衡}|删除算法复杂||红黑树|查找、插">
+<meta property="og:type" content="article">
+<meta property="og:title" content="datastructure1">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/datastructrue/datastructure1/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="abstract优缺点|数据结构|优点|缺点||-:-|-:-|-:-||数组|插入快，如果知道下标可以非常快的存取|查找慢，删除慢，大小固定||有序数组|比无序数组查找快|删除和插入慢，大小固定||栈|提供后进先出方式的存取|存取其他项很慢||队列|提供先进先出方式存取|存取其他项很慢||链表|插入快，删除快|查找慢||二叉树|查找、插入、删除都快（如果树平衡}|删除算法复杂||红黑树|查找、插">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-18T01:41:46.000Z">
+<meta property="article:modified_time" content="2024-12-07T08:21:11.801Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="datastructure,DataStructureAbstract, array, sort, stack, queue, linklist, recursion">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/18/datastructrue/datastructure1/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/18/datastructrue/datastructure1/","path":"2019/08/18/datastructrue/datastructure1/","title":"datastructure1"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>datastructure1 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AE%80%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">软件工程简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E4%B8%8EJava%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">C与Java的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84array"><span class="nav-number">4.</span> <span class="nav-text">数组array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E5%80%BC%E9%97%AE%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">重复值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C"><span class="nav-number">4.2.</span> <span class="nav-text">数组操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8Java%E7%B1%BB%E8%AE%BE%E8%AE%A1%E6%95%B0%E7%BB%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.3.</span> <span class="nav-text">用Java类设计数组程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%9B%B4%E5%8A%A0%E6%B3%9B%E7%94%A8%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">4.4.</span> <span class="nav-text">定义更加泛用的接口</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/datastructrue/datastructure1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="datastructure1 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          datastructure1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-18 09:41:46" itemprop="dateCreated datePublished" datetime="2019-08-18T09:41:46+08:00">2019-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-07 16:21:11" itemprop="dateModified" datetime="2024-12-07T16:21:11+08:00">2024-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/datastructrue/" itemprop="url" rel="index"><span itemprop="name">datastructrue</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h1><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>|数据结构|优点|缺点|<br>|-:-|-:-|-:-|<br>|数组|插入快，如果知道下标可以非常快的存取|查找慢，删除慢，大小固定|<br>|有序数组|比无序数组查找快|删除和插入慢，大小固定|<br>|栈|提供后进先出方式的存取|存取其他项很慢|<br>|队列|提供先进先出方式存取|存取其他项很慢|<br>|链表|插入快，删除快|查找慢|<br>|二叉树|查找、插入、删除都快（如果树平衡}|删除算法复杂|<br>|红黑树|查找、插入、删除都快。树总是平衡|算法复杂|<br>|2-3-4数|查找、插入、删除都快。树总是平衡，类似的树对磁盘存储有用|算法复杂|<br>|哈希表|如果关键字已知则存取极快，插入快|删除慢，如果不知道关键字则存取很慢，对存储空间使用不充分|<br>|堆|插入，删除快，对大量数据项的存取很快|对其他数据项存取慢|<br>|图|对现实世界建模|有些算法很复杂|</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li>数据结构除了数组外都可以被认为是抽象数据结构（ADT）</li>
+<li>常用操作<ul>
+<li>插入</li>
+<li>寻找数据项</li>
+<li>删除</li>
+</ul>
+</li>
+</ul>
+<h1 id="软件工程简述"><a href="#软件工程简述" class="headerlink" title="软件工程简述"></a>软件工程简述</h1><ul>
+<li>软件生命周期<ul>
+<li>分析</li>
+<li>设计</li>
+<li>验证</li>
+<li>编码</li>
+<li>测试</li>
+<li>生产</li>
+<li>维护</li>
+</ul>
+</li>
+</ul>
+<h1 id="C与Java的区别"><a href="#C与Java的区别" class="headerlink" title="C与Java的区别"></a>C与Java的区别</h1><ul>
+<li>Java无指针</li>
+<li>Java有内存回收机制</li>
+<li>Java输出不用预处理，System.out.println可以直接用。print 和println的区别在于是否换行</li>
+<li>Java中判断类是否是同一个通过&#x3D;&#x3D;的方法来判断，而判断类的属性是否一致通过equals进行判断</li>
+<li>调用java.io.*需要为所有的输入方法加上throws IOException<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//java输入字符</span><br><span class="line">public static char getChar() throws IOException</span><br><span class="line">&#123;</span><br><span class="line">String s = getString();</span><br><span class="line">return s.charAt(0);</span><br><span class="line">&#125;</span><br><span class="line">//String类的charAt()方法返回一个String类对象中某个特定位置的字符，在上面的例子中，是第一个字符，号码是0.这个方法避免了无关的字符留在输入缓存中，正是无关的字符导致后续的输入总是出现错误。</span><br><span class="line"></span><br><span class="line">//输入整数</span><br><span class="line">public int getInt() throws IOException</span><br><span class="line">&#123;</span><br><span class="line">String s = getString();</span><br><span class="line">return Integer.parseInt(s);</span><br><span class="line">&#125;</span><br><span class="line">//Integer类的parseInt()方法将字符串转成int型。</span><br><span class="line"></span><br><span class="line">// 输入浮点数</span><br><span class="line"></span><br><span class="line">public int getDouble() throws IOException</span><br><span class="line">&#123;</span><br><span class="line">String s = getString();</span><br><span class="line">Double aDub = Double.valueof(s);</span><br><span class="line">return aDub.doubleValue();</span><br><span class="line">&#125;</span><br><span class="line">//字符串先转换成一个Double型的对象（大写D，double类型的封装类）之后用doubleValue()方法将这个对象转换为double型。</span><br><span class="line">// float型同样有Float类和valueOf()和floatValue()方法</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="数组array"><a href="#数组array" class="headerlink" title="数组array"></a>数组array</h1><ul>
+<li>其中不允许有空的数据项，否则会出现删除查找困难需要判断，是否有空数据项，难以判断是否结尾。</li>
+<li>查找平均数据项为N&#x2F;2</li>
+</ul>
+<h2 id="重复值问题"><a href="#重复值问题" class="headerlink" title="重复值问题"></a>重复值问题</h2><ul>
+<li>判断关键字是否重复<br>||不允许重复|允许重复|<br>|-:-|-:-|-:-|<br>|查找|N&#x2F;2次比较|N次比较|<br>|插入|无比较，一次移动|无比较，一次移动|<br>|删除|N&#x2F;2次比较，N&#x2F;2次移动|N次比较，多于N&#x2F;2次移动|</li>
+</ul>
+<h2 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h2><ul>
+<li>初始化数组<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int[] intArray;</span><br><span class="line">intArray = new int[100];</span><br><span class="line">//or</span><br><span class="line">int[] intArray = new int[100];</span><br><span class="line">//or</span><br><span class="line">int intArray[] = new int[100];</span><br><span class="line">// 自定义数组创建数组对象</span><br><span class="line">autoData[] carArray = new autoData[4000];</span><br><span class="line">//除非开始赋值否则它们将一直是特殊的null对象，尝试访问会出现空指针赋值的错误</span><br><span class="line">，访问前需要先赋值</span><br></pre></td></tr></table></figure></li>
+<li>数组长度<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int arrayLength = intArray.length;</span><br></pre></td></tr></table></figure></li>
+<li>访问数组数据项<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = intArray[3];</span><br><span class="line">intArray[7] = 66;</span><br><span class="line">//注意数组下标从0开始，所以上例中是第八个数组值</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="用Java类设计数组程序"><a href="#用Java类设计数组程序" class="headerlink" title="用Java类设计数组程序"></a>用Java类设计数组程序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">//lowArray.java</span><br><span class="line">// demonstrate array class with low-level interface</span><br><span class="line">// to run this program: C &gt; java LowArrayApp</span><br><span class="line"></span><br><span class="line">class LowArray</span><br><span class="line">&#123;</span><br><span class="line">private long[] a;	//ref to array a</span><br><span class="line">public LowArray(int size)	//constructor</span><br><span class="line">	&#123; a = new long[size];&#125;	//create array</span><br><span class="line">public void setElem(int index,long value) //setvalue</span><br><span class="line">	&#123; a[index] = value;&#125;</span><br><span class="line">public long getElem(int index)	//get vlaue</span><br><span class="line">	&#123;return a[index];&#125;</span><br><span class="line">&#125;	//end class LowArray</span><br><span class="line"></span><br><span class="line">class LowArrayApp</span><br><span class="line">&#123;</span><br><span class="line">public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">	LowArray arr;	//reference</span><br><span class="line">	arr = new LowArray(100);	//create LOwArray object</span><br><span class="line">	int nElems = 0;	//number of items in array</span><br><span class="line">	int j;	//loop variable</span><br><span class="line"></span><br><span class="line">	arr.setELem(0,77);	//insert 10 items</span><br><span class="line">	arr.setElem(1,99);</span><br><span class="line">	arr.setElem(2,44);</span><br><span class="line">	arr.setElem(3,55);</span><br><span class="line">	arr.setElem(4,22);</span><br><span class="line">	arr.setElem(5,88);</span><br><span class="line">	arr.setElem(6,11);</span><br><span class="line">	arr.setElem(7,00);</span><br><span class="line">	arr.setElem(8,66);</span><br><span class="line">	arr.setElem(9,33);</span><br><span class="line">	nElems = 10;	// now 10 items in array</span><br><span class="line"></span><br><span class="line">	for (j = 0; j &lt; nElems; j++)	// display items</span><br><span class="line">	System.out.print(arr.getElem(j) + &quot; &quot;);</span><br><span class="line">System.out.println(&quot;&quot;);</span><br><span class="line">int searchKey = 26;	//search for data item</span><br><span class="line">for (j = 0; j &lt; nElems; j++)	//for each element</span><br><span class="line">	if(arr.getELem(j) == searchKey)	// found item?</span><br><span class="line">		break;</span><br><span class="line">if(j == nElems)		//no</span><br><span class="line">	System.out.println(&quot;Can&#x27;t find &quot; + searchKey);</span><br><span class="line">else				//yes</span><br><span class="line">	System.out.println(&quot;Found &quot; + searchKey);</span><br><span class="line">// delete value 55</span><br><span class="line">for(j = 0; j &lt; nELems; k++)		// higher ones down</span><br><span class="line">	arr.setElem(k, arr.getElem(k+1));</span><br><span class="line">nElems--;	//decrement size</span><br><span class="line">for(j = 0; j &lt; nElems; j++)	// display items</span><br><span class="line">	System.out.print( arr.getElem(j) + &quot; &quot;);</span><br><span class="line">System.out.println(&quot;&quot;);</span><br><span class="line">&#125;	//end main()</span><br><span class="line">&#125;//end class LowArrayApp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 将普通的Ｊａｖａ数组封装仅LowArray类中。类中的数组隐藏了起来，它是私有的，所以只有LowArray 类中的方法才能访问它。其中的三个方法分别用来插入和检索一个数据项，和构造函数，创建一个特定大小的数组</span><br><span class="line">//LowArrayApp创建一个LowArray类的对象并用它储存和操作数据。可以将LowArray类想成是工具。LowArrayApp类使用者</span><br></pre></td></tr></table></figure>
+
+<h2 id="定义更加泛用的接口"><a href="#定义更加泛用的接口" class="headerlink" title="定义更加泛用的接口"></a>定义更加泛用的接口</h2><pre><code>// highArray.java
+// demonstrates array class with high-level interface
+// to run this program: C&gt;java HighArrayApp
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/datastructure-DataStructureAbstract-array-sort-stack-queue-linklist-recursion/" rel="tag"># datastructure,DataStructureAbstract, array, sort, stack, queue, linklist, recursion</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/13/hexolearn/nextthemes/" rel="prev" title="nextthemes">
+                  <i class="fa fa-angle-left"></i> nextthemes
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/19/git/git2/" rel="next" title="git2">
+                  git2 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

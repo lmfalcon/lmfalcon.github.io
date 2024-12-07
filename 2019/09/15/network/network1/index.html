@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="互联网（internet） 多个计算机网络连接  因特网（Internet） 用TCP&#x2F;IP协议的连接的一种互联网  三个阶段 ARPANET向互联网发展 三级网络结构的因特网 多层次的ISP结构的因特网 ISP 相当于运营商    因特网的标准化工作因特网组成网络边缘区域C-S 客户端请求服务器  P2P 对等连接方式 既是服务器又是客户端  网络核心部分电路交换 交换过程 交换机链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="network1">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/network/network1/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="互联网（internet） 多个计算机网络连接  因特网（Internet） 用TCP&#x2F;IP协议的连接的一种互联网  三个阶段 ARPANET向互联网发展 三级网络结构的因特网 多层次的ISP结构的因特网 ISP 相当于运营商    因特网的标准化工作因特网组成网络边缘区域C-S 客户端请求服务器  P2P 对等连接方式 既是服务器又是客户端  网络核心部分电路交换 交换过程 交换机链接">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-15T03:17:07.000Z">
+<meta property="article:modified_time" content="2019-09-15T06:15:48.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="network">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/09/15/network/network1/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/09/15/network/network1/","path":"2019/09/15/network/network1/","title":"network1"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>network1 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%88internet%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">互联网（internet）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%EF%BC%88Internet%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">因特网（Internet）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="nav-number">2.1.</span> <span class="nav-text">三个阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E7%9A%84%E6%A0%87%E5%87%86%E5%8C%96%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.2.</span> <span class="nav-text">因特网的标准化工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E7%BB%84%E6%88%90"><span class="nav-number">2.3.</span> <span class="nav-text">因特网组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98%E5%8C%BA%E5%9F%9F"><span class="nav-number">2.3.1.</span> <span class="nav-text">网络边缘区域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-S"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">C-S</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P2P"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">P2P</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">网络核心部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">报文交换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="nav-number">2.4.</span> <span class="nav-text">计算机网络分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">2.4.1.</span> <span class="nav-text">作用范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E5%BC%8F"><span class="nav-number">2.4.2.</span> <span class="nav-text">分类方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="nav-number">2.4.3.</span> <span class="nav-text">拓扑结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%80%85"><span class="nav-number">2.4.4.</span> <span class="nav-text">使用者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-number">2.4.5.</span> <span class="nav-text">工作方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="nav-number">2.4.6.</span> <span class="nav-text">交换方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">2.5.</span> <span class="nav-text">网络的性能指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9F%E7%8E%87"><span class="nav-number">2.5.1.</span> <span class="nav-text">速率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%AE%BD"><span class="nav-number">2.5.2.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="nav-number">2.5.3.</span> <span class="nav-text">吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BB%B6"><span class="nav-number">2.5.4.</span> <span class="nav-text">时延</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF"><span class="nav-number">2.5.5.</span> <span class="nav-text">时延带宽积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4"><span class="nav-number">2.5.6.</span> <span class="nav-text">往返时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%8E%87"><span class="nav-number">2.5.7.</span> <span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%9E%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">2.6.</span> <span class="nav-text">计算机网络非性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">2.7.</span> <span class="nav-text">计算机网络的体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISO-%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87"><span class="nav-number">2.7.1.</span> <span class="nav-text">ISO 国际标准化组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI-RM-%E4%BA%92%E8%81%94%E7%BD%91%E6%B3%95%E5%BE%8B%E4%B8%8A%E7%9A%84%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86"><span class="nav-number">2.7.2.</span> <span class="nav-text">OSI&#x2F;RM 互联网法律上的国际标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Application"><span class="nav-number">2.7.2.1.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Presentation"><span class="nav-number">2.7.2.2.</span> <span class="nav-text">Presentation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session"><span class="nav-number">2.7.2.3.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transport"><span class="nav-number">2.7.2.4.</span> <span class="nav-text">Transport</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network"><span class="nav-number">2.7.2.5.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Link"><span class="nav-number">2.7.2.6.</span> <span class="nav-text">Data Link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Physical"><span class="nav-number">2.7.2.7.</span> <span class="nav-text">Physical</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-Suite-%E5%9B%A0%E7%89%B9%E7%BD%91%E4%BA%8B%E5%AE%9E%E4%B8%8A%E7%9A%84%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86"><span class="nav-number">2.7.3.</span> <span class="nav-text">TCP&#x2F;IP Suite 因特网事实上的国际标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-1"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transport-1"><span class="nav-number">2.7.3.2.</span> <span class="nav-text">Transport</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Internet"><span class="nav-number">2.7.3.3.</span> <span class="nav-text">Internet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network-Access"><span class="nav-number">2.7.3.4.</span> <span class="nav-text">Network Access</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Protocols-%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E9%81%B5%E5%AE%88%E7%9A%84%E8%A7%84%E5%88%99-%E6%A0%87%E5%87%86%E6%88%96%E7%BA%A6%E5%AE%9A"><span class="nav-number">2.7.4.</span> <span class="nav-text">Network Protocols 数据交换遵守的规则,标准或约定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%BA%92%E8%81%94"><span class="nav-number">2.7.5.</span> <span class="nav-text">开放式系统互联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E4%BA%94%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.7.6.</span> <span class="nav-text">本书的五层协议</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/network/network1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="network1 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          network1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2019-09-15 11:17:07 / 修改时间：14:15:48" itemprop="dateCreated datePublished" datetime="2019-09-15T11:17:07+08:00">2019-09-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/network/" itemprop="url" rel="index"><span itemprop="name">network</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="互联网（internet）"><a href="#互联网（internet）" class="headerlink" title="互联网（internet）"></a>互联网（internet）</h1><ul>
+<li>多个计算机网络连接</li>
+</ul>
+<h1 id="因特网（Internet）"><a href="#因特网（Internet）" class="headerlink" title="因特网（Internet）"></a>因特网（Internet）</h1><ul>
+<li>用TCP&#x2F;IP协议的连接的一种互联网</li>
+</ul>
+<h2 id="三个阶段"><a href="#三个阶段" class="headerlink" title="三个阶段"></a>三个阶段</h2><ol>
+<li>ARPANET向互联网发展</li>
+<li>三级网络结构的因特网</li>
+<li>多层次的ISP结构的因特网<ul>
+<li>ISP 相当于运营商</li>
+</ul>
+</li>
+</ol>
+<h2 id="因特网的标准化工作"><a href="#因特网的标准化工作" class="headerlink" title="因特网的标准化工作"></a>因特网的标准化工作</h2><h2 id="因特网组成"><a href="#因特网组成" class="headerlink" title="因特网组成"></a>因特网组成</h2><h3 id="网络边缘区域"><a href="#网络边缘区域" class="headerlink" title="网络边缘区域"></a>网络边缘区域</h3><h4 id="C-S"><a href="#C-S" class="headerlink" title="C-S"></a>C-S</h4><ul>
+<li>客户端请求服务器</li>
+</ul>
+<h4 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h4><ul>
+<li>对等连接方式</li>
+<li>既是服务器又是客户端</li>
+</ul>
+<h3 id="网络核心部分"><a href="#网络核心部分" class="headerlink" title="网络核心部分"></a>网络核心部分</h3><h4 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h4><ol>
+<li>交换过程<ul>
+<li>交换机链接</li>
+<li>建立连接</li>
+<li>交换</li>
+<li>释放</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>适用于大量的实时性传输</li>
+<li>核心路由器间可进行电路交换</li>
+</ul>
+</li>
+</ol>
+<h4 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h4><ol>
+<li>过程<ul>
+<li>发送端报文分组</li>
+<li>接收端去掉首部接收数据</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>不需要特定的路径</li>
+<li>动态选择特定路径</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>时延</li>
+<li>开销</li>
+</ul>
+</li>
+</ol>
+<h4 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h4><h2 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h2><h3 id="作用范围"><a href="#作用范围" class="headerlink" title="作用范围"></a>作用范围</h3><ul>
+<li>广域网(WAN)<ul>
+<li>花钱买服务 </li>
+<li>花钱买带宽</li>
+</ul>
+</li>
+<li>城域网(MAN)</li>
+<li>局域网(LAN)<ul>
+<li>自己买设备自己维护</li>
+</ul>
+</li>
+</ul>
+<h3 id="分类方式"><a href="#分类方式" class="headerlink" title="分类方式"></a>分类方式</h3><ul>
+<li>不依赖距离判断，依赖的是是否使用了相关的技术（局域网 or 广域网技术）</li>
+</ul>
+<h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><ul>
+<li>总线型</li>
+<li>环形</li>
+<li>星型</li>
+<li>树型</li>
+<li>网状</li>
+</ul>
+<h3 id="使用者"><a href="#使用者" class="headerlink" title="使用者"></a>使用者</h3><ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+<h3 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h3><ul>
+<li>资源子网</li>
+<li>通信子网</li>
+<li>接入网</li>
+</ul>
+<h3 id="交换方式"><a href="#交换方式" class="headerlink" title="交换方式"></a>交换方式</h3><ul>
+<li>电路交换网</li>
+<li>报文交换网</li>
+<li>分组交换网</li>
+</ul>
+<h2 id="网络的性能指标"><a href="#网络的性能指标" class="headerlink" title="网络的性能指标"></a>网络的性能指标</h2><h3 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h3><ul>
+<li>连接在计算机网络的主机上的数字信道上传送数据位数的速率</li>
+</ul>
+<h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><ul>
+<li>数据通信中数据信道所能传送的最高速率</li>
+</ul>
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><ul>
+<li>单位时间通过某个网络的数据量</li>
+</ul>
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><ul>
+<li>发送时延<ul>
+<li>发送时延 &#x3D; 数据块长度（bit）&#x2F; 信道带宽（bit&#x2F;s)</li>
+</ul>
+</li>
+<li>传播时延<ul>
+<li>传播时延 &#x3D; 信道长度（米）&#x2F; 信号在信道上的传播速率（米&#x2F;秒)</li>
+</ul>
+</li>
+<li>处理时延<ul>
+<li>网络结点存储转发处理时间</li>
+</ul>
+</li>
+<li>排队时延<ul>
+<li>网络结点缓存队列排队事件</li>
+</ul>
+</li>
+</ul>
+<h3 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h3><ul>
+<li>时延带宽积 &#x3D; 传播时延 * 带宽</li>
+<li>数据链路上能够承载的数据量</li>
+</ul>
+<h3 id="往返时间"><a href="#往返时间" class="headerlink" title="往返时间"></a>往返时间</h3><ul>
+<li>从发送方发送数据到发送方收到接收方确认</li>
+</ul>
+<h3 id="利用率"><a href="#利用率" class="headerlink" title="利用率"></a>利用率</h3><ul>
+<li>信道利用率<ul>
+<li>信道利用率 &#x3D; 有数据通过时间 &#x2F; (有 + 无）数据通过时间</li>
+</ul>
+</li>
+<li>网络利用率<ul>
+<li>信道利用率加权平均值</li>
+<li>D &#x3D; D0&#x2F;(1-U)<ul>
+<li>D0表示网络空闲时的时延</li>
+<li>D表示网络当前的时延</li>
+<li>U表示信道的利用率</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="计算机网络非性能指标"><a href="#计算机网络非性能指标" class="headerlink" title="计算机网络非性能指标"></a>计算机网络非性能指标</h2><ul>
+<li>费用</li>
+<li>质量</li>
+<li>标准化</li>
+<li>可靠性</li>
+<li>可扩展性</li>
+<li>可升级性</li>
+<li>管理与维护</li>
+</ul>
+<h2 id="计算机网络的体系结构"><a href="#计算机网络的体系结构" class="headerlink" title="计算机网络的体系结构"></a>计算机网络的体系结构</h2><ul>
+<li>计算机网络各层及其协议的集合</li>
+</ul>
+<h3 id="ISO-国际标准化组织"><a href="#ISO-国际标准化组织" class="headerlink" title="ISO 国际标准化组织"></a>ISO 国际标准化组织</h3><h3 id="OSI-RM-互联网法律上的国际标准"><a href="#OSI-RM-互联网法律上的国际标准" class="headerlink" title="OSI&#x2F;RM 互联网法律上的国际标准"></a>OSI&#x2F;RM 互联网法律上的国际标准</h3><ul>
+<li>网络排错应该从底层得到高层</li>
+<li>网络安全和OSI参考模型<ul>
+<li>物理层安全</li>
+<li>数据链路层安全 ADSL AP密码</li>
+<li>网络层安全</li>
+<li>应用层安全 SQl注入漏洞 上传漏洞</li>
+</ul>
+</li>
+</ul>
+<h4 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h4><ul>
+<li>应用层</li>
+<li>能够产生流量</li>
+<li>能够和用户交互的应用程序</li>
+</ul>
+<h4 id="Presentation"><a href="#Presentation" class="headerlink" title="Presentation"></a>Presentation</h4><ul>
+<li>表示层</li>
+<li>加密 压缩</li>
+<li>开发人员考虑的问题</li>
+</ul>
+<h4 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h4><ul>
+<li>会话层</li>
+<li>服务端和客户端建立的对话</li>
+<li>可以查木马 netstat -nb</li>
+</ul>
+<h4 id="Transport"><a href="#Transport" class="headerlink" title="Transport"></a>Transport</h4><ul>
+<li>传输层</li>
+<li>可靠传输	建立会话</li>
+<li>不可靠传输	不建立会话 QQ，广播，百度</li>
+<li>流量控制</li>
+</ul>
+<h4 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h4><ul>
+<li>网络层</li>
+<li>IP地址编址 选择最佳路径</li>
+</ul>
+<h4 id="Data-Link"><a href="#Data-Link" class="headerlink" title="Data Link"></a>Data Link</h4><ul>
+<li>数据链路层</li>
+<li>数据如何封装</li>
+<li>添加物理层地址  MAC</li>
+</ul>
+<h4 id="Physical"><a href="#Physical" class="headerlink" title="Physical"></a>Physical</h4><ul>
+<li>物理层 </li>
+<li>电压</li>
+<li>接口标准</li>
+</ul>
+<h3 id="TCP-IP-Suite-因特网事实上的国际标准"><a href="#TCP-IP-Suite-因特网事实上的国际标准" class="headerlink" title="TCP&#x2F;IP Suite 因特网事实上的国际标准"></a>TCP&#x2F;IP Suite 因特网事实上的国际标准</h3><ul>
+<li>TCP&#x2F;IP 四层模型</li>
+</ul>
+<h4 id="Application-1"><a href="#Application-1" class="headerlink" title="Application"></a>Application</h4><ul>
+<li>相当于OSI的前三层</li>
+</ul>
+<h4 id="Transport-1"><a href="#Transport-1" class="headerlink" title="Transport"></a>Transport</h4><h4 id="Internet"><a href="#Internet" class="headerlink" title="Internet"></a>Internet</h4><h4 id="Network-Access"><a href="#Network-Access" class="headerlink" title="Network Access"></a>Network Access</h4><ul>
+<li>相当于数据链路层加物理层</li>
+</ul>
+<h3 id="Network-Protocols-数据交换遵守的规则-标准或约定"><a href="#Network-Protocols-数据交换遵守的规则-标准或约定" class="headerlink" title="Network Protocols 数据交换遵守的规则,标准或约定"></a>Network Protocols 数据交换遵守的规则,标准或约定</h3><h3 id="开放式系统互联"><a href="#开放式系统互联" class="headerlink" title="开放式系统互联"></a>开放式系统互联</h3><ol>
+<li>概念<ul>
+<li>实体 entity<ul>
+<li>交换信息的硬件或软件进程</li>
+</ul>
+</li>
+<li>协议 protocol<ul>
+<li>控制两个对等实体通信的规则</li>
+</ul>
+</li>
+<li>服务 service<ul>
+<li>下层向上层提供服务，上层需要使用下层提供的服务来实现本层功能</li>
+</ul>
+</li>
+<li>访问点 SAP<ul>
+<li>相邻两层实体间交换信息的地方</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="本书的五层协议"><a href="#本书的五层协议" class="headerlink" title="本书的五层协议"></a>本书的五层协议</h3><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>传送内容</th>
+<th>相对上层增加内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>传输数据单元PDU</td>
+<td></td>
+</tr>
+<tr>
+<td>运输层</td>
+<td>运输层报文</td>
+<td>PDU+运输层首部</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP数据报(IP分组)</td>
+<td>+网络层首部</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>数据帧</td>
+<td>+链路层首部+链路层尾部</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>bit</td>
+<td>转比特流</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/network/" rel="tag"># network</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/07/C/CLearning8/" rel="prev" title="CLearning8">
+                  <i class="fa fa-angle-left"></i> CLearning8
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/15/network/network2/" rel="next" title="network2">
+                  network2 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

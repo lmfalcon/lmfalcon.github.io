@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="C语言printf 八进制%o 十进制%d 十六进制%x  C语言打印二进制1234567891011#define _CRT_SECURE_NO_WARNINGS	&#x2F;&#x2F;关闭安全检查#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;void main()&#123;	int num &#x3D;12312;	char str[32];	_itoa_s(num,st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CLearning6">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/C/CLearning6/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="C语言printf 八进制%o 十进制%d 十六进制%x  C语言打印二进制1234567891011#define _CRT_SECURE_NO_WARNINGS	&#x2F;&#x2F;关闭安全检查#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;void main()&#123;	int num &#x3D;12312;	char str[32];	_itoa_s(num,st">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-04T04:39:58.000Z">
+<meta property="article:modified_time" content="2019-09-05T09:47:17.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/09/04/C/CLearning6/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/09/04/C/CLearning6/","path":"2019/09/04/C/CLearning6/","title":"CLearning6"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CLearning6 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80printf"><span class="nav-number">1.</span> <span class="nav-text">C语言printf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E6%89%93%E5%8D%B0%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">C语言打印二进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E6%9E%81%E5%A4%A7%E6%9E%81%E5%B0%8F%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text">显示极大极小值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E6%8F%90%E5%8D%87"><span class="nav-number">4.</span> <span class="nav-text">类型提升</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%A7%BB%E6%A4%8D%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">可以跨平台移植的软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E7%9A%84C"><span class="nav-number">5.1.</span> <span class="nav-text">不同平台的C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bool%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">6.</span> <span class="nav-text">bool型数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stdlib-h%E4%B8%AD%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">stdlib.h中的随机数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.1.</span> <span class="nav-text">算数运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.1.1.</span> <span class="nav-text">逗号运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.2.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">8.4.</span> <span class="nav-text">位运算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%AE%9E%E4%BD%93"><span class="nav-number">9.</span> <span class="nav-text">左值和程序实体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="nav-number">10.</span> <span class="nav-text">插入汇编语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-number">11.</span> <span class="nav-text">输入输出知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5double"><span class="nav-number">11.1.</span> <span class="nav-text">输入double</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">11.2.</span> <span class="nav-text">%格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typedef"><span class="nav-number">11.3.</span> <span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#puts"><span class="nav-number">11.4.</span> <span class="nav-text">puts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scanf"><span class="nav-number">11.5.</span> <span class="nav-text">scanf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getchar"><span class="nav-number">11.6.</span> <span class="nav-text">getchar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gets"><span class="nav-number">11.7.</span> <span class="nav-text">gets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sprintf-sscanf"><span class="nav-number">11.8.</span> <span class="nav-text">sprintf,sscanf</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/C/CLearning6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CLearning6 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CLearning6
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-04 12:39:58" itemprop="dateCreated datePublished" datetime="2019-09-04T12:39:58+08:00">2019-09-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-09-05 17:47:17" itemprop="dateModified" datetime="2019-09-05T17:47:17+08:00">2019-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="C语言printf"><a href="#C语言printf" class="headerlink" title="C语言printf"></a>C语言printf</h1><ul>
+<li>八进制%o</li>
+<li>十进制%d</li>
+<li>十六进制%x</li>
+</ul>
+<h1 id="C语言打印二进制"><a href="#C语言打印二进制" class="headerlink" title="C语言打印二进制"></a>C语言打印二进制</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define _CRT_SECURE_NO_WARNINGS	//关闭安全检查</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	int num =12312;</span><br><span class="line">	char str[32];</span><br><span class="line">	_itoa_s(num,str,32,2);	//最后一位传参定义转换为几进制</span><br><span class="line">	printf(&quot;%s&quot;,str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="显示极大极小值"><a href="#显示极大极小值" class="headerlink" title="显示极大极小值"></a>显示极大极小值</h1><ul>
+<li>因为之前写过int，unsigned，float，这里只介绍double<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># include&lt;stdio.h&gt;</span><br><span class="line"># include&lt;float.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	printf(&quot;%400f,%400f&quot;,DEL_MAX,DEL_MIN);	//之前可能有地方printf写错了，暂时不改了，反正不会重用这里的代码</span><br><span class="line">	//注意这里的极小值其实是小数点后的精确位数</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="类型提升"><a href="#类型提升" class="headerlink" title="类型提升"></a>类型提升</h1><ul>
+<li>char,short字符无论有无符号都会在表达式中转换为int or unsigned<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">printf(&quot;%d,%d,%d&quot;,sizeof(short1),sizeof(short2),sizeof(short1+short2))	//会输出2,2,4</span><br><span class="line">//sizeof可以判断表达式，short字符无论有无符号都会在表达式中转换为int</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="可以跨平台移植的软件"><a href="#可以跨平台移植的软件" class="headerlink" title="可以跨平台移植的软件"></a>可以跨平台移植的软件</h1><h2 id="不同平台的C"><a href="#不同平台的C" class="headerlink" title="不同平台的C"></a>不同平台的C</h2><ul>
+<li>不同平台，不同编译器，同样的一个整数数据类型，可能大小不一样</li>
+<li>int	16位的情况下是2个字节，32位	4个字节</li>
+<li>long 64位linux是8个字节，windows 32,64都是4个字节</li>
+</ul>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdint.h&gt;	//数据类型可以跨平台移植，字节都是一样的，只要支持C99的编译器都可以</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	int32_t	num =123;</span><br><span class="line">	printf(&quot;%d,%d&quot;,sizeof(num),num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="bool型数据"><a href="#bool型数据" class="headerlink" title="bool型数据"></a>bool型数据</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdbool.h&gt;		//支持C语言的bool型变量</span><br><span class="line">//因为每次都要打印，但是我不想写#include&lt;stdio.h&gt;所以省略以下内容</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	_Bool bl;</span><br><span class="line">	bl = true;	//1</span><br><span class="line">	printf(&quot;bl=%d&quot;,bl);</span><br><span class="line">	printf(&quot;\nsize= %d&quot;,sizeof(bl));</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="stdlib-h中的随机数"><a href="#stdlib-h中的随机数" class="headerlink" title="stdlib.h中的随机数"></a>stdlib.h中的随机数</h1><ul>
+<li>随机数生成代码</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">time_t</span><br><span class="line">srand((unsigned int)time(&amp;ts));	//用系统时间生成随机数种子</span><br><span class="line">a = rand%num //a是生成的随机数范围在0到num之间，如果要改变下线可以加减一个数同时调整上限即可</span><br></pre></td></tr></table></figure>
+
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><ul>
+<li>数学计算中有高精度数参与，则结果按高精度表示</li>
+<li>加减乘除取余，自加自减等</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//键盘输入一个数举例</span><br><span class="line">//由于键盘输入常常是字符串（与Python作对比eval函数好用啊）</span><br><span class="line">#define _CRT_SECURE_NO_WARNINGS</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	int x,y;</span><br><span class="line">	scanf_s(&quot;%d&quot;,&amp;x);</span><br><span class="line">	scanf_s(&quot;%d&quot;,&amp;y);	//键盘输入，输入的就是进入到int x,y中的就是数字了</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>求余运算操作数不能包含double，float类型</li>
+<li>求余运算除数和被除数都可以是负数</li>
+<li>要打印%就必须写上两个%%，例如<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;x%%y=%d&quot;,z);</span><br><span class="line">//输出为x%y = z</span><br></pre></td></tr></table></figure></li>
+<li>求余函数（x-(x&#x2F;y)*y)</li>
+<li>自加自减运算符优先于乘除运算符</li>
+<li>左值就是等号左边的值，等号是赋值运算，赋值运算规则如下<ul>
+<li>左边不能是表达式</li>
+<li>左边不能是常量或者一个数</li>
+<li>赋值号会自动将右值转换为左值的类型</li>
+</ul>
+</li>
+</ul>
+<h3 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int num = (1,2);</span><br><span class="line">printf(&quot;%d&quot;，num);</span><br><span class="line">//输出为2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这里的逗号就是顺序求值运算符</li>
+<li>整个表达式的值就是逗号后面的值</li>
+<li>逗号运算符优先级最低</li>
+<li>只在顺序求值时起到求值作用，其他时候只是连接语句或者间隔作用</li>
+</ul>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><ul>
+<li>? 表达式1:表达式2<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 &gt;3 ? printf(&quot;成立&quot;) : printf(&quot;不成立&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>字符串比较，如果是常量是一个内存地址，但是如果除常量外还另外定义了一个变量，字符串变量就算和常量的值相同，用&#x3D;&#x3D;判断的结果也是false</li>
+<li>条件运算符且条件运算符的优先级高于赋值运算符，运算顺序是从右到左</li>
+</ul>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><ul>
+<li>表达式1？表达式2：表达式3	这个是三目运算符</li>
+<li>三目运算符会自动进行数据类型转换<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int num =2;</span><br><span class="line">float fl = 1;</span><br><span class="line">printf(&quot;%f&quot;,num &gt; fl ? num : fl);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h1 id="左值和程序实体"><a href="#左值和程序实体" class="headerlink" title="左值和程序实体"></a>左值和程序实体</h1><ul>
+<li>程序实体是内存中的一块区域</li>
+<li>左值是左值表达式简称，是指明程序实体的表达式</li>
+<li>判断一个程序左值的方法是看是否能放在等号左边（有例外const）</li>
+<li>const是例外，初始化的时候可以放在赋值号左边。const变量必须一开始就初始化，而且const是左值</li>
+</ul>
+<h1 id="插入汇编语言"><a href="#插入汇编语言" class="headerlink" title="插入汇编语言"></a>插入汇编语言</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void main()&#123;</span><br><span class="line">	int x = 10;</span><br><span class="line">	_asm	//插入汇编语言</span><br><span class="line">	&#123;</span><br><span class="line">		mov eax,20	//将20这个值赋值给寄存器eax</span><br><span class="line">		add eax,-15	//将eax的值加上-15</span><br><span class="line">		mov x,eax	//将寄存器eax的值赋值给x</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%d&quot;,x);	//打印5</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>汇编常用语逆向软件开发和嵌入式开发</li>
+</ul>
+<h1 id="输入输出知识补充"><a href="#输入输出知识补充" class="headerlink" title="输入输出知识补充"></a>输入输出知识补充</h1><h2 id="输入double"><a href="#输入double" class="headerlink" title="输入double"></a>输入double</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double da,db,dc;</span><br><span class="line">scanf_s(&quot;%lf%lf%lf&quot;,&amp;da,&amp;db,&amp;dc);	//载入这三个数的地址，double类型必须用%lf</span><br></pre></td></tr></table></figure>
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="%格式化输出"></a>%格式化输出</h2><ul>
+<li>%格式化输出，后接控制输出形式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d or i</td>
+<td>有符号十进制</td>
+</tr>
+<tr>
+<td>o</td>
+<td>无符号八进制</td>
+</tr>
+<tr>
+<td>x</td>
+<td>无符号十六进制</td>
+</tr>
+<tr>
+<td>e</td>
+<td>标准指数形式输出单双精度实数</td>
+</tr>
+<tr>
+<td>u</td>
+<td>无符号十进制</td>
+</tr>
+<tr>
+<td>c</td>
+<td>输出单个字符</td>
+</tr>
+<tr>
+<td>s</td>
+<td>输出字符串</td>
+</tr>
+<tr>
+<td>f</td>
+<td>小数点形式输出单双精度实数</td>
+</tr>
+<tr>
+<td>g</td>
+<td>选用输出宽度较小的格式输出实数</td>
+</tr>
+<tr>
+<td>a</td>
+<td>按照十六进制的指数输出</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;hellochina%nsfasfa&quot;,&amp;num)</span><br><span class="line">//仅在linux中使用（2014年），%n作为统计之前输出多少个字符，并保存到num中。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>输出的数字或字符以左对齐，右边填空格的方式输出</td>
+</tr>
+<tr>
+<td>0</td>
+<td>输出的空位用0填充</td>
+</tr>
+<tr>
+<td>m(一个正整数)</td>
+<td>输出数据的字段宽度。如果实际位数多于m,按照实际位数输出，如果实际位数少于m,则补以空格</td>
+</tr>
+<tr>
+<td>.n(一个正整数）</td>
+<td>对实数，表示输出n位小数，对字符串，表示截取的字符个数</td>
+</tr>
+<tr>
+<td>（字母）</td>
+<td>输出长整形整数</td>
+</tr>
+<tr>
+<td>*</td>
+<td>输出后面的整数单位，动态变化，*相当于变量</td>
+</tr>
+<tr>
+<td>空格</td>
+<td>正数前面添加一个空格作为前缀，负数不变</td>
+</tr>
+<tr>
+<td>#</td>
+<td>显示八进制和十六进制时会加0和0x方便理解，#确保一定保留小数点</td>
+</tr>
+<tr>
+<td>+</td>
+<td>显示正号</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void main()&#123;</span><br><span class="line">	printf(&quot;%d&quot;,10);</span><br><span class="line">	printf(&quot;\n%ld&quot;,10);</span><br><span class="line">	printf(&quot;\n%8d&quot;,10);	</span><br><span class="line">	printf(&quot;\n%08d&quot;,10);</span><br><span class="line">	printf(&quot;\n%-08d&quot;,10);</span><br><span class="line">	printf(&quot;\n%.4f&quot;,1.23456789);</span><br><span class="line">	printf(&quot;\n%.5s&quot;,&quot;abcdefg&quot;);</span><br><span class="line">	for(int i =3; i&lt;10; i++)&#123;</span><br><span class="line">		printf(&quot;\n%*d&quot;,i,10);//*与i对应，表明宽度为i，输出10</span><br><span class="line">		printf(&quot;\n%*.*f&quot;,2*i,i,10.9);	//2*i宽度，i小数点后保留几位</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>不同的数据类型应该用相同的形式输出否则会出问题。</li>
+</ul>
+<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><ul>
+<li>没有创建一个新的数据类型只是为已有数据类型起一个别名<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef unsigned int UIT</span><br><span class="line">void main()&#123;</span><br><span class="line">	UIT i = 45536;	//代替unsigned int </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="puts"><a href="#puts" class="headerlink" title="puts"></a>puts</h2><ul>
+<li>puts类似printf但是puts会自动换行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">puts(&quot;helloworld&quot;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="scanf"><a href="#scanf" class="headerlink" title="scanf"></a>scanf</h2><ul>
+<li>输入多个数据可以用空格tab或者回车，但最后一个一定要回车。</li>
+<li>scanf要注意变量初始化，否则如果scanf未按格式输入，很可能会出现无效数据</li>
+<li>scanf中还可以规定输入格式，scanf中如果有%和空格之外的符号，必须输入那些符号进行格式化输入。</li>
+<li>空白符在百分号前无影响，在百分号后会需要输入一个数据但是不影响输入结果。</li>
+<li>scanf中必须传入内存地址也就是变量前必须有&amp;符号</li>
+<li>输入%c时所有转义字符都被当做有效字符，回车这个虽然也可能转义但是一般只要正常输入字符就不会出现转移情况</li>
+<li>扫描字符集合避免错误</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">char str[30] = &#123;0&#125;;	//定义字符串，全部初始化为字符&#x27;\0&#x27;</span><br><span class="line">scanf_s(&quot;%[xyz]&quot;,str);	//设定只接受xyz，如不是则停止输入。例如输入123xyz，什么都不会输入输出</span><br><span class="line">//中括号内类似正则匹配</span><br><span class="line">//注意\n可以作为匹配条件，此时需注意是否添加\n,否则会影响回车输入</span><br><span class="line">printf(&quot;%s&quot;,str);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int num;</span><br><span class="line">int data;</span><br><span class="line"></span><br><span class="line">scanf_s(&quot;%d%n&quot;,&amp;num,&amp;data);	//%n用以统计输入多少个字符</span><br><span class="line">printf(&quot;%d%d&quot;,num,data);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="getchar"><a href="#getchar" class="headerlink" title="getchar"></a>getchar</h2><ul>
+<li>会把回车也当做字符</li>
+</ul>
+<h2 id="gets"><a href="#gets" class="headerlink" title="gets"></a>gets</h2><ul>
+<li>gets_s是安全的输入类似scanf_s</li>
+<li>用处是获取一个字符串</li>
+</ul>
+<h2 id="sprintf-sscanf"><a href="#sprintf-sscanf" class="headerlink" title="sprintf,sscanf"></a>sprintf,sscanf</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sprintf(str,&quot;%s%s&quot;,&quot;ge&quot;,&quot;dit&quot;);</span><br><span class="line">//将两个字符串合并</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int num;</span><br><span class="line">char str[40] = &quot;num = 99&quot;;</span><br><span class="line">sscanf(str,&quot;num=%d&quot;,&amp;num);</span><br><span class="line">printf(&quot;%d&quot;,num);</span><br><span class="line">//通过sscanf去除其中的数字</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int num</span><br><span class="line">char str[40] = &quot;for /1 %i in (1,1,10) do echo china&quot;;</span><br><span class="line">sscanf(str,&quot;for /1 %%i in (1,1,%d) do echo china&quot;,&amp;num);</span><br><span class="line">printf(&quot;\n%d&quot;,num);</span><br><span class="line">num = 20;</span><br><span class="line">sprintf(str,&quot;for /1 %%i in (1,1,%d) do echo china&quot;,num);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/03/C/CLearning5/" rel="prev" title="CLearning5">
+                  <i class="fa fa-angle-left"></i> CLearning5
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/04/hexolearn/noroot/" rel="next" title="noroot">
+                  noroot <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

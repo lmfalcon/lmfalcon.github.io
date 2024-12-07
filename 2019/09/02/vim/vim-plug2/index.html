@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="markdown-preview插件系列 折腾了很久发现可以用了，但是还是有一些问题 只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog 不能进入报错，某个rpc的依赖插件打不开   解决方案 换个插件 安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg 发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是这些插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim-plug2">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/vim/vim-plug2/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="markdown-preview插件系列 折腾了很久发现可以用了，但是还是有一些问题 只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog 不能进入报错，某个rpc的依赖插件打不开   解决方案 换个插件 安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg 发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是这些插件">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-02T12:49:37.000Z">
+<meta property="article:modified_time" content="2019-09-02T17:38:41.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="plugin,vim,vim-plug">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/09/02/vim/vim-plug2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/09/02/vim/vim-plug2/","path":"2019/09/02/vim/vim-plug2/","title":"vim-plug2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vim-plug2 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-preview%E6%8F%92%E4%BB%B6%E7%B3%BB%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">markdown-preview插件系列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-plug%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">vim-plug插件管理器问题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/vim/vim-plug2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vim-plug2 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vim-plug2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-02 20:49:37" itemprop="dateCreated datePublished" datetime="2019-09-02T20:49:37+08:00">2019-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-09-03 01:38:41" itemprop="dateModified" datetime="2019-09-03T01:38:41+08:00">2019-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="markdown-preview插件系列"><a href="#markdown-preview插件系列" class="headerlink" title="markdown-preview插件系列"></a>markdown-preview插件系列</h1><ul>
+<li>折腾了很久发现可以用了，但是还是有一些问题<ol>
+<li>只能在根目录下使用，而我绝大部分的编辑是在hexo中编辑blog</li>
+<li>不能进入报错，某个rpc的依赖插件打不开</li>
+</ol>
+</li>
+<li>解决方案<ol>
+<li>换个插件</li>
+<li>安装instant-markdown-d发现这些插件都有相同的问题在hexo中无法编辑bolg</li>
+<li>发现我编辑的blog都是root用户的因为我每次打开都是sudo vim，但是这些插件打开浏览器firefox是我登录用户的，所以打不开。</li>
+<li>当然我尝试了以下直接用firefox打开markdown，firefox安装了markdown文件的显示插件和自动重载页面，代码如下（改的vimrc文件）  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;t :call Preview() &lt;CR&gt;</span><br><span class="line">func! Preview()</span><br><span class="line">	if &amp;filetype == &#x27;markdown&#x27; ||  &amp;filetype == &#x27;md&#x27;</span><br><span class="line">		exec &quot;firefox %&quot;</span><br><span class="line">	endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure></li>
+<li>运行报错Running Firefox as root in a regular user’s session is not supported。我估计那两个插件没有料到我会遇到这样的问题，毕竟是浏览器打不开插件运行是正常的。</li>
+<li>只能改掉blog目录下所有文件的拥有者  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R 我的用户名 blog目录</span><br></pre></td></tr></table></figure></li>
+<li>重新进入可以使用了，一切恢复正常</li>
+</ol>
+</li>
+</ul>
+<h1 id="vim-plug插件管理器问题"><a href="#vim-plug插件管理器问题" class="headerlink" title="vim-plug插件管理器问题"></a>vim-plug插件管理器问题</h1><ul>
+<li>大部分插件是可以直接安装的但是第一次安装失败后退出安装界面，再进入就显示安装完成了</li>
+<li>怀疑是不是只检测是否有这个文件目录就算安装了插件</li>
+<li>解决办法<ol>
+<li>最有效的方式是  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">删除或者注释掉.vimrc中未安装成功的插件相关的内容</span><br><span class="line">执行:PlugClean清除插件（可能清除失败，目录没删掉）</span><br><span class="line">因为我用的是vim所以目录为~/.vim/plugged/中，删掉文件夹即可</span><br><span class="line">之后重新安装依赖或者重新安装</span><br></pre></td></tr></table></figure></li>
+<li>直接找到依赖包安装，说不定插件是安装好的只是少依赖再或者就如markdown-preview中的问题，插件安装成功依赖也是完整的，只是用户组问题这样的bug插件本身无法检测也无任何报错导致插件打不开。（文档读着都累，而且markdown-preview还不知道怎么查文档的我，一步步慢慢试水分析原因浪费了大量时间）</li>
+<li>依赖安装不成功很可能是依赖的环境变量没有设置好或者只是局部变量没办法在全局引用中查找到（所以安装中 -g 很重要）。再或者就是我之前的问题root用户和自己的用户在vim中未作区分，导致有些无法执行。有些就算区分了在vim中也没办法执行,下面的方法我用了之后可以在vim中使用firefox了，但是对插件你仍不知道去哪里改插件问题  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nnoremap &lt;leader&gt;t :call Preview() &lt;CR&gt;</span><br><span class="line">func! Preview()</span><br><span class="line">	if &amp;filetype == &#x27;markdown&#x27; ||  &amp;filetype == &#x27;md&#x27;</span><br><span class="line">		exec &quot;!sudo -u lmfalcon firefox %&quot;</span><br><span class="line">	endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/plugin-vim-vim-plug/" rel="tag"># plugin,vim,vim-plug</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/01/C/CLearning4/" rel="prev" title="CLearning4">
+                  <i class="fa fa-angle-left"></i> CLearning4
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/03/hexolearn/aboutthexonew/" rel="next" title="aboutthehexonew">
+                  aboutthehexonew <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

