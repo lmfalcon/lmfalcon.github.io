@@ -47,12 +47,18 @@ hexo命令需要重新clean 并deploy
 ## 新电脑
 
 clone 下来。新电脑需要改变的较多git，nodejs和npm淘宝源都需要重新设置
+```
+淘宝源的配置方式是：
+npm config set registry https://registry.npmmirror.com
+这段代码最好是在CMD命令行输入而不是git bash中，毕竟npm是包管理工具可能在其他文件中也用得到。主要是不知道其他地方是否也会使用到npm。
 
 生成新的ssh key 后续过来完善这个部分，如果没有完善就搜索解决如何通过ssh上传的github。
 
 新的blog文件夹下把clone的文件复制过来，之后
 
 ```
+先在cmd的命令行全局安装hexo
+npm install -g hexo-cli
 npm install hexo 
 npm install
 npm install hexo-deployer-git
@@ -61,6 +67,8 @@ hexo s
 hexo d
 ```
 
-后续的步骤其实和旧电脑一样进行操作。其实新电脑的还没有尝试完。之后看效果吧
+后续的步骤其实和旧电脑一样进行操作。其实新电脑的还没有尝试完。之后看效果吧。
+
+
 
 
