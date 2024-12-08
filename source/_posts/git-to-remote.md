@@ -27,11 +27,11 @@ blog文件夹里增加.gitignore文件（就是设置不上传的文件，文件
 如果原本的themes主题是clone下来的那么主题文件中可能有.git文件夹，如果有删掉。
 
 ```
-
+# add 应该就是新增推送上去的意思
 git add .
-
+# commit 是对modify的内容进行描述
 git commit -m add_branch
-
+# push就是推送最新的信息。
 git push
 ```
 这里可以将文件推送到远程库分支hexo
@@ -48,17 +48,18 @@ hexo命令需要重新clean 并deploy
 
 clone 下来。新电脑需要改变的较多git，nodejs和npm淘宝源都需要重新设置
 ```
-淘宝源的配置方式是：
+# 淘宝源的配置方式是：
 npm config set registry https://registry.npmmirror.com
-这段代码最好是在CMD命令行输入而不是git bash中，毕竟npm是包管理工具可能在其他文件中也用得到。主要是不知道其他地方是否也会使用到npm。
-
+# 这段代码最好是在CMD命令行输入而不是git bash中，毕竟npm是包管理工具可能在其他文件中也用得到。主要是不知道其他地方是否也会使用到npm。
+```
 生成新的ssh key 后续过来完善这个部分，如果没有完善就搜索解决如何通过ssh上传的github。
 
 新的blog文件夹下把clone的文件复制过来，之后
 
 ```
-先在cmd的命令行全局安装hexo
+# 先在cmd的命令行全局安装hexo
 npm install -g hexo-cli
+# 之后可以在blog文件下使用git bash here,不过我的hexo确实安装了两遍不知道哪里出问题了。
 npm install hexo 
 npm install
 npm install hexo-deployer-git
@@ -69,6 +70,14 @@ hexo d
 
 后续的步骤其实和旧电脑一样进行操作。其实新电脑的还没有尝试完。之后看效果吧。
 
+完成后在旧电脑编辑需要同步内容也是从github中pull 内容下来，具体代码是：
+```
+# 这里是保证提交上去的是最新的版本。
+git pull origin hexo
+```
+之后应该就可以在多个电脑上写blog并进行同步了，后续应该是解决github网络太慢的问题，打算通过gitee进行解决不知道能否同时push到github和gitee这样有两个远程库相对安全。
+
+考虑到远程仓库可能存储的东西有限，尽量不要存储图片，还是以文字的形式进行描述。虽然图片很好理解，但是如果能通过文字描述清楚一些概念还是很厉害的。
 
 
 
